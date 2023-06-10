@@ -1,8 +1,26 @@
-const stringToArray = string => string.split(' ')
+const arrayPlusArray = (arr1, arr2) => {
+    let a = arr1.reduce((a, c) => a + c, 0)
+    let b = arr2.reduce((a, c) => a + c, 0)
+    return (
+        a + b
+    )
+}
 
-let a = "I love arrays they are my favorite"
 
-console.log(stringToArray(a));
+let c = [1, 2, 3]
+let d = [4, 5, 6]
+
+console.log(arrayPlusArray(c, d));
+
+// [1, 2, 3], [4, 5, 6]), 21
+
+
+
+// const stringToArray = string => string.split(' ')
+
+// let a = "I love arrays they are my favorite"
+
+// console.log(stringToArray(a));
 
 
 
