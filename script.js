@@ -1,16 +1,26 @@
-const arrayPlusArray = (arr1, arr2) => {
-    let a = arr1.reduce((a, c) => a + c, 0)
-    let b = arr2.reduce((a, c) => a + c, 0)
-    return (
-        a + b
-    )
-}
+const getAverage = marks => Math.floor(marks.reduce((a, c) => a + c, 0) / marks.length)
+
+console.log(getAverage([11,7,10,11,4,12,2,4,17,12,3,7,16,4,9]));
+
+// Test.assertEquals(getAverage([2,2,2,2]),2);
+// Test.assertEquals(getAverage([1,2,3,4,5,]),3);
+// Test.assertEquals(getAverage([1,1,1,1,1,1,1,2]),1);
 
 
-let c = [1, 2, 3]
-let d = [4, 5, 6]
 
-console.log(arrayPlusArray(c, d));
+// const arrayPlusArray = (arr1, arr2) => {
+//     let a = arr1.reduce((a, c) => a + c, 0)
+//     let b = arr2.reduce((a, c) => a + c, 0)
+//     return (
+//         a + b
+//     )
+// }
+
+
+// let c = [1, 2, 3]
+// let d = [4, 5, 6]
+
+// console.log(arrayPlusArray(c, d));
 
 // [1, 2, 3], [4, 5, 6]), 21
 
