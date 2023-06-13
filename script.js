@@ -1,6 +1,29 @@
-const getAverage = marks => Math.floor(marks.reduce((a, c) => a + c, 0) / marks.length)
+const sumTwoSmallestNumbers = numbers => {
+    const filterArr = numbers.filter(el => Number.isInteger(el) === true && el > 0)
+    if (filterArr.length > 3) {
+        let sortArr = filterArr.sort((a, b) => a - b).slice(0, 2).reduce((a, b) => a + b, 0);
+        return sortArr
+    }
+}
 
-console.log(getAverage([11,7,10,11,4,12,2,4,17,12,3,7,16,4,9]));
+console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7]));
+
+// Создайте функцию, которая возвращает сумму двух наименьших положительных чисел для заданного массива минимум из 4 положительных целых чисел.
+// Не будут переданы числа с плавающей запятой или неположительные целые числа.
+
+// assert.strictEqual(sumTwoSmallestNumbers([5, 8, 12, 19, 22]), 13, "Sum should be 13");
+// assert.strictEqual(sumTwoSmallestNumbers([15, 28, 4, 2, 43]), 6, "Sum should be 6");
+// assert.strictEqual(sumTwoSmallestNumbers([3, 87, 45, 12, 7]), 10, "Sum should be 10");
+// assert.strictEqual(sumTwoSmallestNumbers([23, 71, 33, 82, 1]), 24, "Sum should be 24");
+// assert.strictEqual(sumTwoSmallestNumbers([52, 76, 14, 12, 4]), 16, "Sum should be 16");
+
+
+
+
+
+// const getAverage = marks => Math.floor(marks.reduce((a, c) => a + c, 0) / marks.length)
+
+// console.log(getAverage([11,7,10,11,4,12,2,4,17,12,3,7,16,4,9]));
 
 // Test.assertEquals(getAverage([2,2,2,2]),2);
 // Test.assertEquals(getAverage([1,2,3,4,5,]),3);
