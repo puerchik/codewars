@@ -1,14 +1,37 @@
-const minMax = profit => {
-    let min = profit[0]
-    let max = profit[profit.length - 1]
-    profit.forEach(el => {
-        if (el < min) { min = el }
-        if (el > max) { max = el }
-    })
-    return [min, max]
+const dontGiveMeFive = (start, end) => {
+    let arr = []
+    for (let i = start; i <= end; i++) {
+        if (!/5/.test(i)) {
+            arr = [...arr, i]
+        }
+    }
+    return arr.length
 }
 
-console.log(minMax([2334454, 5]));
+
+console.log(dontGiveMeFive(1,9));
+
+
+
+
+
+// 1,9 -> 1,2,3,4,6,7,8,9 -> Result 8
+// 4,17 -> 4,6,7,8,9,10,11,12,13,14,16,17 -> Result 12
+
+
+
+
+// const minMax = profit => {
+//     let min = profit[0]
+//     let max = profit[profit.length - 1]
+//     profit.forEach(el => {
+//         if (el < min) { min = el }
+//         if (el > max) { max = el }
+//     })
+//     return [min, max]
+// }
+
+// console.log(minMax([2334454, 5]));
 
 
 
