@@ -1,7 +1,27 @@
-const number = pageNumber => pageNumber.map((el, i) => `${i + 1}: ${el}`)
+const minMax = profit => {
+    let min = profit[0]
+    let max = profit[profit.length - 1]
+    profit.forEach(el => {
+        if (el < min) { min = el }
+        if (el > max) { max = el }
+    })
+    return [min, max]
+}
+
+console.log(minMax([2334454, 5]));
 
 
-console.log(number(["a", "b", "c"]));
+
+// [1,2,3,4,5] --> [1,5]
+// [2334454,5] --> [5,2334454]
+// [1]         --> [1,1]
+
+
+
+// const number = pageNumber => pageNumber.map((el, i) => `${i + 1}: ${el}`)
+
+
+// console.log(number(["a", "b", "c"]));
 
 // [] --> []
 // ["a", "b", "c"] --> ["1: a", "2: b", "3: c"]
