@@ -1,12 +1,34 @@
-const sumTwoSmallestNumbers = numbers => {
-    const filterArr = numbers.filter(el => Number.isInteger(el) === true && el > 0)
-    if (filterArr.length > 3) {
-        let sortArr = filterArr.sort((a, b) => a - b).slice(0, 2).reduce((a, b) => a + b, 0);
-        return sortArr
-    }
+const removeSmallest = numbers => {
+    let finalArray = numbers.slice();
+    let min = finalArray[0];
+    finalArray.forEach(el => {
+        if (el < min) {
+            min = el
+        }
+    });
+    finalArray.splice(numbers.indexOf(min), 1);
+    
+    return finalArray
 }
 
-console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7]));
+console.log(removeSmallest([ 331, 60, 272, 136 ]));
+
+
+// Input: [1,2,3,4,5], output = [2,3,4,5]
+// Input: [5,3,2,1,4], output = [5,3,2,4]
+// Input: [2,2,1,2,1], output = [2,2,2,1]
+
+
+
+// const sumTwoSmallestNumbers = numbers => {
+//     const filterArr = numbers.filter(el => Number.isInteger(el) === true && el > 0)
+//     if (filterArr.length > 3) {
+//         let sortArr = filterArr.sort((a, b) => a - b).slice(0, 2).reduce((a, b) => a + b, 0);
+//         return sortArr
+//     }
+// }
+
+// console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7]));
 
 // Создайте функцию, которая возвращает сумму двух наименьших положительных чисел для заданного массива минимум из 4 положительных целых чисел.
 // Не будут переданы числа с плавающей запятой или неположительные целые числа.
