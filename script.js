@@ -1,24 +1,29 @@
-const removeSmallest = numbers => {
-    let finalArray = numbers.slice();
-    let min = finalArray[0];
-    finalArray.forEach(el => {
-        if (el < min) {
-            min = el
-        }
-    });
-    finalArray.splice(numbers.indexOf(min), 1);
-    
-    return finalArray
-}
+const number = pageNumber => pageNumber.map((el, i) => `${i + 1}: ${el}`)
 
-console.log(removeSmallest([ 331, 60, 272, 136 ]));
 
+console.log(number(["a", "b", "c"]));
+
+// [] --> []
+// ["a", "b", "c"] --> ["1: a", "2: b", "3: c"]
+
+// const removeSmallest = numbers => {
+//     let finalArray = numbers.slice();
+//     let min = finalArray[0];
+//     finalArray.forEach(el => {
+//         if (el < min) {
+//             min = el
+//         }
+//     });
+//     finalArray.splice(numbers.indexOf(min), 1);
+
+//     return finalArray
+// }
+
+// console.log(removeSmallest([ 331, 60, 272, 136 ]));
 
 // Input: [1,2,3,4,5], output = [2,3,4,5]
 // Input: [5,3,2,1,4], output = [5,3,2,4]
 // Input: [2,2,1,2,1], output = [2,2,2,1]
-
-
 
 // const sumTwoSmallestNumbers = numbers => {
 //     const filterArr = numbers.filter(el => Number.isInteger(el) === true && el > 0)
@@ -39,10 +44,6 @@ console.log(removeSmallest([ 331, 60, 272, 136 ]));
 // assert.strictEqual(sumTwoSmallestNumbers([23, 71, 33, 82, 1]), 24, "Sum should be 24");
 // assert.strictEqual(sumTwoSmallestNumbers([52, 76, 14, 12, 4]), 16, "Sum should be 16");
 
-
-
-
-
 // const getAverage = marks => Math.floor(marks.reduce((a, c) => a + c, 0) / marks.length)
 
 // console.log(getAverage([11,7,10,11,4,12,2,4,17,12,3,7,16,4,9]));
@@ -50,8 +51,6 @@ console.log(removeSmallest([ 331, 60, 272, 136 ]));
 // Test.assertEquals(getAverage([2,2,2,2]),2);
 // Test.assertEquals(getAverage([1,2,3,4,5,]),3);
 // Test.assertEquals(getAverage([1,1,1,1,1,1,1,2]),1);
-
-
 
 // const arrayPlusArray = (arr1, arr2) => {
 //     let a = arr1.reduce((a, c) => a + c, 0)
@@ -61,7 +60,6 @@ console.log(removeSmallest([ 331, 60, 272, 136 ]));
 //     )
 // }
 
-
 // let c = [1, 2, 3]
 // let d = [4, 5, 6]
 
@@ -69,23 +67,15 @@ console.log(removeSmallest([ 331, 60, 272, 136 ]));
 
 // [1, 2, 3], [4, 5, 6]), 21
 
-
-
 // const stringToArray = string => string.split(' ')
 
 // let a = "I love arrays they are my favorite"
 
 // console.log(stringToArray(a));
 
-
-
-
 // "Robin Singh" ==> ["Robin", "Singh"]
 
 // "I love arrays they are my favorite" ==> ["I", "love", "arrays", "they", "are", "my", "favorite"]
-
-
-
 
 // const grow = x => {
 //     return (
@@ -96,8 +86,6 @@ console.log(removeSmallest([ 331, 60, 272, 136 ]));
 // const a = [4, 1, 1, 1, 4]
 
 // console.log(grow(a));
-
-
 
 // [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
 
@@ -132,7 +120,6 @@ console.log(removeSmallest([ 331, 60, 272, 136 ]));
 
 //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should return [10, -65].
 
-
 // const invert = array => array.map(el => el * -1)
 
 // const a = [1, 2, 3, 4, 5]
@@ -143,8 +130,6 @@ console.log(removeSmallest([ 331, 60, 272, 136 ]));
 //invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
 //invert([]) == []
 
-
-
 // const maps = x => x.map(el => el * 2)
 
 // const a = [1, 2, 3]
@@ -153,25 +138,19 @@ console.log(removeSmallest([ 331, 60, 272, 136 ]));
 
 //[1, 2, 3] --> [2, 4, 6]
 
-
-
 // const findNeedle = haystack => `found the needle at position ${haystack.indexOf("needle")}`
 
 // const a = ["hay", "junk", "hay", "hay", "moreJunk", "moreJunk", "moreJunk", "moreJunk", "randomJunk", "needle"]
 
 // console.log(findNeedle(a));
 
-
-
 //["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5"
-
 
 // const digitize = n => Array.from(String(n), Number).reverse()
 
 // let n = 35231;
 
 // console.log(digitize(n));
-
 
 //35231 => [1,3,2,5,3]
 //0 => [0]
