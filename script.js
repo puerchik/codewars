@@ -1,6 +1,33 @@
-const breakChocolate = (n, m) => n * m > 1 ? n * m - 1 : 0
+const sequenceSum = (begin, end, step) => {
+    let result = begin;
+    if (begin > end) {
+        return 0
+    } if (begin === end || begin + step > end) {
+        return begin
+    } else {
+        for (let i = begin; i < (step !== 1 &&  i > end - step ? end - step : end); i + step) {             
+            i = i + step;
+            result = result + i;      
+        }
+        return result
+    }
+}
 
-console.log(breakChocolate(1, 9));
+
+console.log(sequenceSum(639, 778, 83));
+
+// Testing for 639, 778, 83: expected 2166 to equal 1361
+// 2,2,2 --> 2
+// 2,6,2 --> 12 (2 + 4 + 6)
+// 1,5,1 --> 15 (1 + 2 + 3 + 4 + 5)
+// 1,5,3  --> 5 (1 + 4)
+
+
+
+
+// const breakChocolate = (n, m) => n * m > 1 ? n * m - 1 : 0
+
+// console.log(breakChocolate(1, 9));
 
 
 
