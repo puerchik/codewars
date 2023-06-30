@@ -1,17 +1,41 @@
-const getSum = (a, b) => {
-
-    let result = 0;
-    if (a === b) {
-        return a;
-    } else {
-        for (let i = (a < b ? a : b); i <= (b > a ? b : a); i++) {
-            result = result + i;
-        }
-        return result;
-    }
+const stray = numbers => {
+    let valid;
+    let result;
+    numbers[0] === numbers[1] ? valid = numbers[0]
+        : numbers[0] === numbers[2]
+            ? valid = numbers[0]
+            : valid = numbers[1]
+    result = numbers.filter(el => el !== valid)
+    return Number(result)
 }
 
-console.log(getSum(1, 5));
+console.log(stray([1, 1, 2]));
+
+
+
+// [1, 1, 2] ==> 2
+// [17, 17, 3, 17, 17, 17, 17] ==> 3
+
+
+
+
+
+
+
+// const getSum = (a, b) => {
+
+//     let result = 0;
+//     if (a === b) {
+//         return a;
+//     } else {
+//         for (let i = (a < b ? a : b); i <= (b > a ? b : a); i++) {
+//             result = result + i;
+//         }
+//         return result;
+//     }
+// }
+
+// console.log(getSum(1, 5));
 
 
 
