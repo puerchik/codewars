@@ -1,20 +1,34 @@
-const sequenceSum = (begin, end, step) => {
-    let result = begin;
-    if (begin > end) {
-        return 0
-    } if (begin === end || begin + step > end) {
-        return begin
-    } else {
-        for (let i = begin; i < (step !== 1 &&  i > end - step ? end - step : end); i + step) {             
-            i = i + step;
-            result = result + i;      
-        }
-        return result
-    }
+const twoOldestAges = ages => {
+    let a = ages.sort((a, b) => b - a)
+    return [a[1],a[0]]
 }
 
 
-console.log(sequenceSum(639, 778, 83));
+console.log(twoOldestAges([1, 5, 87, 45, 8, 8]));
+
+
+// [1, 2, 10, 8] --> [8, 10]
+// [1, 5, 87, 45, 8, 8] --> [45, 87]
+// [1, 3, 10, 0]) --> [3, 10]
+
+
+// const sequenceSum = (begin, end, step) => {
+//     let result = begin;
+//     if (begin > end) {
+//         return 0
+//     } if (begin === end || begin + step > end) {
+//         return begin
+//     } else {
+//         for (let i = begin; i < (step !== 1 &&  i > end - step ? end - step : end); i + step) {
+//             i = i + step;
+//             result = result + i;
+//         }
+//         return result
+//     }
+// }
+
+
+// console.log(sequenceSum(639, 778, 83));
 
 // Testing for 639, 778, 83: expected 2166 to equal 1361
 // 2,2,2 --> 2
