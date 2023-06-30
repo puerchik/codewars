@@ -1,15 +1,27 @@
-const stray = numbers => {
-    let valid;
-    let result;
-    numbers[0] === numbers[1] ? valid = numbers[0]
-        : numbers[0] === numbers[2]
-            ? valid = numbers[0]
-            : valid = numbers[1]
-    result = numbers.filter(el => el !== valid)
-    return Number(result)
-}
+const breakChocolate = (n, m) => n * m > 1 ? n * m - 1 : 0
 
-console.log(stray([1, 1, 2]));
+console.log(breakChocolate(1, 9));
+
+
+
+
+// (5, 5) , 24
+// (1, 1) , 0
+
+
+
+// const stray = numbers => {
+//     let valid;
+//     let result;
+//     numbers[0] === numbers[1] ? valid = numbers[0]
+//         : numbers[0] === numbers[2]
+//             ? valid = numbers[0]
+//             : valid = numbers[1]
+//     result = numbers.filter(el => el !== valid)
+//     return Number(result)
+// }
+
+// console.log(stray([1, 1, 2]));
 
 
 
