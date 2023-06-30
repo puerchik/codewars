@@ -1,15 +1,43 @@
-const sortByLength = arr => arr.sort((a, b) => a.length - b.length)
+const maskify = maskifyData => {
+    let maskifyArr = [];
+    let resultArr = [];
+    maskifyArr = maskifyData.split('')
+    if (maskifyArr.length >= 4) {
+        for (let i = 0; i < maskifyArr.length - 4; i++) {
+            resultArr = [...resultArr, "#"]
+        }
+        for (let j = maskifyArr.length - 4; j <= maskifyArr.length - 1; j++) {
+            resultArr =[...resultArr, maskifyArr[j]]
+        }
+        return resultArr.join("")
+    } else {        
+            return maskifyArr.join("")
+    }    
+}
 
-console.log(sortByLength(["Telescopes", "Glasses", "Eyes", "Monocles"]));
+console.log(maskify(""));
+
+
+
+// maskify("4556364607935616") == "############5616"
+// maskify(     "64607935616") ==      "#######5616"
+// maskify(               "1") ==                "1"
+// maskify(                "") ==                 ""
+
+
+
+
+
+
+
+// const sortByLength = arr => arr.sort((a, b) => a.length - b.length)
+
+// console.log(sortByLength(["Telescopes", "Glasses", "Eyes", "Monocles"]));
 
 
 
 // ["Telescopes", "Glasses", "Eyes", "Monocles"]
 // ["Eyes", "Glasses", "Monocles", "Telescopes"]
-
-
-
-
 
 
 // const dontGiveMeFive = (start, end) => {
