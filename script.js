@@ -1,21 +1,49 @@
-const maskify = maskifyData => {
-    let maskifyArr = [];
-    let resultArr = [];
-    maskifyArr = maskifyData.split('')
-    if (maskifyArr.length >= 4) {
-        for (let i = 0; i < maskifyArr.length - 4; i++) {
-            resultArr = [...resultArr, "#"]
+const getSum = (a, b) => {
+
+    let result = 0;
+    if (a === b) {
+        return a;
+    } else {
+        for (let i = (a < b ? a : b); i <= (b > a ? b : a); i++) {
+            result = result + i;
         }
-        for (let j = maskifyArr.length - 4; j <= maskifyArr.length - 1; j++) {
-            resultArr =[...resultArr, maskifyArr[j]]
-        }
-        return resultArr.join("")
-    } else {        
-            return maskifyArr.join("")
-    }    
+        return result;
+    }
 }
 
-console.log(maskify(""));
+console.log(getSum(1, 5));
+
+
+
+// (1, 0) --> 1 (1 + 0 = 1)
+// (1, 2) --> 3 (1 + 2 = 3)
+// (0, 1) --> 1 (0 + 1 = 1)
+// (1, 1) --> 1 (1 since both are same)
+// (-1, 0) --> -1 (-1 + 0 = -1)
+// (-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)
+
+
+
+
+
+// const maskify = maskifyData => {
+//     let maskifyArr = [];
+//     let resultArr = [];
+//     maskifyArr = maskifyData.split('')
+//     if (maskifyArr.length >= 4) {
+//         for (let i = 0; i < maskifyArr.length - 4; i++) {
+//             resultArr = [...resultArr, "#"]
+//         }
+//         for (let j = maskifyArr.length - 4; j <= maskifyArr.length - 1; j++) {
+//             resultArr =[...resultArr, maskifyArr[j]]
+//         }
+//         return resultArr.join("")
+//     } else {
+//             return maskifyArr.join("")
+//     }
+// }
+
+// console.log(maskify(""));
 
 
 
