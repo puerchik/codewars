@@ -1,17 +1,29 @@
-const dontGiveMeFive = (start, end) => {
-    let arr = []
-    for (let i = start; i <= end; i++) {
-        if (!/5/.test(i)) {
-            arr = [...arr, i]
-        }
-    }
-    return arr.length
-}
+const sortByLength = arr => arr.sort((a, b) => a.length - b.length)
+
+console.log(sortByLength(["Telescopes", "Glasses", "Eyes", "Monocles"]));
 
 
-console.log(dontGiveMeFive(1,9));
+
+// ["Telescopes", "Glasses", "Eyes", "Monocles"]
+// ["Eyes", "Glasses", "Monocles", "Telescopes"]
 
 
+
+
+
+
+// const dontGiveMeFive = (start, end) => {
+//     let arr = []
+//     for (let i = start; i <= end; i++) {
+//         if (!/5/.test(i)) {
+//             arr = [...arr, i]
+//         }
+//     }
+//     return arr.length
+// }
+
+
+// console.log(dontGiveMeFive(1,9));
 
 
 
