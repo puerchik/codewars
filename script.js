@@ -1,21 +1,44 @@
-const factorial = n => {
-    let result = 1;
-    if (n >= 0 && n <= 12) {
-        if (n === 0 || n === 1) {
-            return 1;
-        } else {
-            for (let i = 2; i <= n; i++) {
-                result = result * i;
-            }
-            return result;
-        }
-    } else {
-        throw 'RangeError'
+const solution = digits => {
+    let arr = [];
+    let result = 0;
+    for (let i = 0; i <= digits.length - 5; i++) {
+        arr = [...arr, digits.substring(i, i + 5)]
     }
+    for (let j = 0; j <= arr.length - 1; j++) {
+        if (Number(arr[j]) > result) {
+            result = Number(arr[j]);
+        }
+    }
+    return result
 }
 
+console.log(solution('7801861481949842845625894265605490469898989'));
 
-console.log(factorial(12));
+
+
+
+
+// 1234567890   67890 is the greatest sequence of 5 consecutive digits.
+
+
+// const factorial = n => {
+//     let result = 1;
+//     if (n >= 0 && n <= 12) {
+//         if (n === 0 || n === 1) {
+//             return 1;
+//         } else {
+//             for (let i = 2; i <= n; i++) {
+//                 result = result * i;
+//             }
+//             return result;
+//         }
+//     } else {
+//         throw 'RangeError'
+//     }
+// }
+
+
+// console.log(factorial(12));
 
 
 
