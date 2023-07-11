@@ -1,10 +1,36 @@
-const twoOldestAges = ages => {
-    let a = ages.sort((a, b) => b - a)
-    return [a[1],a[0]]
+const factorial = n => {
+    let result = 1;
+    if (n >= 0 && n <= 12) {
+        if (n === 0 || n === 1) {
+            return 1;
+        } else {
+            for (let i = 2; i <= n; i++) {
+                result = result * i;
+            }
+            return result;
+        }
+    } else {
+        throw 'RangeError'
+    }
 }
 
 
-console.log(twoOldestAges([1, 5, 87, 45, 8, 8]));
+console.log(factorial(12));
+
+
+
+// 5! = 5 * 4 * 3 * 2 * 1 = 120
+// below 0 or above 12 throw an exception of type ArgumentOutOfRangeException
+
+
+
+// const twoOldestAges = ages => {
+//     let a = ages.sort((a, b) => b - a)
+//     return [a[1],a[0]]
+// }
+
+
+// console.log(twoOldestAges([1, 5, 87, 45, 8, 8]));
 
 
 // [1, 2, 10, 8] --> [8, 10]
