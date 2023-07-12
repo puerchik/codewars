@@ -1,20 +1,53 @@
-const solution = digits => {
+const averages = numbers => {
+
     let arr = [];
-    let result = 0;
-    for (let i = 0; i <= digits.length - 5; i++) {
-        arr = [...arr, digits.substring(i, i + 5)]
-    }
-    for (let j = 0; j <= arr.length - 1; j++) {
-        if (Number(arr[j]) > result) {
-            result = Number(arr[j]);
+    let avr;
+
+    if (numbers !== null) {
+        let firstCheck = numbers.reduce((a, b) => a + b, 0)
+        let secondCheck = numbers.filter(el => el !== 0)
+        if (firstCheck !== numbers.length && secondCheck !== []) {
+            for (let i = 0; i < numbers.length - 1; i++) {
+                avr = (numbers[i] + numbers[i + 1]) / 2;
+                arr = [...arr, avr]
+            }
+            return arr;
+        } else {
+            console.log(firstCheck);
+            return arr;
         }
+    } else {
+        return arr;
     }
-    return result
+
 }
 
-console.log(solution('7801861481949842845625894265605490469898989'));
+
+console.log(averages([1, 3, 5, 1, -10]));
 
 
+
+// Input:  [ 1, 3, 5, 1, -10]
+// Output:  [ 2, 4, 3, -4.5]
+
+
+
+
+// const solution = digits => {
+//     let arr = [];
+//     let result = 0;
+//     for (let i = 0; i <= digits.length - 5; i++) {
+//         arr = [...arr, digits.substring(i, i + 5)]
+//     }
+//     for (let j = 0; j <= arr.length - 1; j++) {
+//         if (Number(arr[j]) > result) {
+//             result = Number(arr[j]);
+//         }
+//     }
+//     return result
+// }
+
+// console.log(solution('780189'));
 
 
 
