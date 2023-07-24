@@ -1,29 +1,49 @@
-const averages = numbers => {
-
-    let arr = [];
-    let avr;
-
-    if (numbers !== null) {
-        let firstCheck = numbers.reduce((a, b) => a + b, 0)
-        let secondCheck = numbers.filter(el => el !== 0)
-        if (firstCheck !== numbers.length && secondCheck !== []) {
-            for (let i = 0; i < numbers.length - 1; i++) {
-                avr = (numbers[i] + numbers[i + 1]) / 2;
-                arr = [...arr, avr]
-            }
-            return arr;
-        } else {
-            console.log(firstCheck);
-            return arr;
-        }
+const triangular = n => {
+    let result;
+    if (n > 0) {
+        result = 0.5 * n * (n + 1);
+        return result;
     } else {
-        return arr;
+        return 0;
     }
-
 }
 
 
-console.log(averages([1, 3, 5, 1, -10]));
+console.log(triangular(91523503));
+
+
+// 0 --> 0
+// 2 --> 3
+// 3 --> 6
+// -10 --> 0
+
+
+// const averages = numbers => {
+
+//     let arr = [];
+//     let avr;
+
+//     if (numbers !== null) {
+//         let firstCheck = numbers.reduce((a, b) => a + b, 0)
+//         let secondCheck = numbers.filter(el => el !== 0)
+//         if (firstCheck !== numbers.length && secondCheck !== []) {
+//             for (let i = 0; i < numbers.length - 1; i++) {
+//                 avr = (numbers[i] + numbers[i + 1]) / 2;
+//                 arr = [...arr, avr]
+//             }
+//             return arr;
+//         } else {
+//             console.log(firstCheck);
+//             return arr;
+//         }
+//     } else {
+//         return arr;
+//     }
+
+// }
+
+
+// console.log(averages([1, 3, 5, 1, -10]));
 
 
 
