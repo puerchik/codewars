@@ -1,15 +1,33 @@
-const triangular = n => {
-    let result;
-    if (n > 0) {
-        result = 0.5 * n * (n + 1);
-        return result;
-    } else {
-        return 0;
-    }
+const gimme = triplet => {
+    let Arr = [...triplet];
+    let mid;
+    triplet.sort((a, b) => a - b);
+    mid = triplet[1];
+
+    return Arr.indexOf(mid)
 }
 
+let arr = [5, 10, 14];
 
-console.log(triangular(91523503));
+console.log(gimme(arr));
+
+
+// gimme([5, 10, 14]) => 1
+// gimme([2, 3, 1]) => 0
+
+
+// const triangular = n => {
+//     let result;
+//     if (n > 0) {
+//         result = 0.5 * n * (n + 1);
+//         return result;
+//     } else {
+//         return 0;
+//     }
+// }
+
+
+// console.log(triangular(91523503));
 
 
 // 0 --> 0
