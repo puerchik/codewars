@@ -1,15 +1,28 @@
-const gimme = triplet => {
-    let Arr = [...triplet];
-    let mid;
-    triplet.sort((a, b) => a - b);
-    mid = triplet[1];
+const sum = numbers => numbers.reduce((a, b) => a + b, 0)
 
-    return Arr.indexOf(mid)
-}
+console.log(sum([1, 5.2, 4, 0, -1]));
 
-let arr = [5, 10, 14];
 
-console.log(gimme(arr));
+// Input: [1, 5.2, 4, 0, -1]
+// Output: 9.2
+
+
+// Input: [-2.398]
+// Output: -2.398
+
+
+// const gimme = triplet => {
+//     let Arr = [...triplet];
+//     let mid;
+//     triplet.sort((a, b) => a - b);
+//     mid = triplet[1];
+
+//     return Arr.indexOf(mid)
+// }
+
+// let arr = [5, 10, 14];
+
+// console.log(gimme(arr));
 
 
 // gimme([5, 10, 14]) => 1
