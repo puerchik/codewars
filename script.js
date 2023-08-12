@@ -1,8 +1,21 @@
-const removeEveryOther = arr => arr.filter((el, i) => i % 2 ? false : el)
+const divisibleBy = (numbers, divisor) => numbers.filter(el => el === 0 ? [el] : !(el % divisor) ? el : null)
 
 
 
-console.log(removeEveryOther(["Keep", "Remove", "Keep", "Remove", "Keep"]));
+console.log(divisibleBy([0, 1, 2, 3, 4, 5, 6], 4));
+
+
+
+// [1, 2, 3, 4, 5, 6], 2 --> [2, 4, 6]
+
+
+
+
+// const removeEveryOther = arr => arr.filter((el, i) => i % 2 ? false : el)
+
+
+
+// console.log(removeEveryOther(["Keep", "Remove", "Keep", "Remove", "Keep"]));
 
 // ["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
 
