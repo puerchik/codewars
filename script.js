@@ -1,6 +1,15 @@
-const sumMix = x => x.reduce((a, b) => Number(a) + Number(b), 0)
+const removeEveryOther = arr => arr.filter((el, i) => i % 2 ? false : el)
 
-console.log(sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]));
+
+
+console.log(removeEveryOther(["Keep", "Remove", "Keep", "Remove", "Keep"]));
+
+// ["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
+
+
+// const sumMix = x => x.reduce((a, b) => Number(a) + Number(b), 0)
+
+// console.log(sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]));
 
 // [9, 3, '7', '3'], 22;
 // ['5', '0', 9, 3, 2, 1, '9', 6, 7], 42;
