@@ -1,6 +1,22 @@
-const sum = numbers => numbers.reduce((a, b) => a + b, 0)
+const monkeyCount = n => {
+    const result = []
+    for (let i = 1; i <= n; i++) {
+        result.push(i)
+    }
+    return result
+}
 
-console.log(sum([1, 5.2, 4, 0, -1]));
+console.log(monkeyCount(10));
+
+
+
+// 10 --> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// 1 --> [1]
+
+
+// const sum = numbers => numbers.reduce((a, b) => a + b, 0)
+
+// console.log(sum([1, 5.2, 4, 0, -1]));
 
 
 // Input: [1, 5.2, 4, 0, -1]
