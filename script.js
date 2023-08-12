@@ -1,12 +1,23 @@
-const monkeyCount = n => {
-    const result = []
-    for (let i = 1; i <= n; i++) {
-        result.push(i)
-    }
-    return result
-}
+const sumMix = x => x.reduce((a, b) => Number(a) + Number(b), 0)
 
-console.log(monkeyCount(10));
+console.log(sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]));
+
+// [9, 3, '7', '3'], 22;
+// ['5', '0', 9, 3, 2, 1, '9', 6, 7], 42;
+// ['3', 6, 6, 0, '5', 8, 5, '6', 2,'0'], 41;
+
+
+
+
+// const monkeyCount = n => {
+//     const result = []
+//     for (let i = 1; i <= n; i++) {
+//         result.push(i)
+//     }
+//     return result
+// }
+
+// console.log(monkeyCount(10));
 
 
 
