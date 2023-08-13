@@ -1,10 +1,39 @@
-const gooseFilter = birds => {
-    const geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
-    return birds.filter(el => geese.includes(el) ? null : el)
+const findMultiples = (integer, limit) => {
+    let result = [];
+    let i = 1;
+    let newInteger = integer;
+    while (newInteger <= limit) {
+        newInteger = integer * i;
+        i += 1;
+        if (newInteger <= limit) {
+            result = [...result, newInteger];
+        }
+    };
+    
+    return result;
 }
 
 
-console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]));
+
+
+console.log(findMultiples(4, 27));
+
+// (5, 25), [5, 10, 15, 20, 25]
+// (1, 2), [1, 2]
+// (5, 7), [5]
+// (4, 27), [4, 8, 12, 16, 20, 24]
+// (11, 54), [11, 22, 33, 44]
+
+
+
+
+// const gooseFilter = birds => {
+//     const geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+//     return birds.filter(el => geese.includes(el) ? null : el)
+// }
+
+
+// console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]));
 
 
 // ["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]
