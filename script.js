@@ -1,6 +1,20 @@
-const squareOrSquareRoot = array => array.map(el => Number.isInteger(Math.sqrt(el)) ? Math.sqrt(el) : el ** 2)
+const gooseFilter = birds => {
+    const geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+    return birds.filter(el => geese.includes(el) ? null : el)
+}
 
-console.log(squareOrSquareRoot([4,3,9,7,2,1]));
+
+console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]));
+
+
+// ["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]
+// ["Mallard", "Hook Bill", "Crested", "Blue Swedish"]
+
+
+
+// const squareOrSquareRoot = array => array.map(el => Number.isInteger(Math.sqrt(el)) ? Math.sqrt(el) : el ** 2)
+
+// console.log(squareOrSquareRoot([4,3,9,7,2,1]));
 
 // [4,3,9,7,2,1] -> [2,9,3,49,4,1]
 
