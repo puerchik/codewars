@@ -1,10 +1,19 @@
-const howMuchILoveYou = nbPetals => {
-    const phrases = ["I love you", "a little", "a lot", "passionately", "madly", "not at all"];
-    return phrases[nbPetals % 6 === 0 ? 5 : nbPetals % 6 - 1];
-}
+const squareOrSquareRoot = array => array.map(el => Number.isInteger(Math.sqrt(el)) ? Math.sqrt(el) : el ** 2)
+
+console.log(squareOrSquareRoot([4,3,9,7,2,1]));
+
+// [4,3,9,7,2,1] -> [2,9,3,49,4,1]
 
 
-console.log(howMuchILoveYou(19));
+
+
+// const howMuchILoveYou = nbPetals => {
+//     const phrases = ["I love you", "a little", "a lot", "passionately", "madly", "not at all"];
+//     return phrases[nbPetals % 6 === 0 ? 5 : nbPetals % 6 - 1];
+// }
+
+
+// console.log(howMuchILoveYou(19));
 
 
 
