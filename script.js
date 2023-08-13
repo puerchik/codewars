@@ -1,8 +1,25 @@
-const divisibleBy = (numbers, divisor) => numbers.filter(el => el === 0 ? [el] : !(el % divisor) ? el : null)
+const howMuchILoveYou = nbPetals => {
+    const phrases = ["I love you", "a little", "a lot", "passionately", "madly", "not at all"];
+    return phrases[nbPetals % 6 === 0 ? 5 : nbPetals % 6 - 1];
+}
+
+
+console.log(howMuchILoveYou(19));
 
 
 
-console.log(divisibleBy([0, 1, 2, 3, 4, 5, 6], 4));
+// (7),"I love you"
+// (3),"a lot"
+// (6),"not at all"
+
+
+
+
+// const divisibleBy = (numbers, divisor) => numbers.filter(el => el === 0 ? [el] : !(el % divisor) ? el : null)
+
+
+
+// console.log(divisibleBy([1, 2, 3, 4, 5, 6], 2));
 
 
 
