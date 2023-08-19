@@ -1,12 +1,26 @@
-const arrayDiff = (a, b) => {
-    let res = a
-    for (let i = 0; i < b.length; i++) {
-        res = res.filter(el => el !== b[i])
-    }
-    return res
+const createPhoneNumber = numbers => {
+    const arrNumbers = numbers.join("")
+    let result = "(" + arrNumbers.slice(0, 3) + ")" + " " + arrNumbers.slice(3, 6) + "-" + arrNumbers.slice(6, 10)
+
+    return result
 }
 
-console.log(arrayDiff([1,2,3,4,5], [1,2,3]));
+
+
+// createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
+
+console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+
+
+// const arrayDiff = (a, b) => {
+//     let res = a
+//     for (let i = 0; i < b.length; i++) {
+//         res = res.filter(el => el !== b[i])
+//     }
+//     return res
+// }
+
+// console.log(arrayDiff([1,2,3,4,5], [1,2,3]));
 
 // arrayDiff([1,2],[1]) == [2]
 // arrayDiff([1,2,2,2,3],[2]) == [1,3]
