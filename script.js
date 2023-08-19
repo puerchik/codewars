@@ -1,6 +1,19 @@
-const addLength = str => str.split(' ').map(el => el + ` ${el.length}`)
+const distinct = a => [...new Set(a)]
 
-console.log(addLength("you will win"));
+// const numbers = [1, 2, 3, 4, 4, 5, 5, 6, 6, 7, 7,7, 9,9,8];
+// const uniqueNumbers = [...new Set(numbers)];
+// console.log(uniqueNumbers);
+
+// Input -> Output
+// [1, 1, 2] -> [1, 2]
+// [1, 2, 1, 1, 3, 2] -> [1, 2, 3]
+
+console.log(distinct([1, 2, 1, 1, 3, 2]));
+
+
+// const addLength = str => str.split(' ').map(el => el + ` ${el.length}`)
+
+// console.log(addLength("you will win"));
 
 // "apple ban" --> ["apple 5", "ban 3"]
 // "you will win" -->["you 3", "will 4", "win 3"]
