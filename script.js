@@ -1,14 +1,26 @@
-const distinct = a => [...new Set(a)]
+const arrayDiff = (a, b) => {
+    let res = a
+    for (let i = 0; i < b.length; i++) {
+        res = res.filter(el => el !== b[i])
+    }
+    return res
+}
 
-// const numbers = [1, 2, 3, 4, 4, 5, 5, 6, 6, 7, 7,7, 9,9,8];
-// const uniqueNumbers = [...new Set(numbers)];
-// console.log(uniqueNumbers);
+console.log(arrayDiff([1,2,3,4,5], [1,2,3]));
 
-// Input -> Output
-// [1, 1, 2] -> [1, 2]
-// [1, 2, 1, 1, 3, 2] -> [1, 2, 3]
+// arrayDiff([1,2],[1]) == [2]
+// arrayDiff([1,2,2,2,3],[2]) == [1,3]
+// [1,2,3], [1,2], [3]
 
-console.log(distinct([1, 2, 1, 1, 3, 2]));
+
+// const distinct = a => [...new Set(a)]
+
+
+// // Input -> Output
+// // [1, 1, 2] -> [1, 2]
+// // [1, 2, 1, 1, 3, 2] -> [1, 2, 3]
+
+// console.log(distinct([1, 2, 1, 1, 3, 2]));
 
 
 // const addLength = str => str.split(' ').map(el => el + ` ${el.length}`)
