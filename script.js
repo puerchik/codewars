@@ -1,22 +1,32 @@
-const findMultiples = (integer, limit) => {
-    let result = [];
-    let i = 1;
-    let newInteger = integer;
-    while (newInteger <= limit) {
-        newInteger = integer * i;
-        i += 1;
-        if (newInteger <= limit) {
-            result = [...result, newInteger];
-        }
-    };
-    
-    return result;
-}
+const addLength = str => str.split(' ').map(el => el + ` ${el.length}`)
+
+console.log(addLength("you will win"));
+
+// "apple ban" --> ["apple 5", "ban 3"]
+// "you will win" -->["you 3", "will 4", "win 3"]
 
 
 
 
-console.log(findMultiples(4, 27));
+// const findMultiples = (integer, limit) => {
+//     let result = [];
+//     let i = 1;
+//     let newInteger = integer;
+//     while (newInteger <= limit) {
+//         newInteger = integer * i;
+//         i += 1;
+//         if (newInteger <= limit) {
+//             result = [...result, newInteger];
+//         }
+//     };
+
+//     return result;
+// }
+
+
+
+
+// console.log(findMultiples(4, 27));
 
 // (5, 25), [5, 10, 15, 20, 25]
 // (1, 2), [1, 2]
