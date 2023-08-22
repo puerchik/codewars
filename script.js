@@ -1,15 +1,32 @@
-const createPhoneNumber = numbers => {
-    const arrNumbers = numbers.join("")
-    let result = "(" + arrNumbers.slice(0, 3) + ")" + " " + arrNumbers.slice(3, 6) + "-" + arrNumbers.slice(6, 10)
-
-    return result
+const moveZeros = arr => {
+    const filteredArr = arr.filter(el => el !== 0)
+    const difference = arr.length - filteredArr.length
+    for (let i = 0; i < difference; i++) {
+        filteredArr.push(0)
+    }
+    return filteredArr
 }
 
+console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
 
 
-// createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
+// moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
 
-console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+
+
+
+// const createPhoneNumber = numbers => {
+//     const arrNumbers = numbers.join("")
+//     let result = "(" + arrNumbers.slice(0, 3) + ")" + " " + arrNumbers.slice(3, 6) + "-" + arrNumbers.slice(6, 10)
+
+//     return result
+// }
+
+
+
+// // createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
+
+// console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
 
 
 // const arrayDiff = (a, b) => {
