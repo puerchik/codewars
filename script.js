@@ -1,14 +1,41 @@
-const moveZeros = arr => {
-    const filteredArr = arr.filter(el => el !== 0)
-    const difference = arr.length - filteredArr.length
-    for (let i = 0; i < difference; i++) {
-        filteredArr.push(0)
+const pickPeaks = arr => {
+    const result = {
+        pos: [],
+        peaks: []
     }
-    return filteredArr
+
+    for (let i = 1; i < arr.length - 1; i++) {
+        if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) {
+            result.pos = [...result.pos, i]
+            result.peaks = [...result.peaks, arr[i]]
+        } else if (arr[i] > arr[i - 1] && arr[i] === arr[i + 1] && arr.slice(i).find(el => el !== arr[i]) < arr[i]) {
+            result.pos = [...result.pos, i]
+            result.peaks = [...result.peaks, arr[i]]
+        }
+    }
+    
+    return result
 }
 
-console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
 
+console.log(pickPeaks([1, 2, 5, 4, 3, 2, 3, 6, 4, 1, 2, 3, 3, 4, 5, 3, 2, 1, 2, 3, 5, 5, 4, 3]));
+
+
+// Example: pickPeaks([3, 2, 3, 6, 4, 1, 2, 3, 2, 1, 2, 3]) should return {pos: [3, 7], peaks: [6, 3]} (or equivalent in other languages)
+
+
+
+
+// const moveZeros = arr => {
+//     const filteredArr = arr.filter(el => el !== 0)
+//     const difference = arr.length - filteredArr.length
+//     for (let i = 0; i < difference; i++) {
+//         filteredArr.push(0)
+//     }
+//     return filteredArr
+// }
+
+// console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
 
 // moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
 
