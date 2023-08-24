@@ -1,8 +1,17 @@
-const fakeBin = x => x.split('').map(el => el < 5 ? 0 : 1).join('')
+const smash = words => words.join(" ")
 
 
 
-console.log(fakeBin('45385593107843568'));
+console.log(smash(['hello', 'world', 'this', 'is', 'great']));
+
+// ['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+
+
+// const fakeBin = x => x.split('').map(el => el < 5 ? 0 : 1).join('')
+
+
+
+// console.log(fakeBin('45385593107843568'));
 
 // fakeBin('45385593107843568'), '01011110001100111'
 
