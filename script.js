@@ -1,8 +1,25 @@
-const smash = words => words.join(" ")
+const countBy = (x, n) => {
+    let result = []
+    for (let i = 1; i <= n; i++) {
+        result.push(x * i)
+    }
+
+    return result
+}
+
+
+console.log(countBy(2,5));
+
+
+// countBy(1,10) === [1,2,3,4,5,6,7,8,9,10]
+// countBy(2,5) === [2,4,6,8,10]
+
+
+// const smash = words => words.join(" ")
 
 
 
-console.log(smash(['hello', 'world', 'this', 'is', 'great']));
+// console.log(smash(['hello', 'world', 'this', 'is', 'great']));
 
 // ['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
 
