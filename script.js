@@ -1,16 +1,25 @@
-const check = (a, x) => {
-    let b = a.find(el => el === x)
-    if (b===0) {
-        return true
-    } else if (b) {
-        return true
-    } else {
-        return false
-    }
-}
+const fakeBin = x => x.split('').map(el => el < 5 ? 0 : 1).join('')
 
 
-console.log(check([101, 45, 75, 105, 99, 107], 107));
+
+console.log(fakeBin('45385593107843568'));
+
+// fakeBin('45385593107843568'), '01011110001100111'
+
+
+// const check = (a, x) => {
+//     let b = a.find(el => el === x)
+//     if (b===0) {
+//         return true
+//     } else if (b) {
+//         return true
+//     } else {
+//         return false
+//     }
+// }
+
+
+// console.log(check([101, 45, 75, 105, 99, 107], 107));
 
 
 // const pickPeaks = arr => {
