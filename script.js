@@ -1,14 +1,39 @@
-const countBy = (x, n) => {
-    let result = []
-    for (let i = 1; i <= n; i++) {
-        result.push(x * i)
+const well = x => {
+    let result = x.map(el => el === 'good' ? 1 : 0).reduce((a, c) => a + c, 0)
+    if (result === 0) {
+        return 'Fail!'
+    } else if (result > 2) {
+        return 'I smell a series!'
+    } else if (result <= 2) {
+        return 'Publish!'
     }
 
-    return result
 }
 
+console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']));
 
-console.log(countBy(2,5));
+
+
+
+
+// well(['good', 'bad', 'bad', 'bad', 'bad']), 'Publish!'
+
+// In this kata you need to check the provided array (x) for good ideas 'good' and bad ideas 'bad'.
+// If there are one or two good ideas, return 'Publish!', if there are more than 2 return 'I smell a series!'.
+// If there are no good ideas, as is often the case, return 'Fail!'.
+
+
+// const countBy = (x, n) => {
+//     let result = []
+//     for (let i = 1; i <= n; i++) {
+//         result.push(x * i)
+//     }
+
+//     return result
+// }
+
+
+// console.log(countBy(2,5));
 
 
 // countBy(1,10) === [1,2,3,4,5,6,7,8,9,10]
