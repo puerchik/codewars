@@ -1,16 +1,25 @@
-const well = x => {
-    let result = x.map(el => el === 'good' ? 1 : 0).reduce((a, c) => a + c, 0)
-    if (result === 0) {
-        return 'Fail!'
-    } else if (result > 2) {
-        return 'I smell a series!'
-    } else if (result <= 2) {
-        return 'Publish!'
-    }
+const findAverage = nums => nums.reduce((a, c) => a + c, 0) / nums.length
 
-}
 
-console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']));
+
+console.log(findAverage([1, 3, 5, 7, 9]));
+
+// findAverage([1, 3, 5, 7]), 4
+
+
+// const well = x => {
+//     let result = x.map(el => el === 'good' ? 1 : 0).reduce((a, c) => a + c, 0)
+//     if (result === 0) {
+//         return 'Fail!'
+//     } else if (result > 2) {
+//         return 'I smell a series!'
+//     } else if (result <= 2) {
+//         return 'Publish!'
+//     }
+
+// }
+
+// console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']));
 
 
 
