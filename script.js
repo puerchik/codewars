@@ -1,8 +1,23 @@
-const findAverage = nums => nums.reduce((a, c) => a + c, 0) / nums.length
+const first = (arr, n) => n === null || n === undefined ? [arr[0]] : n === 0 ? [] : arr.slice(0, n)
+
+let arr = ['a', 'b', 'c', 'd', 'e']
+
+console.log(first(arr, 0));
+
+// var arr = ['a', 'b', 'c', 'd', 'e'];
+// first(arr) //=> ['a'];
+// first(arr, 2) //=> ['a', 'b']
+// first(arr, 3) //=> ['a', 'b', 'c'];
+// first(arr, 0) //=> [];
 
 
 
-console.log(findAverage([1, 3, 5, 7, 9]));
+
+// const findAverage = nums => nums.reduce((a, c) => a + c, 0) / nums.length
+
+
+
+// console.log(findAverage([1, 3, 5, 7, 9]));
 
 // findAverage([1, 3, 5, 7]), 4
 
