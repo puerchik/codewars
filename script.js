@@ -1,14 +1,30 @@
-const first = (arr, n) => n === null || n === undefined ? [arr[0]] : n === 0 ? [] : arr.slice(0, n)
+const mergeArrays = (arr1, arr2) => {
+    let newArr = [...arr1, ...arr2]
+    let result = [... new Set(newArr)].sort((a, b) => a - b)
 
-let arr = ['a', 'b', 'c', 'd', 'e']
+    return result
+}
 
-console.log(first(arr, 0));
+console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]));
 
-// var arr = ['a', 'b', 'c', 'd', 'e'];
-// first(arr) //=> ['a'];
-// first(arr, 2) //=> ['a', 'b']
-// first(arr, 3) //=> ['a', 'b', 'c'];
-// first(arr, 0) //=> [];
+// * [1, 2, 3, 4, 5], [6, 7, 8, 9, 10] -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// * [1, 3, 5, 7, 9], [10, 8, 6, 4, 2] -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// * [1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12] -> [1, 2, 3, 4, 5, 7, 9, 10, 11, 12]
+
+
+// const first = (arr, n) => n === null || n === undefined ? [arr[0]] : n === 0 ? [] : arr.slice(0, n)
+
+// let arr = ['a', 'b', 'c', 'd', 'e']
+
+// console.log(first(arr, 0));
+
+// // var arr = ['a', 'b', 'c', 'd', 'e'];
+// // first(arr) //=> ['a'];
+// // first(arr, 2) //=> ['a', 'b']
+// // first(arr, 3) //=> ['a', 'b', 'c'];
+// // first(arr, 0) //=> [];
 
 
 
