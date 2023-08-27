@@ -1,11 +1,31 @@
-const mergeArrays = (arr1, arr2) => {
-    let newArr = [...arr1, ...arr2]
-    let result = [... new Set(newArr)].sort((a, b) => a - b)
+const rowSumOddNumbers = n => {
+    let amountElemets = 0;
+    let sideElement;
+    let result = 0;    
 
-    return result
+    amountElemets = (n * (n + 1)) / 2
+    sideElement = 1 + 2 * (amountElemets - 1)
+
+    for (let i=1; i<=n; i++) {
+        result = result + sideElement;
+        sideElement = sideElement - 2;
+    }
+
+    return result;
 }
 
-console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]));
+
+console.log(rowSumOddNumbers(42));
+
+
+
+// const mergeArrays = (arr1, arr2) => {
+//     let newArr = [...arr1, ...arr2]
+//     let result = [... new Set(newArr)].sort((a, b) => a - b)
+//     return result
+// }
+
+// console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]));
 
 // * [1, 2, 3, 4, 5], [6, 7, 8, 9, 10] -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
