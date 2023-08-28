@@ -1,21 +1,49 @@
-const rowSumOddNumbers = n => {
-    let amountElemets = 0;
-    let sideElement;
-    let result = 0;    
-
-    amountElemets = (n * (n + 1)) / 2
-    sideElement = 1 + 2 * (amountElemets - 1)
-
-    for (let i=1; i<=n; i++) {
-        result = result + sideElement;
-        sideElement = sideElement - 2;
+const points = games => {
+    let result = 0;
+    for (let i = 0; i < games.length; i++) {
+        Number(games[i].split(":")[0]) > Number(games[i].split(":")[1])
+            ? result += 3
+            : Number(games[i].split(":")[0]) < Number(games[i].split(":")[1])
+                ? result += 0
+                : result += 1
     }
 
     return result;
 }
 
 
-console.log(rowSumOddNumbers(42));
+console.log(points(["1:0", "2:0", "3:0", "4:4", "2:2", "3:3", "1:4", "2:3", "2:4", "3:4"]));
+
+
+// if x > y: 3 points (win)
+// if x < y: 0 points (loss)
+// if x = y: 1 point (tie)
+
+// assert.strictEqual(points(["1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3"]), 30);
+// assert.strictEqual(points(["1:1", "2:2", "3:3", "4:4", "2:2", "3:3", "4:4", "3:3", "4:4", "4:4"]), 10);
+// assert.strictEqual(points(["0:1", "0:2", "0:3", "0:4", "1:2", "1:3", "1:4", "2:3", "2:4", "3:4"]), 0);
+// assert.strictEqual(points(["1:0", "2:0", "3:0", "4:0", "2:1", "1:3", "1:4", "2:3", "2:4", "3:4"]), 15);
+// assert.strictEqual(points(["1:0", "2:0", "3:0", "4:4", "2:2", "3:3", "1:4", "2:3", "2:4", "3:4"]), 12);
+
+
+// const rowSumOddNumbers = n => {
+//     let amountElemets = 0;
+//     let sideElement;
+//     let result = 0;
+
+//     amountElemets = (n * (n + 1)) / 2
+//     sideElement = 1 + 2 * (amountElemets - 1)
+
+//     for (let i=1; i<=n; i++) {
+//         result = result + sideElement;
+//         sideElement = sideElement - 2;
+//     }
+
+//     return result;
+// }
+
+
+// console.log(rowSumOddNumbers(42));
 
 
 
