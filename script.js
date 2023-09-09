@@ -1,16 +1,33 @@
-const binaryArrayToNumber = arr => {
-    let result = 0;
+const oddOrEven = arr => arr.reduce((a, b) => a + b, 0) % 2 ? "odd" : "even"
 
-    for (let i = 0; i < arr.length; i++) {
-        result = result * 2 + arr[i]
-    }
 
-    return result;
-}
 
-const binaryArrayToNumberSecondVersion = arr => arr.reduce((a, b) => 2 * a + b, 0)
+console.log(oddOrEven([0, -1, -5]));
 
-console.log(binaryArrayToNumber([1, 0, 1, 1, 0, 0, 1]));
+// Input: [0]
+// Output: "even"
+
+// Input: [0, 1, 4]
+// Output: "odd"
+
+// Input: [0, -1, -5]
+// Output: "even"
+
+
+// const binaryArrayToNumber = arr => {
+//     let result = 0;
+
+//     for (let i = 0; i < arr.length; i++) {
+//         result = result * 2 + arr[i]
+//     }
+
+//     return result;
+// }
+
+// const binaryArrayToNumberSecondVersion = arr => arr.reduce((a, b) => 2 * a + b, 0)
+
+
+// console.log(binaryArrayToNumber([1, 0, 1, 1, 0, 0, 1]));
 
 
 // Testing: [0, 0, 0, 1] ==> 1
