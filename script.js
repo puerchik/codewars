@@ -1,8 +1,22 @@
-const oddOrEven = arr => arr.reduce((a, b) => a + b, 0) % 2 ? "odd" : "even"
+const sumOfMinimums = arr => arr.map(el => el.sort((a, b) => a - b)[0]).reduce((a, c) => a + c, 0)
 
 
 
-console.log(oddOrEven([0, -1, -5]));
+console.log(sumOfMinimums([[1, 2, 3, 4, 5], [5, 6, 7, 8, 9], [20, 21, 34, 56, 100]]));
+
+// [ [ 1, 2, 3, 4, 5 ]        #  minimum value of row is 1
+// , [ 5, 6, 7, 8, 9 ]        #  minimum value of row is 5
+// , [ 20, 21, 34, 56, 100 ]  #  minimum value of row is 20
+// ]
+
+// 1 + 5 + 20 = 26
+
+
+// const oddOrEven = arr => arr.reduce((a, b) => a + b, 0) % 2 ? "odd" : "even"
+
+
+
+// console.log(oddOrEven([0, -1, -5]));
 
 // Input: [0]
 // Output: "even"
