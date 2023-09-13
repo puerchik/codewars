@@ -1,8 +1,24 @@
-const sumOfMinimums = arr => arr.map(el => el.sort((a, b) => a - b)[0]).reduce((a, c) => a + c, 0)
+const flattenAndSort = array => {
+    let resultArray = [];
+    for (let i = 0; i < array.length; i++) {
+        resultArray = resultArray.concat(array[i])
+    }
+
+    return resultArray.sort((a, b) => a - b);
+}
+
+console.log(flattenAndSort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]]));
+
+// Given [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]], your function should return [1, 2, 3, 4, 5, 6, 7, 8, 9].
 
 
 
-console.log(sumOfMinimums([[1, 2, 3, 4, 5], [5, 6, 7, 8, 9], [20, 21, 34, 56, 100]]));
+
+// const sumOfMinimums = arr => arr.map(el => el.sort((a, b) => a - b)[0]).reduce((a, c) => a + c, 0)
+
+
+
+// console.log(sumOfMinimums([[1, 2, 3, 4, 5], [5, 6, 7, 8, 9], [20, 21, 34, 56, 100]]));
 
 // [ [ 1, 2, 3, 4, 5 ]        #  minimum value of row is 1
 // , [ 5, 6, 7, 8, 9 ]        #  minimum value of row is 5
