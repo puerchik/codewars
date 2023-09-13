@@ -1,13 +1,54 @@
-const flattenAndSort = array => {
-    let resultArray = [];
-    for (let i = 0; i < array.length; i++) {
-        resultArray = resultArray.concat(array[i])
-    }
+const rowWeights = array => {
+    let result;
+    let firstTeam = 0;
+    let secondTeam = 0;
 
-    return resultArray.sort((a, b) => a - b);
+    for (let i = 0; i < array.length; i++) {
+        i % 2 ? secondTeam = secondTeam + array[i] : firstTeam = firstTeam + array[i]
+    }
+    result = [firstTeam, secondTeam]
+
+    return result
 }
 
-console.log(flattenAndSort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]]));
+console.log(rowWeights([29,83,67,53,19,28,96]));
+
+// assert.deepEqual(rowWeights([80]), [80,0]);
+// assert.deepEqual(rowWeights([100,50]), [100,50]);
+// assert.deepEqual(rowWeights([50,60,70,80]), [120,140]);
+// assert.deepEqual(rowWeights([13,27,49]), [62,27]);
+// assert.deepEqual(rowWeights([70,58,75,34,91]), [236,92]);
+// assert.deepEqual(rowWeights([29,83,67,53,19,28,96]), [211,164]);
+
+// rowWeights([13, 27, 49])  ==>  return (62, 27)
+// Explanation:
+// The first element 62 is the total weight of team 1, and the second element 27 is the total weight of team 2.
+
+
+// rowWeights([50, 60, 70, 80])  ==>  return (120, 140)
+// Explanation:
+// The first element 120 is the total weight of team 1, and the second element 140 is the total weight of team 2.
+
+
+// rowWeights([80])  ==>  return (80, 0)
+// Explanation:
+// The first element 80 is the total weight of team 1, and the second element 0 is the total weight of team 2.
+
+
+
+
+
+
+// const flattenAndSort = array => {
+//     let resultArray = [];
+//     for (let i = 0; i < array.length; i++) {
+//         resultArray = resultArray.concat(array[i])
+//     }
+
+//     return resultArray.sort((a, b) => a - b);
+// }
+
+// console.log(flattenAndSort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]]));
 
 // Given [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]], your function should return [1, 2, 3, 4, 5, 6, 7, 8, 9].
 
