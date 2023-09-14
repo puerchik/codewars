@@ -1,8 +1,22 @@
-const getEvenNumbers = numbersArray => numbersArray.filter(el => !(el % 2))
+const evenNumbers = (array, number) => array.filter(f => !(f % 2)).reverse().slice(0, number).reverse()
 
 
 
-console.log(getEvenNumbers([2, 4, 5, 6, 7, 8, 9, 10]));
+console.log(evenNumbers([6, -25, 3, 7, 5, 5, 7, -3, 23], 1));
+
+
+// ([1, 2, 3, 4, 5, 6, 7, 8, 9], 3) => [4, 6, 8]
+// ([-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26], 2) => [-8, 26]
+// ([6, -25, 3, 7, 5, 5, 7, -3, 23], 1) => [6]
+
+
+
+
+// const getEvenNumbers = numbersArray => numbersArray.filter(el => !(el % 2))
+
+
+
+// console.log(getEvenNumbers([2, 4, 5, 6, 7, 8, 9, 10]));
 
 // getEvenNumbers([2,4,5,6]) // should == [2,4,6]
 
