@@ -1,17 +1,26 @@
-const rowWeights = array => {
-    let result;
-    let firstTeam = 0;
-    let secondTeam = 0;
+const getEvenNumbers = numbersArray => numbersArray.filter(el => !(el % 2))
 
-    for (let i = 0; i < array.length; i++) {
-        i % 2 ? secondTeam = secondTeam + array[i] : firstTeam = firstTeam + array[i]
-    }
-    result = [firstTeam, secondTeam]
 
-    return result
-}
 
-console.log(rowWeights([29,83,67,53,19,28,96]));
+console.log(getEvenNumbers([2, 4, 5, 6, 7, 8, 9, 10]));
+
+// getEvenNumbers([2,4,5,6]) // should == [2,4,6]
+
+
+// const rowWeights = array => {
+//     let result;
+//     let firstTeam = 0;
+//     let secondTeam = 0;
+
+//     for (let i = 0; i < array.length; i++) {
+//         i % 2 ? secondTeam = secondTeam + array[i] : firstTeam = firstTeam + array[i]
+//     }
+//     result = [firstTeam, secondTeam]
+
+//     return result
+// }
+
+// console.log(rowWeights([29,83,67,53,19,28,96]));
 
 // assert.deepEqual(rowWeights([80]), [80,0]);
 // assert.deepEqual(rowWeights([100,50]), [100,50]);
