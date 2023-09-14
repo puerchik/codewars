@@ -1,8 +1,30 @@
-const evenNumbers = (array, number) => array.filter(f => !(f % 2)).reverse().slice(0, number).reverse()
+const adjacentElementsProduct = array => {
+    let resultArray = [];
+
+    for (let i = 0; i < array.length - 1; i++) {
+        let mult = array[i] * array[i + 1];
+        resultArray.push(mult)
+    }
+
+    return resultArray.sort((a, b) => b - a)[0];
+}
+
+
+console.log(adjacentElementsProduct([1, 5, 10, 9]));
+
+
+// Test.assertEquals(adjacentElementsProduct([5, 8]), 40);
+// Test.assertEquals(adjacentElementsProduct([1, 2, 3]), 6);
+// Test.assertEquals(adjacentElementsProduct([1, 5, 10, 9]), 90);
+// Test.assertEquals(adjacentElementsProduct([4, 12, 3, 1, 5]), 48);
+// Test.assertEquals(adjacentElementsProduct([5, 1, 2, 3, 1, 4]), 6);
+
+
+// const evenNumbers = (array, number) => array.filter(f => !(f % 2)).reverse().slice(0, number).reverse()
 
 
 
-console.log(evenNumbers([6, -25, 3, 7, 5, 5, 7, -3, 23], 1));
+// console.log(evenNumbers([6, -25, 3, 7, 5, 5, 7, -3, 23], 1));
 
 
 // ([1, 2, 3, 4, 5, 6, 7, 8, 9], 3) => [4, 6, 8]
