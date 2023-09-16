@@ -1,8 +1,27 @@
-const divCon = x => x.reduce((a, b) => typeof (b) === 'number' ? a + b : a - Number(b), 0)
+const maxDiff = list => {
+    if (list.length === 0) {
+        return 0;
+    } else {
+        const sortedArray = list.sort((a, b) => a - b);
+
+        return sortedArray[sortedArray.length - 1] - sortedArray[0];
+    }
+
+}
+
+console.log(maxDiff([]));
+
+// [1, 2, 3, 4]   //  returns 3 because 4 -   1  == 3
+// [1, 2, 3, -4]  //  returns 7 because 3 - (-4) == 7
 
 
 
-console.log(divCon(['5', '0', 9, 3, 2, 1, '9', 6, 7]));
+
+// const divCon = x => x.reduce((a, b) => typeof (b) === 'number' ? a + b : a - Number(b), 0)
+
+
+
+// console.log(divCon(['5', '0', 9, 3, 2, 1, '9', 6, 7]));
 
 // assert.strictEqual(divCon([9, 3, '7', '3']), 2);
 // assert.strictEqual(divCon(['5', '0', 9, 3, 2, 1, '9', 6, 7]), 14);
