@@ -1,16 +1,25 @@
-const adjacentElementsProduct = array => {
-    let resultArray = [];
-
-    for (let i = 0; i < array.length - 1; i++) {
-        let mult = array[i] * array[i + 1];
-        resultArray.push(mult)
-    }
-
-    return resultArray.sort((a, b) => b - a)[0];
-}
+const toNumberArray = stringarray => stringarray.map(el => Number(el))
 
 
-console.log(adjacentElementsProduct([1, 5, 10, 9]));
+
+console.log(toNumberArray(["1", "2", "3"]));
+
+// ["1", "2", "3"] to [1, 2, 3]
+
+
+// const adjacentElementsProduct = array => {
+//     let resultArray = [];
+
+//     for (let i = 0; i < array.length - 1; i++) {
+//         let mult = array[i] * array[i + 1];
+//         resultArray.push(mult)
+//     }
+
+//     return resultArray.sort((a, b) => b - a)[0];
+// }
+
+
+// console.log(adjacentElementsProduct([1, 5, 10, 9]));
 
 
 // Test.assertEquals(adjacentElementsProduct([5, 8]), 40);
