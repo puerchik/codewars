@@ -1,14 +1,31 @@
-const cubeOdd = arr => {
-    if (arr.filter(f => typeof (f) === 'number').length === arr.length) {
-        return arr.reduce((a, c) => c % 2 ? a + c ** 3 : a + 0, 0)
+const findDeletedNumber = (arr, mixArr) => {
+    if (arr.length === mixArr.length) {
+        return 0;
     } else {
-        return undefined;
+        return result = arr.filter(f => !mixArr.includes(f))[0];
     }
 }
 
+console.log(findDeletedNumber([1,2,3,4,5,6,7,8,9], [5,7,6,9,4,8,1,2,3]));
+
+// Test.assertEquals(findDeletedNumber([1,2,3,4,5], [3,4,1,5]), 2, 'Deletion')
+// Test.assertEquals(findDeletedNumber([1,2,3,4,5,6,7,8,9], [1,9,7,4,6,2,3,8]), 5, 'Deletion')
+// Test.assertEquals(findDeletedNumber([1,2,3,4,5,6,7,8,9], [5,7,6,9,4,8,1,2,3]), 0, 'No deletion')
 
 
-console.log(cubeOdd(["a",12,9,"z",42]));
+
+
+// const cubeOdd = arr => {
+//     if (arr.filter(f => typeof (f) === 'number').length === arr.length) {
+//         return arr.reduce((a, c) => c % 2 ? a + c ** 3 : a + 0, 0)
+//     } else {
+//         return undefined;
+//     }
+// }
+
+
+
+// console.log(cubeOdd(["a",12,9,"z",42]));
 
 // Test.assertEquals(cubeOdd([1, 2, 3, 4]), 28);
 // Test.assertEquals(cubeOdd([-3,-2,2,3]), 0);
