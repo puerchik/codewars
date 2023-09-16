@@ -1,8 +1,19 @@
-const toNumberArray = stringarray => stringarray.map(el => Number(el))
+const divCon = x => x.reduce((a, b) => typeof (b) === 'number' ? a + b : a - Number(b), 0)
 
 
 
-console.log(toNumberArray(["1", "2", "3"]));
+console.log(divCon(['5', '0', 9, 3, 2, 1, '9', 6, 7]));
+
+// assert.strictEqual(divCon([9, 3, '7', '3']), 2);
+// assert.strictEqual(divCon(['5', '0', 9, 3, 2, 1, '9', 6, 7]), 14);
+// assert.strictEqual(divCon(['3', 6, 6, 0, '5', 8, 5, '6', 2, '0']), 13);
+
+
+// const toNumberArray = stringarray => stringarray.map(el => Number(el))
+
+
+
+// console.log(toNumberArray(["1", "2", "3"]));
 
 // ["1", "2", "3"] to [1, 2, 3]
 
