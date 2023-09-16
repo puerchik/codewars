@@ -1,15 +1,31 @@
-const maxDiff = list => {
-    if (list.length === 0) {
-        return 0;
+const cubeOdd = arr => {
+    if (arr.filter(f => typeof (f) === 'number').length === arr.length) {
+        return arr.reduce((a, c) => c % 2 ? a + c ** 3 : a + 0, 0)
     } else {
-        const sortedArray = list.sort((a, b) => a - b);
-
-        return sortedArray[sortedArray.length - 1] - sortedArray[0];
+        return undefined;
     }
-
 }
 
-console.log(maxDiff([]));
+
+
+console.log(cubeOdd(["a",12,9,"z",42]));
+
+// Test.assertEquals(cubeOdd([1, 2, 3, 4]), 28);
+// Test.assertEquals(cubeOdd([-3,-2,2,3]), 0);
+// Test.assertEquals(cubeOdd(["a",12,9,"z",42]), undefined);
+
+
+// const maxDiff = list => {
+//     if (list.length === 0) {
+//         return 0;
+//     } else {
+//         const sortedArray = list.sort((a, b) => a - b);
+
+//         return sortedArray[sortedArray.length - 1] - sortedArray[0];
+//     }
+// }
+
+// console.log(maxDiff([]));
 
 // [1, 2, 3, 4]   //  returns 3 because 4 -   1  == 3
 // [1, 2, 3, -4]  //  returns 7 because 3 - (-4) == 7
