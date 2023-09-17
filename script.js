@@ -1,20 +1,33 @@
-const myLanguages = results => {
-
-    let requiredResults = [];
-
-    const sortedObj = Object.fromEntries(Object.entries(results).sort((a, b) => b[1] - a[1]));
-
-    for (const key in sortedObj) {
-        if (sortedObj[key] >= 60) {
-            requiredResults.push(key)
-        }
-    }
-
-    return requiredResults;
-}
+const removeRotten = bagOfFruits => bagOfFruits === null || bagOfFruits === undefined
+    ? []
+    : bagOfFruits.map(el => el.includes('rotten') ? el.slice(6, el.length).toLowerCase() : el)
 
 
-console.log(myLanguages({"C++": 50, "ASM": 10, "Haskell": 20}));
+
+console.log(removeRotten(["apple", "rottenBanana", "kiwi", "melone", "orange"]));
+
+// Test.assertSimilar(removeRotten(["apple","rottenBanana","kiwi","melone","orange"]), ["apple","banana","kiwi","melone","orange"])
+// Test.assertSimilar(removeRotten([]), [])
+// rottenFruit
+
+
+// const myLanguages = results => {
+
+//     let requiredResults = [];
+
+//     const sortedObj = Object.fromEntries(Object.entries(results).sort((a, b) => b[1] - a[1]));
+
+//     for (const key in sortedObj) {
+//         if (sortedObj[key] >= 60) {
+//             requiredResults.push(key)
+//         }
+//     }
+
+//     return requiredResults;
+// }
+
+
+// console.log(myLanguages({"C++": 50, "ASM": 10, "Haskell": 20}));
 
 // {"Java": 10, "Ruby": 80, "Python": 65}    -->  ["Ruby", "Python"]
 // {"Hindi": 60, "Dutch" : 93, "Greek": 71}  -->  ["Dutch", "Greek", "Hindi"]
