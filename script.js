@@ -1,8 +1,33 @@
-const spacify = str => str.split('').map(el => el + ' ').join('').slice(0, -1)
+const myLanguages = results => {
+
+    let requiredResults = [];
+
+    const sortedObj = Object.fromEntries(Object.entries(results).sort((a, b) => b[1] - a[1]));
+
+    for (const key in sortedObj) {
+        if (sortedObj[key] >= 60) {
+            requiredResults.push(key)
+        }
+    }
+
+    return requiredResults;
+}
+
+
+console.log(myLanguages({"C++": 50, "ASM": 10, "Haskell": 20}));
+
+// {"Java": 10, "Ruby": 80, "Python": 65}    -->  ["Ruby", "Python"]
+// {"Hindi": 60, "Dutch" : 93, "Greek": 71}  -->  ["Dutch", "Greek", "Hindi"]
+// {"C++": 50, "ASM": 10, "Haskell": 20}     -->  []
 
 
 
-console.log(spacify("hello world"));
+
+// const spacify = str => str.split('').map(el => el + ' ').join('').slice(0, -1)
+
+
+
+// console.log(spacify("hello world"));
 
 // spacify("hello world") // returns "h e l l o   w o r l d"
 
