@@ -1,12 +1,21 @@
-const findDeletedNumber = (arr, mixArr) => {
-    if (arr.length === mixArr.length) {
-        return 0;
-    } else {
-        return result = arr.filter(f => !mixArr.includes(f))[0];
-    }
-}
+const spacify = str => str.split('').map(el => el + ' ').join('').slice(0, -1)
 
-console.log(findDeletedNumber([1,2,3,4,5,6,7,8,9], [5,7,6,9,4,8,1,2,3]));
+
+
+console.log(spacify("hello world"));
+
+// spacify("hello world") // returns "h e l l o   w o r l d"
+
+
+// const findDeletedNumber = (arr, mixArr) => {
+//     if (arr.length === mixArr.length) {
+//         return 0;
+//     } else {
+//         return result = arr.filter(f => !mixArr.includes(f))[0];
+//     }
+// }
+
+// console.log(findDeletedNumber([1,2,3,4,5,6,7,8,9], [5,7,6,9,4,8,1,2,3]));
 
 // Test.assertEquals(findDeletedNumber([1,2,3,4,5], [3,4,1,5]), 2, 'Deletion')
 // Test.assertEquals(findDeletedNumber([1,2,3,4,5,6,7,8,9], [1,9,7,4,6,2,3,8]), 5, 'Deletion')
