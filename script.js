@@ -1,19 +1,34 @@
-const insertDash = num => {
-    const splitArray = num.toString().split('');
-    let resultArr = [];
+const stantonMeasure = arr => {
+    const amountOfOne = arr.reduce((a, c) => c === 1 ? c + a : 0 + a, 0)
 
-    for (let i = 0; i < splitArray.length; i++) {
-        resultArr.push(splitArray[i])
-        if (Number(splitArray[i]) % 2 && Number(splitArray[i + 1]) % 2) {
-            resultArr.push('-')
-        }
-    }
-
-    return resultArr.join('');
+    return arr.filter(f => f === amountOfOne ? f : null).length;
 }
 
+console.log(stantonMeasure([1, 4, 3, 2, 1, 2, 3, 2]));
 
-console.log(insertDash(454793));
+// The Stanton measure of [1, 4, 3, 2, 1, 2, 3, 2] is 3, because 1 occurs 2 times in the array and 2 occurs 3 times.
+
+// The Stanton measure of [1, 4, 1, 2, 11, 2, 3, 1] is 1, because 1 occurs 3 times in the array and 3 occurs 1 time.
+
+
+
+
+// const insertDash = num => {
+//     const splitArray = num.toString().split('');
+//     let resultArr = [];
+
+//     for (let i = 0; i < splitArray.length; i++) {
+//         resultArr.push(splitArray[i])
+//         if (Number(splitArray[i]) % 2 && Number(splitArray[i + 1]) % 2) {
+//             resultArr.push('-')
+//         }
+//     }
+
+//     return resultArr.join('');
+// }
+
+
+// console.log(insertDash(454793));
 
 
 // assert.strictEqual(insertDash(454793),'4547-9-3');
