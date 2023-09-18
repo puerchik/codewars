@@ -1,11 +1,34 @@
-const betweenExtremes = numbers => {
-    numbers.sort((a, b) => a - b);
+const insertDash = num => {
+    const splitArray = num.toString().split('');
+    let resultArr = [];
 
-    return numbers[numbers.length -1] - numbers[0]
+    for (let i = 0; i < splitArray.length; i++) {
+        resultArr.push(splitArray[i])
+        if (Number(splitArray[i]) % 2 && Number(splitArray[i + 1]) % 2) {
+            resultArr.push('-')
+        }
+    }
+
+    return resultArr.join('');
 }
 
 
-console.log(betweenExtremes([1, 434, 555, 34, 112]));
+console.log(insertDash(454793));
+
+
+// assert.strictEqual(insertDash(454793),'4547-9-3');
+// assert.strictEqual(insertDash(123456),'123456');
+// assert.strictEqual(insertDash(1003567),'1003-567');
+
+
+// const betweenExtremes = numbers => {
+//     numbers.sort((a, b) => a - b);
+
+//     return numbers[numbers.length -1] - numbers[0]
+// }
+
+
+// console.log(betweenExtremes([1, 434, 555, 34, 112]));
 
 
 // [23, 3, 19, 21, 16] should return 20 (i.e., 23 - 3).
