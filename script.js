@@ -1,10 +1,28 @@
-const removeRotten = bagOfFruits => bagOfFruits === null || bagOfFruits === undefined
-    ? []
-    : bagOfFruits.map(el => el.includes('rotten') ? el.slice(6, el.length).toLowerCase() : el)
+const head = arr => arr[0]
+
+const tail = arr => arr.slice(1, arr.length)
+
+const init = arr => arr.slice(0, arr.length - 1)
+
+const last = arr => arr[arr.length - 1]
+
+
+// | HEAD | <----------- TAIL ------------> |
+// [  1,  2,  3,  4,  5,  6,  7,  8,  9,  10]
+// | <----------- INIT ------------> | LAST |
+
+
+// head([1,2,3,4,5]); => 1
+// tail([1,2,3,4,5]); => [2,3,4,5]
+
+
+// const removeRotten = bagOfFruits => bagOfFruits === null || bagOfFruits === undefined
+//     ? []
+//     : bagOfFruits.map(el => el.includes('rotten') ? el.slice(6, el.length).toLowerCase() : el)
 
 
 
-console.log(removeRotten(["apple", "rottenBanana", "kiwi", "melone", "orange"]));
+// console.log(removeRotten(["apple", "rottenBanana", "kiwi", "melone", "orange"]));
 
 // Test.assertSimilar(removeRotten(["apple","rottenBanana","kiwi","melone","orange"]), ["apple","banana","kiwi","melone","orange"])
 // Test.assertSimilar(removeRotten([]), [])
