@@ -1,10 +1,20 @@
-const head = arr => arr[0]
+const largest = (n, array) => n === 0 ? [] : array.sort((a, b) => a - b).slice(-n)
 
-const tail = arr => arr.slice(1, arr.length)
+console.log(largest(0, [7, 6, 5, 4, 3, 2, 1]));
 
-const init = arr => arr.slice(0, arr.length - 1)
+// largest(2, [7,6,5,4,3,2,1])
+// => [6,7]
 
-const last = arr => arr[arr.length - 1]
+
+
+
+// const head = arr => arr[0]
+
+// const tail = arr => arr.slice(1, arr.length)
+
+// const init = arr => arr.slice(0, arr.length - 1)
+
+// const last = arr => arr[arr.length - 1]
 
 
 // | HEAD | <----------- TAIL ------------> |
