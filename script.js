@@ -1,6 +1,21 @@
-const largest = (n, array) => n === 0 ? [] : array.sort((a, b) => a - b).slice(-n)
+const betweenExtremes = numbers => {
+    numbers.sort((a, b) => a - b);
 
-console.log(largest(0, [7, 6, 5, 4, 3, 2, 1]));
+    return numbers[numbers.length -1] - numbers[0]
+}
+
+
+console.log(betweenExtremes([1, 434, 555, 34, 112]));
+
+
+// [23, 3, 19, 21, 16] should return 20 (i.e., 23 - 3).
+
+// [1, 434, 555, 34, 112] should return 554 (i.e., 555 - 1).
+
+
+// const largest = (n, array) => n === 0 ? [] : array.sort((a, b) => a - b).slice(-n)
+
+// console.log(largest(0, [7, 6, 5, 4, 3, 2, 1]));
 
 // largest(2, [7,6,5,4,3,2,1])
 // => [6,7]
