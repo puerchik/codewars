@@ -1,10 +1,22 @@
-const stantonMeasure = arr => {
-    const amountOfOne = arr.reduce((a, c) => c === 1 ? c + a : 0 + a, 0)
+const smallEnough = (a, limit) => a.filter(f => f > limit ? f : null).length === 0 ? true : false
 
-    return arr.filter(f => f === amountOfOne ? f : null).length;
-}
+console.log(smallEnough([80, 117, 115, 104, 45, 85, 112, 115], 120));
 
-console.log(stantonMeasure([1, 4, 3, 2, 1, 2, 3, 2]));
+// assert.strictEqual(smallEnough([66, 101], 200), true);
+// assert.strictEqual(smallEnough([78, 117, 110, 99, 104, 117, 107, 115], 100), false);
+// assert.strictEqual(smallEnough([101, 45, 75, 105, 99, 107], 107), true);
+// assert.strictEqual(smallEnough([80, 117, 115, 104, 45, 85, 112, 115], 120), true);
+
+
+
+
+// const stantonMeasure = arr => {
+//     const amountOfOne = arr.reduce((a, c) => c === 1 ? c + a : 0 + a, 0)
+
+//     return arr.filter(f => f === amountOfOne ? f : null).length;
+// }
+
+// console.log(stantonMeasure([1, 4, 3, 2, 1, 2, 3, 2]));
 
 // The Stanton measure of [1, 4, 3, 2, 1, 2, 3, 2] is 3, because 1 occurs 2 times in the array and 2 occurs 3 times.
 
