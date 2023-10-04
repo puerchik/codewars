@@ -1,24 +1,34 @@
-const isSortedAndHow = array => {
-    const mainArray = [...array];
+const noOdds = values => values.filter(f => f === 0 || !(f % 2))
 
-    array.sort((a, b) => a - b)
-    const equalArr = array.every((v, i) => v === mainArray[i]);
-    const equalArrReverse = array.reverse().every((v, i) => v === mainArray[i]);
+console.log(noOdds([0, 1, 2, 3]));
 
-    return equalArr 
-                   ? "yes, ascending" 
-                   : !equalArr && equalArrReverse
-                   ? "yes, descending"
-                   : "no";
-}
+// assert.deepEqual(noOdds([0, 1]), [0])
+// assert.deepEqual(noOdds([0, 1, 2, 3]), [0, 2])
 
 
-console.log(isSortedAndHow([4, 2, 30]));
+
+
+// const isSortedAndHow = array => {
+//     const mainArray = [...array];
+
+//     array.sort((a, b) => a - b)
+//     const equalArr = array.every((v, i) => v === mainArray[i]);
+//     const equalArrReverse = array.reverse().every((v, i) => v === mainArray[i]);
+
+//     return equalArr
+//                    ? "yes, ascending"
+//                    : !equalArr && equalArrReverse
+//                    ? "yes, descending"
+//                    : "no";
+// }
+
+
+// console.log(isSortedAndHow([4, 2, 30]));
 
 // it("[1, 2]", function() {
 //     Test.assertEquals(isSortedAndHow([1, 2]), 'yes, ascending');
 //   });
-  
+
 //   it("[15, 7, 3, -8]", function() {
 //     Test.assertEquals(isSortedAndHow([15, 7, 3, -8]), 'yes, descending');
 //   });
@@ -30,11 +40,11 @@ console.log(isSortedAndHow([4, 2, 30]));
 
 // const checkExam = (array1, array2) => {
 //     const result = array1.map((el, i) => el === array2[i]
-//     ? 4
-//     : el === '' || array2[i] === ''
-//         ? 0
-//         : -1).reduce((a, c) => a + c, 0);
-    
+//         ? 4
+//         : el === '' || array2[i] === ''
+//             ? 0
+//             : -1).reduce((a, c) => a + c, 0);
+
 //     return result > 0 ? result : 0;
 // }
 
