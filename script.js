@@ -1,6 +1,10 @@
-const noOdds = values => values.filter(f => f === 0 || !(f % 2))
+const test = 'test';
 
-console.log(noOdds([0, 1, 2, 3]));
+
+
+// const noOdds = values => values.filter(f => f === 0 || !(f % 2))
+
+// console.log(noOdds([0, 1, 2, 3]));
 
 // assert.deepEqual(noOdds([0, 1]), [0])
 // assert.deepEqual(noOdds([0, 1, 2, 3]), [0, 2])
