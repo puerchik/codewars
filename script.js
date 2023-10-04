@@ -1,12 +1,43 @@
-const multipleOfIndex = array => array.filter((f, i) => {
-    return i === 0 && f === 0
-        ? true
-        : i !== 0 && !(f % i)
-            ? true
-            : false
-})
+const sumOfDifferences = arr => {
+    arr.sort((a, b) => b - a);
+    let result = 0;
 
-console.log(multipleOfIndex([-56,-85,72,-26,-14,76,-27,72,35,-21,-67,87,0,21,59,27,-92,68]));
+    for (let i = 0; i < arr.length - 1; i++) {
+        let diff = arr[i] - arr[i + 1];
+        result = result + diff;
+    }
+
+    return result;
+}
+
+
+
+console.log(sumOfDifferences([-3, -2, -1]));
+
+
+// [2, 1, 10]  -->  9
+// In descending order: [10, 2, 1]
+
+// Sum: (10 - 2) + (2 - 1) = 8 + 1 = 9
+
+// it("sumOfDifferences([1, 2, 10]", function () {
+//     assert.strictEqual(sumOfDifferences([1, 2, 10]), 9);
+// });
+
+// it("sumOfDifferences([-3, -2, -1])", function () {
+//     assert.strictEqual(sumOfDifferences([-3, -2, -1]), 2);
+
+
+
+// const multipleOfIndex = array => array.filter((f, i) => {
+//     return i === 0 && f === 0
+//         ? true
+//         : i !== 0 && !(f % i)
+//             ? true
+//             : false
+// })
+
+// console.log(multipleOfIndex([-56,-85,72,-26,-14,76,-27,72,35,-21,-67,87,0,21,59,27,-92,68]));
 
 // [22, -6, 32, 82, 9, 25] =>  [-6, 32, 25]
 
