@@ -1,15 +1,45 @@
-const checkExam = (array1, array2) => {
-    const result = array1.map((el, i) => el === array2[i]
-    ? 4
-    : el === '' || array2[i] === ''
-        ? 0
-        : -1).reduce((a, c) => a + c, 0);
-    
-    return result > 0 ? result : 0;
+const isSortedAndHow = array => {
+    const mainArray = [...array];
+
+    array.sort((a, b) => a - b)
+    const equalArr = array.every((v, i) => v === mainArray[i]);
+    const equalArrReverse = array.reverse().every((v, i) => v === mainArray[i]);
+
+    return equalArr 
+                   ? "yes, ascending" 
+                   : !equalArr && equalArrReverse
+                   ? "yes, descending"
+                   : "no";
 }
 
 
-console.log(checkExam(["b", "c", "b", "a"], ["",  "a", "a", "c"]));
+console.log(isSortedAndHow([4, 2, 30]));
+
+// it("[1, 2]", function() {
+//     Test.assertEquals(isSortedAndHow([1, 2]), 'yes, ascending');
+//   });
+  
+//   it("[15, 7, 3, -8]", function() {
+//     Test.assertEquals(isSortedAndHow([15, 7, 3, -8]), 'yes, descending');
+//   });
+
+// "yes, ascending" - if the numbers in the array are sorted in an ascending order
+// "yes, descending" - if the numbers in the array are sorted in a descending order
+// "no" - otherwise
+
+
+// const checkExam = (array1, array2) => {
+//     const result = array1.map((el, i) => el === array2[i]
+//     ? 4
+//     : el === '' || array2[i] === ''
+//         ? 0
+//         : -1).reduce((a, c) => a + c, 0);
+    
+//     return result > 0 ? result : 0;
+// }
+
+
+// console.log(checkExam(["b", "c", "b", "a"], ["",  "a", "a", "c"]));
 
 // The two arrays are not empty and are the same length.
 // Return the score for this array of answers, giving
