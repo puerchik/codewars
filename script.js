@@ -1,6 +1,33 @@
-const smallEnough = (a, limit) => a.filter(f => f > limit ? f : null).length === 0 ? true : false
+const checkExam = (array1, array2) => {
+    const result = array1.map((el, i) => el === array2[i]
+    ? 4
+    : el === '' || array2[i] === ''
+        ? 0
+        : -1).reduce((a, c) => a + c, 0);
+    
+    return result > 0 ? result : 0;
+}
 
-console.log(smallEnough([80, 117, 115, 104, 45, 85, 112, 115], 120));
+
+console.log(checkExam(["b", "c", "b", "a"], ["",  "a", "a", "c"]));
+
+// The two arrays are not empty and are the same length.
+// Return the score for this array of answers, giving
+// +4 for each correct answer,
+// -1 for each incorrect answer, and
+// +0 for each blank answer,
+// represented as an empty string (in C the space character is used).
+
+
+// checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]) → 6
+// checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]) → 7
+// checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]) → 16
+// checkExam(["b", "c", "b", "a"], ["",  "a", "a", "c"]) → 0
+
+
+// const smallEnough = (a, limit) => a.filter(f => f > limit ? f : null).length === 0 ? true : false
+
+// console.log(smallEnough([80, 117, 115, 104, 45, 85, 112, 115], 120));
 
 // assert.strictEqual(smallEnough([66, 101], 200), true);
 // assert.strictEqual(smallEnough([78, 117, 110, 99, 104, 117, 107, 115], 100), false);
