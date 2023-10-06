@@ -1,13 +1,41 @@
-const differenceInAges = ages => {
-    let result = [];
+const isVow = a => a.map(el => {
+    switch (el) {
+        case 97: return 'a';
+        case 101: return 'e';
+        case 105: return 'i';
+        case 111: return 'o';
+        case 117: return 'u';
 
-    ages.sort((a, b) => a - b);
-    result = [ages[0], ages[ages.length - 1], ages[ages.length - 1] - ages[0]];
+        default: return el;
+    }
+})
 
-    return result;
-}
 
-console.log(differenceInAges([57, 99, 14, 32]));
+
+console.log(isVow([101,121,110,113,113,103,121,121,101,107,103]));
+
+// a = 97
+// e = 101
+// i = 105
+// o = 111
+// u = 117
+
+// Test.assertSimilar(isVow([118,117,120,121,117,98,122,97,120,106,104,116,113,114,113,120,106]),[118,"u",120,121,"u",98,122,"a",120,106,104,116,113,114,113,120,106]);
+// Test.assertSimilar(isVow([101,121,110,113,113,103,121,121,101,107,103]),["e",121,110,113,113,103,121,121,"e",107,103]);
+
+
+
+
+// const differenceInAges = ages => {
+//     let result = [];
+
+//     ages.sort((a, b) => a - b);
+//     result = [ages[0], ages[ages.length - 1], ages[ages.length - 1] - ages[0]];
+
+//     return result;
+// }
+
+// console.log(differenceInAges([57, 99, 14, 32]));
 
 // Test.assertSimilar(differenceInAges([82, 15, 6, 38, 35]), [6, 82, 76]);
 // Test.assertSimilar(differenceInAges([57, 99, 14, 32]), [14, 99, 85]);
