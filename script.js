@@ -1,18 +1,35 @@
-const sumOfDifferences = arr => {
-    arr.sort((a, b) => b - a);
-    let result = 0;
+const differenceInAges = ages => {
+    let result = [];
 
-    for (let i = 0; i < arr.length - 1; i++) {
-        let diff = arr[i] - arr[i + 1];
-        result = result + diff;
-    }
+    ages.sort((a, b) => a - b);
+    result = [ages[0], ages[ages.length - 1], ages[ages.length - 1] - ages[0]];
 
     return result;
 }
 
+console.log(differenceInAges([57, 99, 14, 32]));
+
+// Test.assertSimilar(differenceInAges([82, 15, 6, 38, 35]), [6, 82, 76]);
+// Test.assertSimilar(differenceInAges([57, 99, 14, 32]), [14, 99, 85]);
 
 
-console.log(sumOfDifferences([-3, -2, -1]));
+
+
+// const sumOfDifferences = arr => {
+//     arr.sort((a, b) => b - a);
+//     let result = 0;
+
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         let diff = arr[i] - arr[i + 1];
+//         result = result + diff;
+//     }
+
+//     return result;
+// }
+
+
+
+// console.log(sumOfDifferences([2, 1, 10]));
 
 
 // [2, 1, 10]  -->  9
