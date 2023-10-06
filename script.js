@@ -1,18 +1,39 @@
-const isVow = a => a.map(el => {
-    switch (el) {
-        case 97: return 'a';
-        case 101: return 'e';
-        case 105: return 'i';
-        case 111: return 'o';
-        case 117: return 'u';
+const eachCons = (array, n) => {
+    let result = [];
 
-        default: return el;
+    for (let i = 0; i <= array.length - n; i++) {
+        result.push([...array.slice(i, n + i)])
     }
-})
+
+    return result;
+}
+
+console.log(eachCons([1,2,3,4], 3));
+
+// each_cons([1,2,3,4], 2)
+//   #=> [[1,2], [2,3], [3,4]]
+
+// each_cons([1,2,3,4], 3)
+//   #=> [[1,2,3],[2,3,4]]
 
 
 
-console.log(isVow([101,121,110,113,113,103,121,121,101,107,103]));
+
+// const isVow = a => a.map(el => {
+//     switch (el) {
+//         case 97: return 'a';
+//         case 101: return 'e';
+//         case 105: return 'i';
+//         case 111: return 'o';
+//         case 117: return 'u';
+
+//         default: return el;
+//     }
+// })
+
+
+
+// console.log(isVow([101,121,110,113,113,103,121,121,101,107,103]));
 
 // a = 97
 // e = 101
