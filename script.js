@@ -1,15 +1,33 @@
-const reverseWords = str => str.split(' ').reverse().join(' ');
+const between = (a, b) => {
+    let result = [];
+    
+    for (let i = a; i <= b; i++) {        
+        result.push(i);
+    }
+
+    return result;
+}
+
+console.log(between(-2, 2));
+
+// it("between(1, 4)", () => assert.deepStrictEqual(between(1, 4), [1, 2, 3, 4]));
+// it("between(-2, 2)", () => assert.deepStrictEqual(between(-2, 2), [-2, -1, 0, 1, 2]));
 
 
 
-// assert.strictEqual(reverseWords("hello world!"), "world! hello")
-// assert.strictEqual(reverseWords("yoda doesn't speak like this"), "this like speak doesn't yoda")
-// assert.strictEqual(reverseWords("foobar"), "foobar")
-// assert.strictEqual(reverseWords("kata editor"), "editor kata")
-// assert.strictEqual(reverseWords("row row row your boat"), "boat your row row row")
-// assert.strictEqual(reverseWords(""), "")
 
-console.log(reverseWords(""));
+// const reverseWords = str => str.split(' ').reverse().join(' ');
+
+
+
+// // assert.strictEqual(reverseWords("hello world!"), "world! hello")
+// // assert.strictEqual(reverseWords("yoda doesn't speak like this"), "this like speak doesn't yoda")
+// // assert.strictEqual(reverseWords("foobar"), "foobar")
+// // assert.strictEqual(reverseWords("kata editor"), "editor kata")
+// // assert.strictEqual(reverseWords("row row row your boat"), "boat your row row row")
+// // assert.strictEqual(reverseWords(""), "")
+
+// console.log(reverseWords(""));
 
 
 // const litres = time => Math.floor(time * 0.5);
