@@ -1,14 +1,29 @@
-const eachCons = (array, n) => {
-    let result = [];
+const litres = time => Math.floor(time * 0.5);
 
-    for (let i = 0; i <= array.length - n; i++) {
-        result.push([...array.slice(i, n + i)])
-    }
 
-    return result;
-}
 
-console.log(eachCons([1,2,3,4], 3));
+// assert.strictEqual(litres(2), 1, 'should return 1 litre');
+// assert.strictEqual(litres(1.4), 0, 'should return 0 litres');
+// assert.strictEqual(litres(12.3), 6, 'should return 6 litres');
+// assert.strictEqual(litres(0.82), 0, 'should return 0 litres');
+// assert.strictEqual(litres(11.8), 5, 'should return 5 litres');
+// assert.strictEqual(litres(1787), 893, 'should return 893 litres');
+// assert.strictEqual(litres(0), 0, 'should return 0 litres');
+
+
+console.log(litres(0));
+
+// const eachCons = (array, n) => {
+//     let result = [];
+
+//     for (let i = 0; i <= array.length - n; i++) {
+//         result.push([...array.slice(i, n + i)])
+//     }
+
+//     return result;
+// }
+
+// console.log(eachCons([1,2,3,4], 3));
 
 // each_cons([1,2,3,4], 2)
 //   #=> [[1,2], [2,3], [3,4]]
