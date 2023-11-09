@@ -1,14 +1,26 @@
-const stringy = size => {
-    let resultArr = [];
+const solution = (a, b) => a.length > b.length ? b + a + b : a + b + a;
 
-    for (let i = 0; i < size; i++) {
-        i % 2 ? resultArr.push(0) : resultArr.push(1);
-    }
 
-    return resultArr.join('');
-}
 
-console.log(stringy(10));
+// Test.assertEquals(solution('45', '1'), '1451');
+// Test.assertEquals(solution('13', '200'), '1320013');
+// Test.assertEquals(solution('Soon', 'Me'), 'MeSoonMe');
+// Test.assertEquals(solution('U', 'False'), 'UFalseU');
+
+console.log(solution('45', '1'));
+
+
+// const stringy = size => {
+//     let resultArr = [];
+
+//     for (let i = 0; i < size; i++) {
+//         i % 2 ? resultArr.push(0) : resultArr.push(1);
+//     }
+
+//     return resultArr.join('');
+// }
+
+// console.log(stringy(10));
 
 // a string with size 6 should return :'101010'.
 
