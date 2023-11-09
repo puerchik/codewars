@@ -1,17 +1,31 @@
-const litres = time => Math.floor(time * 0.5);
+const reverseWords = str => str.split(' ').reverse().join(' ');
 
 
 
-// assert.strictEqual(litres(2), 1, 'should return 1 litre');
-// assert.strictEqual(litres(1.4), 0, 'should return 0 litres');
-// assert.strictEqual(litres(12.3), 6, 'should return 6 litres');
-// assert.strictEqual(litres(0.82), 0, 'should return 0 litres');
-// assert.strictEqual(litres(11.8), 5, 'should return 5 litres');
-// assert.strictEqual(litres(1787), 893, 'should return 893 litres');
-// assert.strictEqual(litres(0), 0, 'should return 0 litres');
+// assert.strictEqual(reverseWords("hello world!"), "world! hello")
+// assert.strictEqual(reverseWords("yoda doesn't speak like this"), "this like speak doesn't yoda")
+// assert.strictEqual(reverseWords("foobar"), "foobar")
+// assert.strictEqual(reverseWords("kata editor"), "editor kata")
+// assert.strictEqual(reverseWords("row row row your boat"), "boat your row row row")
+// assert.strictEqual(reverseWords(""), "")
+
+console.log(reverseWords(""));
 
 
-console.log(litres(0));
+// const litres = time => Math.floor(time * 0.5);
+
+
+
+// // assert.strictEqual(litres(2), 1, 'should return 1 litre');
+// // assert.strictEqual(litres(1.4), 0, 'should return 0 litres');
+// // assert.strictEqual(litres(12.3), 6, 'should return 6 litres');
+// // assert.strictEqual(litres(0.82), 0, 'should return 0 litres');
+// // assert.strictEqual(litres(11.8), 5, 'should return 5 litres');
+// // assert.strictEqual(litres(1787), 893, 'should return 893 litres');
+// // assert.strictEqual(litres(0), 0, 'should return 0 litres');
+
+
+// console.log(litres(0));
 
 // const eachCons = (array, n) => {
 //     let result = [];
