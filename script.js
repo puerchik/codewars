@@ -1,14 +1,35 @@
-const between = (a, b) => {
-    let result = [];
-    
-    for (let i = a; i <= b; i++) {        
-        result.push(i);
+const stringy = size => {
+    let resultArr = [];
+
+    for (let i = 0; i < size; i++) {
+        i % 2 ? resultArr.push(0) : resultArr.push(1);
     }
 
-    return result;
+    return resultArr.join('');
 }
 
-console.log(between(-2, 2));
+console.log(stringy(10));
+
+// a string with size 6 should return :'101010'.
+
+// with size 4 should return : '1010'.
+
+// with size 12 should return : '101010101010'.
+
+
+
+
+// const between = (a, b) => {
+//     let result = [];
+
+//     for (let i = a; i <= b; i++) {
+//         result.push(i);
+//     }
+
+//     return result;
+// }
+
+// console.log(between(-2, 2));
 
 // it("between(1, 4)", () => assert.deepStrictEqual(between(1, 4), [1, 2, 3, 4]));
 // it("between(-2, 2)", () => assert.deepStrictEqual(between(-2, 2), [-2, -1, 0, 1, 2]));
