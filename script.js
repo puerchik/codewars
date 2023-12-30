@@ -1,13 +1,25 @@
-const solution = (a, b) => a.length > b.length ? b + a + b : a + b + a;
+const nthEven = n => n * 2 - 2;
+
+console.log(nthEven(100));
+
+// 1 --> 0 (the first even number is 0)
+// 3 --> 4 (the 3rd even number is 4 (0, 2, 4))
+// 100 --> 198
+// 1298734 --> 2597466
 
 
 
-// Test.assertEquals(solution('45', '1'), '1451');
-// Test.assertEquals(solution('13', '200'), '1320013');
-// Test.assertEquals(solution('Soon', 'Me'), 'MeSoonMe');
-// Test.assertEquals(solution('U', 'False'), 'UFalseU');
 
-console.log(solution('45', '1'));
+// const solution = (a, b) => a.length > b.length ? b + a + b : a + b + a;
+
+
+
+// // Test.assertEquals(solution('45', '1'), '1451');
+// // Test.assertEquals(solution('13', '200'), '1320013');
+// // Test.assertEquals(solution('Soon', 'Me'), 'MeSoonMe');
+// // Test.assertEquals(solution('U', 'False'), 'UFalseU');
+
+// console.log(solution('45', '1'));
 
 
 // const stringy = size => {
