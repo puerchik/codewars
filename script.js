@@ -1,6 +1,27 @@
-const nthEven = n => n * 2 - 2;
+const generateRange = (min, max, step) => {
+    let result = [];
+    let i = min;
 
-console.log(nthEven(100));
+    while (i <= max) {
+        result.push(i);
+        i += step;
+    }
+
+    return result;
+}
+
+console.log(generateRange(1, 15, 20));
+
+// (1, 10, 1) -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// (-10, 1, 1) -> [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1]
+// (1, 15, 20) -> [1]
+
+
+
+
+// const nthEven = n => n * 2 - 2;
+
+// console.log(nthEven(100));
 
 // 1 --> 0 (the first even number is 0)
 // 3 --> 4 (the 3rd even number is 4 (0, 2, 4))
