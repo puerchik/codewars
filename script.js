@@ -1,16 +1,28 @@
-const generateRange = (min, max, step) => {
-    let result = [];
-    let i = min;
+const formatMoney = amount => `$${amount.toFixed(2)}`;
 
-    while (i <= max) {
-        result.push(i);
-        i += step;
-    }
 
-    return result;
-}
+console.log(formatMoney(3));
 
-console.log(generateRange(1, 15, 20));
+// 3 needs to become $3.00
+
+// 3.1 needs to become $3.10
+
+
+
+
+// const generateRange = (min, max, step) => {
+//     let result = [];
+//     let i = min;
+
+//     while (i <= max) {
+//         result.push(i);
+//         i += step;
+//     }
+
+//     return result;
+// }
+
+// console.log(generateRange(1, 15, 20));
 
 // (1, 10, 1) -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // (-10, 1, 1) -> [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1]
