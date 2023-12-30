@@ -1,28 +1,42 @@
-const elevator = (left, right, call) => {
-    const diffRight = right - call;
-    const diffLeft = left - call;
+const drawStairs = n => {
+    let result = "I".padStart(n, " ")
 
-    if (diffRight === diffLeft) {
-        return "right";
-    } else if (diffRight < 0 && diffLeft < 0) {
-        return diffRight > diffLeft ? "right" : "left";
-    } else if (diffRight === -1 && diffLeft !== 0) {
-        return "right"
-    } else if (diffRight >= 0 && diffRight < diffLeft) {
-        return "right"
-    } else if (diffLeft >= 0 && diffRight > diffLeft) {
-        return "left"
-    } else if (diffRight >= 0 && diffLeft < 0 && diffRight > diffLeft) {
-        return "right"
-    } else if (diffLeft >= 0 && diffRight < 0 && diffRight < diffLeft) {
-        return "left"
-    } else {
-        return "right"
+    for (let i = 1; i < n; i++) {
+        result = "I".padStart(n - i, " ") + "\n" + result;
     }
+
+    return result;
 }
 
+console.log(drawStairs(9));
 
-console.log(elevator(1, 1, 2));
+
+
+// const elevator = (left, right, call) => {
+//     const diffRight = right - call;
+//     const diffLeft = left - call;
+
+//     if (diffRight === diffLeft) {
+//         return "right";
+//     } else if (diffRight < 0 && diffLeft < 0) {
+//         return diffRight > diffLeft ? "right" : "left";
+//     } else if (diffRight === -1 && diffLeft !== 0) {
+//         return "right"
+//     } else if (diffRight >= 0 && diffRight < diffLeft) {
+//         return "right"
+//     } else if (diffLeft >= 0 && diffRight > diffLeft) {
+//         return "left"
+//     } else if (diffRight >= 0 && diffLeft < 0 && diffRight > diffLeft) {
+//         return "right"
+//     } else if (diffLeft >= 0 && diffRight < 0 && diffRight < diffLeft) {
+//         return "left"
+//     } else {
+//         return "right"
+//     }
+// }
+
+
+// console.log(elevator(1, 1, 2));
 
 // elevator(0, 1, 0); // => "left"
 // elevator(0, 1, 1); // => "right"
