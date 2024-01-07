@@ -1,15 +1,28 @@
-const solution = number => {
-    let result = 0;
-    for (let i = 1; i < number; i++) {
-        if (!(i % 3) || !(i % 5)) {
-            result += i;
-        }
-    }
+const spinWords = string => string.split(' ').map(w => w.length >= 5 ? [...w].reverse().join('') : w).join(' ');
 
-    return result;
-}
 
-console.log(solution(10));
+
+console.log(spinWords("This is another test"));
+
+// "Hey fellow warriors"  --> "Hey wollef sroirraw"
+// "This is a test        --> "This is a test"
+// "This is another test" --> "This is rehtona test"
+
+
+
+
+// const solution = number => {
+//     let result = 0;
+//     for (let i = 1; i < number; i++) {
+//         if (!(i % 3) || !(i % 5)) {
+//             result += i;
+//         }
+//     }
+
+//     return result;
+// }
+
+// console.log(solution(10));
 
 // 3, 5
 
