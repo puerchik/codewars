@@ -1,14 +1,32 @@
-const drawStairs = n => {
-    let result = "I".padStart(n, " ")
-
-    for (let i = 1; i < n; i++) {
-        result = "I".padStart(n - i, " ") + "\n" + result;
+const solution = number => {
+    let result = 0;
+    for (let i = 1; i < number; i++) {
+        if (!(i % 3) || !(i % 5)) {
+            result += i;
+        }
     }
 
     return result;
 }
 
-console.log(drawStairs(9));
+console.log(solution(10));
+
+// 3, 5
+
+
+
+
+// const drawStairs = n => {
+//     let result = "I".padStart(n, " ")
+
+//     for (let i = 1; i < n; i++) {
+//         result = "I".padStart(n - i, " ") + "\n" + result;
+//     }
+
+//     return result;
+// }
+
+// console.log(drawStairs(9));
 
 
 
