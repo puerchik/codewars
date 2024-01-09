@@ -1,8 +1,37 @@
-const spinWords = string => string.split(' ').map(w => w.length >= 5 ? [...w].reverse().join('') : w).join(' ');
+const digitalRoot = n => {
+    let result;
+    const sumOfDigits = num => {
+        const sum = ("" + num).split("").map(Number).reduce((a, c) => a + c, 0);
+
+        return sum;
+    }
+
+    result = sumOfDigits(n);
+
+    while (result > 9) {
+        result = sumOfDigits(result);
+    }
+
+    return result;
+}
 
 
 
-console.log(spinWords("This is another test"));
+console.log(digitalRoot(1321895));
+
+// 16  -- > 1 + 6 = 7
+// 942  -- > 9 + 4 + 2 = 15  -- > 1 + 5 = 6
+// 132189  -- > 1 + 3 + 2 + 1 + 8 + 9 = 24  -- > 2 + 4 = 6
+// 493193  -- > 4 + 9 + 3 + 1 + 9 + 3 = 29  -- > 2 + 9 = 11  -- > 1 + 1 = 2
+
+
+
+
+// const spinWords = string => string.split(' ').map(w => w.length >= 5 ? [...w].reverse().join('') : w).join(' ');
+
+
+
+// console.log(spinWords("This is another test"));
 
 // "Hey fellow warriors"  --> "Hey wollef sroirraw"
 // "This is a test        --> "This is a test"
