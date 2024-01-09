@@ -1,23 +1,40 @@
-const digitalRoot = n => {
-    let result;
-    const sumOfDigits = num => {
-        const sum = ("" + num).split("").map(Number).reduce((a, c) => a + c, 0);
-
-        return sum;
-    }
-
-    result = sumOfDigits(n);
-
-    while (result > 9) {
-        result = sumOfDigits(result);
-    }
-
-    return result;
-}
+const countBits = n => n.toString(2).split('').reduce((a, c) => Number(a) + Number(c), 0);
 
 
 
-console.log(digitalRoot(1321895));
+
+
+console.log(countBits(4));
+
+// assert.strictEqual(countBits(0), 0);
+// assert.strictEqual(countBits(4), 1);
+// assert.strictEqual(countBits(7), 3);
+// assert.strictEqual(countBits(9), 2);
+// assert.strictEqual(countBits(10), 2);
+
+
+
+
+// const digitalRoot = n => {
+//     let result;
+//     const sumOfDigits = num => {
+//         const sum = ("" + num).split("").map(Number).reduce((a, c) => a + c, 0);
+
+//         return sum;
+//     }
+
+//     result = sumOfDigits(n);
+
+//     while (result > 9) {
+//         result = sumOfDigits(result);
+//     }
+
+//     return result;
+// }
+
+
+
+// console.log(digitalRoot(1321895));
 
 // 16  -- > 1 + 6 = 7
 // 942  -- > 9 + 4 + 2 = 15  -- > 1 + 5 = 6
