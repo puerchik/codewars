@@ -1,20 +1,39 @@
-const findOutlier = integers => {
-    let parityDetection = 0;
-
-    for (let i = 0; i <= 2; i++) {
-        parityDetection += Math.abs(integers[i] % 2);
-    }
-
-    if (parityDetection >= 2) {
-        return integers.filter(f => !(f % 2))[0];
-    } else {
-        return integers.filter(f => !!(f % 2))[0];
-    }
-}
+const toCamelCase = str => str.split(/[-_]/)
+    .map((w, i) => i === 0
+        ? w
+        : w.charAt(0).toUpperCase() + w.slice(1)).join('');
 
 
 
-console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21]));
+
+console.log(toCamelCase("The_Stealth-Warrior"));
+
+// "the-stealth-warrior" gets converted to "theStealthWarrior"
+
+// "The_Stealth_Warrior" gets converted to "TheStealthWarrior"
+
+// "The_Stealth-Warrior" gets converted to "TheStealthWarrior"
+
+
+
+
+// const findOutlier = integers => {
+//     let parityDetection = 0;
+
+//     for (let i = 0; i <= 2; i++) {
+//         parityDetection += Math.abs(integers[i] % 2);
+//     }
+
+//     if (parityDetection >= 2) {
+//         return integers.filter(f => !(f % 2))[0];
+//     } else {
+//         return integers.filter(f => !!(f % 2))[0];
+//     }
+// }
+
+
+
+// console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21]));
 
 // [2, 4, 0, 100, 4, 11, 2602, 36] -->  11 (the only odd number)
 
