@@ -1,10 +1,35 @@
-const countBits = n => n.toString(2).split('').reduce((a, c) => Number(a) + Number(c), 0);
+const findOutlier = integers => {
+    let parityDetection = 0;
+
+    for (let i = 0; i <= 2; i++) {
+        parityDetection += Math.abs(integers[i] % 2);
+    }
+
+    if (parityDetection >= 2) {
+        return integers.filter(f => !(f % 2))[0];
+    } else {
+        return integers.filter(f => !!(f % 2))[0];
+    }
+}
+
+
+
+console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21]));
+
+// [2, 4, 0, 100, 4, 11, 2602, 36] -->  11 (the only odd number)
+
+// [160, 3, 1719, 19, 11, 13, -21] --> 160 (the only even number)
+
+
+
+
+// const countBits = n => n.toString(2).split('').reduce((a, c) => Number(a) + Number(c), 0);
 
 
 
 
 
-console.log(countBits(4));
+// console.log(countBits(4));
 
 // assert.strictEqual(countBits(0), 0);
 // assert.strictEqual(countBits(4), 1);
