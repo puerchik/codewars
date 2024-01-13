@@ -1,13 +1,27 @@
-const narcissistic = value => {
-    const valueLength = String(value).length;
-    const result = value.toString().split('').reduce((a, c) => Math.pow(Number(c), valueLength) + a, 0);
-
-    return result === value ? true : false;
+const uniqueInOrder = iterable => {
+    const array = Array.isArray(iterable) ? iterable : iterable.split('');
+    return array.filter((f, i) => f !== array[i + 1])
 }
 
+console.log(uniqueInOrder('ABBCcAD'));
+
+// uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
+// uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
+// uniqueInOrder([1,2,2,3,3])       == [1,2,3]
 
 
-console.log(narcissistic(153));
+
+
+// const narcissistic = value => {
+//     const valueLength = String(value).length;
+//     const result = value.toString().split('').reduce((a, c) => Math.pow(Number(c), valueLength) + a, 0);
+
+//     return result === value ? true : false;
+// }
+
+
+
+// console.log(narcissistic(153));
 
 // 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153 - true
 // 1^4 + 6^4 + 5^4 + 2^4 = 1 + 1296 + 625 + 16 = 1938 - false
