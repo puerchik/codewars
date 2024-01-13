@@ -1,12 +1,28 @@
-const toCamelCase = str => str.split(/[-_]/)
-    .map((w, i) => i === 0
-        ? w
-        : w.charAt(0).toUpperCase() + w.slice(1)).join('');
+const narcissistic = value => {
+    const valueLength = String(value).length;
+    const result = value.toString().split('').reduce((a, c) => Math.pow(Number(c), valueLength) + a, 0);
+
+    return result === value ? true : false;
+}
+
+
+
+console.log(narcissistic(153));
+
+// 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153 - true
+// 1^4 + 6^4 + 5^4 + 2^4 = 1 + 1296 + 625 + 16 = 1938 - false
+
+
+
+// const toCamelCase = str => str.split(/[-_]/)
+//     .map((w, i) => i === 0
+//         ? w
+//         : w.charAt(0).toUpperCase() + w.slice(1)).join('');
 
 
 
 
-console.log(toCamelCase("The_Stealth-Warrior"));
+// console.log(toCamelCase("The_Stealth-Warrior"));
 
 // "the-stealth-warrior" gets converted to "theStealthWarrior"
 
