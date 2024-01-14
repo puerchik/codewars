@@ -1,9 +1,80 @@
-const uniqueInOrder = iterable => {
-    const array = Array.isArray(iterable) ? iterable : iterable.split('');
-    return array.filter((f, i) => f !== array[i + 1])
+const decodeMorse = morseCode => {
+    const MORSE_CODE = {
+        '.-': 'A',
+        '-...': 'B',
+        '-.-.': 'C',
+        '-..': 'D',
+        '.': 'E',
+        '..-.': 'F',
+        '--.': 'G',
+        '....': 'H',
+        '..': 'I',
+        '.---': 'J',
+        '-.-': 'K',
+        '.-..': 'L',
+        '--': 'M',
+        '-.': 'N',
+        '---': 'O',
+        '.--.': 'P',
+        '--.-': 'Q',
+        '.-.': 'R',
+        '...': 'S',
+        '-': 'T',
+        '..-': 'U',
+        '...-': 'V',
+        '.--': 'W',
+        '-..-': 'X',
+        '-.--': 'Y',
+        '--..': 'Z',
+        '.----': '1',
+        '..---': '2',
+        '...--': '3',
+        '....-': '4',
+        '.....': '5',
+        '-....': '6',
+        '--...': '7',
+        '---..': '8',
+        '----.': '9',
+        '-----': '0',
+        '--..--': ', ',
+        '.-.-.-': '.',
+        '..--..': '?',
+        '-.-.--': '!',
+        '-..-.': '/',
+        '-....-': '-',
+        '-.--.': '(',
+        '-.--.-': ')',
+        '/': ' ',
+        '...---...': 'SOS'
+    };
+
+    const arr = morseCode.trim(' ').split(' ');
+    let resultArr = [];
+
+    for (let i = 0; i <= arr.length - 1; i++) {
+        if (resultArr.length === 0 || resultArr[resultArr.length - 1] !== arr[i] || !!(resultArr[resultArr.length - 1])) {
+            resultArr.push(arr[i])
+        }
+    }
+
+    const result = resultArr.map(w => w !== '' ? MORSE_CODE[w] : ' ').join('');
+
+    return result;
 }
 
-console.log(uniqueInOrder('ABBCcAD'));
+console.log(decodeMorse("-.-.--"));
+
+
+//  assert.strictEqual(decodeMorse('.... . -.--   .--- ..- -.. .'), 'HEY JUDE');
+
+
+
+// const uniqueInOrder = iterable => {
+//     const array = Array.isArray(iterable) ? iterable : iterable.split('');
+//     return array.filter((f, i) => f !== array[i + 1])
+// }
+
+// console.log(uniqueInOrder('ABBCcAD'));
 
 // uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
 // uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
