@@ -1,68 +1,93 @@
-const decodeMorse = morseCode => {
-    const MORSE_CODE = {
-        '.-': 'A',
-        '-...': 'B',
-        '-.-.': 'C',
-        '-..': 'D',
-        '.': 'E',
-        '..-.': 'F',
-        '--.': 'G',
-        '....': 'H',
-        '..': 'I',
-        '.---': 'J',
-        '-.-': 'K',
-        '.-..': 'L',
-        '--': 'M',
-        '-.': 'N',
-        '---': 'O',
-        '.--.': 'P',
-        '--.-': 'Q',
-        '.-.': 'R',
-        '...': 'S',
-        '-': 'T',
-        '..-': 'U',
-        '...-': 'V',
-        '.--': 'W',
-        '-..-': 'X',
-        '-.--': 'Y',
-        '--..': 'Z',
-        '.----': '1',
-        '..---': '2',
-        '...--': '3',
-        '....-': '4',
-        '.....': '5',
-        '-....': '6',
-        '--...': '7',
-        '---..': '8',
-        '----.': '9',
-        '-----': '0',
-        '--..--': ', ',
-        '.-.-.-': '.',
-        '..--..': '?',
-        '-.-.--': '!',
-        '-..-.': '/',
-        '-....-': '-',
-        '-.--.': '(',
-        '-.--.-': ')',
-        '/': ' ',
-        '...---...': 'SOS'
-    };
+const findUniq = arr => {
+    let uniqueArr = [...new Set(arr)];
+    let result;
 
-    const arr = morseCode.trim(' ').split(' ');
-    let resultArr = [];
-
-    for (let i = 0; i <= arr.length - 1; i++) {
-        if (resultArr.length === 0 || resultArr[resultArr.length - 1] !== arr[i] || !!(resultArr[resultArr.length - 1])) {
-            resultArr.push(arr[i])
-        }
+    if (arr[0] === uniqueArr[0] && arr[1] === uniqueArr[0]) {
+        result = uniqueArr[1];
+    } else if (arr[1] === uniqueArr[0] && arr[2] === uniqueArr[0]) {
+        result = uniqueArr[1];
+    } else if (arr[0] === uniqueArr[0] && arr[2] === uniqueArr[0]) {
+        result = uniqueArr[1];
+    } else if (arr[1] !== uniqueArr[0] && arr[2] !== uniqueArr[0]) {
+        result = uniqueArr[0];
     }
-
-    const result = resultArr.map(w => w !== '' ? MORSE_CODE[w] : ' ').join('');
 
     return result;
 }
 
-console.log(decodeMorse("-.-.--"));
+console.log(findUniq([0, 0, 0.55, 0, 0]));
+
+// findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
+// findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55
+
+
+
+
+// const decodeMorse = morseCode => {
+//     const MORSE_CODE = {
+//         '.-': 'A',
+//         '-...': 'B',
+//         '-.-.': 'C',
+//         '-..': 'D',
+//         '.': 'E',
+//         '..-.': 'F',
+//         '--.': 'G',
+//         '....': 'H',
+//         '..': 'I',
+//         '.---': 'J',
+//         '-.-': 'K',
+//         '.-..': 'L',
+//         '--': 'M',
+//         '-.': 'N',
+//         '---': 'O',
+//         '.--.': 'P',
+//         '--.-': 'Q',
+//         '.-.': 'R',
+//         '...': 'S',
+//         '-': 'T',
+//         '..-': 'U',
+//         '...-': 'V',
+//         '.--': 'W',
+//         '-..-': 'X',
+//         '-.--': 'Y',
+//         '--..': 'Z',
+//         '.----': '1',
+//         '..---': '2',
+//         '...--': '3',
+//         '....-': '4',
+//         '.....': '5',
+//         '-....': '6',
+//         '--...': '7',
+//         '---..': '8',
+//         '----.': '9',
+//         '-----': '0',
+//         '--..--': ', ',
+//         '.-.-.-': '.',
+//         '..--..': '?',
+//         '-.-.--': '!',
+//         '-..-.': '/',
+//         '-....-': '-',
+//         '-.--.': '(',
+//         '-.--.-': ')',
+//         '/': ' ',
+//         '...---...': 'SOS'
+//     };
+
+//     const arr = morseCode.trim(' ').split(' ');
+//     let resultArr = [];
+
+//     for (let i = 0; i <= arr.length - 1; i++) {
+//         if (resultArr.length === 0 || resultArr[resultArr.length - 1] !== arr[i] || !!(resultArr[resultArr.length - 1])) {
+//             resultArr.push(arr[i])
+//         }
+//     }
+
+//     const result = resultArr.map(w => w !== '' ? MORSE_CODE[w] : ' ').join('');
+
+//     return result;
+// }
+
+// console.log(decodeMorse("-.-.--"));
 
 
 //  assert.strictEqual(decodeMorse('.... . -.--   .--- ..- -.. .'), 'HEY JUDE');
