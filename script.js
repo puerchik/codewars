@@ -1,21 +1,49 @@
-const findUniq = arr => {
-    let uniqueArr = [...new Set(arr)];
-    let result;
+const solution = str => {
+    const result = str.length >= 2 ? str.match(/../g) : [str + '_'];
 
-    if (arr[0] === uniqueArr[0] && arr[1] === uniqueArr[0]) {
-        result = uniqueArr[1];
-    } else if (arr[1] === uniqueArr[0] && arr[2] === uniqueArr[0]) {
-        result = uniqueArr[1];
-    } else if (arr[0] === uniqueArr[0] && arr[2] === uniqueArr[0]) {
-        result = uniqueArr[1];
-    } else if (arr[1] !== uniqueArr[0] && arr[2] !== uniqueArr[0]) {
-        result = uniqueArr[0];
+    if (str === '') {
+        return [];
+    } else if (str.length % 2 && str.length > 2) {
+        if (Array.isArray(result)) {
+            result.push(str[str.length - 1] + '_')
+            return result
+        } else {
+            console.error('myArray is not an array');
+        }
+    } else {
+        return result
     }
-
-    return result;
 }
 
-console.log(findUniq([0, 0, 0.55, 0, 0]));
+
+
+console.log(solution('abc'));
+
+
+// * 'abc' =>  ['ab', 'c_']
+// * 'abcdef' => ['ab', 'cd', 'ef']
+
+
+
+
+// const findUniq = arr => {
+//     let uniqueArr = [...new Set(arr)];
+//     let result;
+
+//     if (arr[0] === uniqueArr[0] && arr[1] === uniqueArr[0]) {
+//         result = uniqueArr[1];
+//     } else if (arr[1] === uniqueArr[0] && arr[2] === uniqueArr[0]) {
+//         result = uniqueArr[1];
+//     } else if (arr[0] === uniqueArr[0] && arr[2] === uniqueArr[0]) {
+//         result = uniqueArr[1];
+//     } else if (arr[1] !== uniqueArr[0] && arr[2] !== uniqueArr[0]) {
+//         result = uniqueArr[0];
+//     }
+
+//     return result;
+// }
+
+// console.log(findUniq([0, 0, 0.55, 0, 0]));
 
 // findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
 // findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55
