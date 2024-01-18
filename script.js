@@ -1,17 +1,29 @@
-const findMissingLetter = array => {
-    let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-    const charCode = array[0].charCodeAt(0);
+const camelCase = str => str.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('');
 
-    if (charCode >= 97 && charCode <= 122) {
-        alphabet = alphabet.map(lt => lt.toLowerCase());
-    }
 
-    const arrWithLetter = alphabet.slice(alphabet.indexOf(array[0]), alphabet.indexOf(array[0]) + array.length + 1);
 
-    return arrWithLetter.find((f, i) => f !== array[i])
-}
+console.log(camelCase(""));
 
-console.log(findMissingLetter(['a', 'b', 'c', 'd', 'f']));
+// "hello case" --> "HelloCase"
+// "camel case word" --> "CamelCaseWord"
+
+
+
+
+// const findMissingLetter = array => {
+//     let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+//     const charCode = array[0].charCodeAt(0);
+
+//     if (charCode >= 97 && charCode <= 122) {
+//         alphabet = alphabet.map(lt => lt.toLowerCase());
+//     }
+
+//     const arrWithLetter = alphabet.slice(alphabet.indexOf(array[0]), alphabet.indexOf(array[0]) + array.length + 1);
+
+//     return arrWithLetter.find((f, i) => f !== array[i])
+// }
+
+// console.log(findMissingLetter(['a', 'b', 'c', 'd', 'f']));
 
 // ['a','b','c','d','f'] -> 'e'
 // ['O','Q','R','S'] -> 'P'
