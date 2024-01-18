@@ -1,23 +1,44 @@
-const solution = str => {
-    const result = str.length >= 2 ? str.match(/../g) : [str + '_'];
+const findMissingLetter = array => {
+    let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    const charCode = array[0].charCodeAt(0);
 
-    if (str === '') {
-        return [];
-    } else if (str.length % 2 && str.length > 2) {
-        if (Array.isArray(result)) {
-            result.push(str[str.length - 1] + '_')
-            return result
-        } else {
-            console.error('myArray is not an array');
-        }
-    } else {
-        return result
+    if (charCode >= 97 && charCode <= 122) {
+        alphabet = alphabet.map(lt => lt.toLowerCase());
     }
+
+    const arrWithLetter = alphabet.slice(alphabet.indexOf(array[0]), alphabet.indexOf(array[0]) + array.length + 1);
+
+    return arrWithLetter.find((f, i) => f !== array[i])
 }
 
+console.log(findMissingLetter(['a', 'b', 'c', 'd', 'f']));
+
+// ['a','b','c','d','f'] -> 'e'
+// ['O','Q','R','S'] -> 'P'
 
 
-console.log(solution('abc'));
+
+
+// const solution = str => {
+//     const result = str.length >= 2 ? str.match(/../g) : [str + '_'];
+
+//     if (str === '') {
+//         return [];
+//     } else if (str.length % 2 && str.length > 2) {
+//         if (Array.isArray(result)) {
+//             result.push(str[str.length - 1] + '_')
+//             return result
+//         } else {
+//             console.error('myArray is not an array');
+//         }
+//     } else {
+//         return result
+//     }
+// }
+
+
+
+// console.log(solution('abc'));
 
 
 // * 'abc' =>  ['ab', 'c_']
