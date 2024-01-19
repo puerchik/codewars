@@ -1,8 +1,20 @@
-const camelCase = str => str.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('');
+const pigIt = str => str.split(' ').map(w => /[\.,\-\!\?]/.test(w) ? w : w.slice(1) + w.charAt(0) + 'ay').join(' ');
 
 
 
-console.log(camelCase(""));
+console.log(pigIt('Hello world !'));
+
+// pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+// pigIt('Hello world !');     // elloHay orldway !
+
+
+
+
+// const camelCase = str => str.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('');
+
+
+
+// console.log(camelCase(""));
 
 // "hello case" --> "HelloCase"
 // "camel case word" --> "CamelCaseWord"
