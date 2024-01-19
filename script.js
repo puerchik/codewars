@@ -1,13 +1,33 @@
-const humanReadable = seconds => {
-    let h = Math.floor(seconds / 3600);
-    let m = Math.floor((seconds % 3600) / 60);
-    let s = seconds % 60;
-
-    return `${h > 9 ? h : '0' + h}:${m > 9 ? m : '0' + m}:${s > 9 ? s : '0' + s}`;
+const generateHashtag = str => {
+    const trimArr = str.split(' ').filter(f => f !== '');
+    if (trimArr.length > 140 || trimArr.length === 0 || str === '' || str === ' ') {
+        return false
+    } else {
+        const result = '#' + trimArr.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('');
+        return result.length > 140 ? false : result;
+    }
 }
 
 
-console.log(humanReadable(90));
+console.log(generateHashtag("Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong Cat"));
+
+// " Hello there thanks for trying my Kata"  =>  "#HelloThereThanksForTryingMyKata"
+// "    Hello     World   "                  =>  "#HelloWorld"
+// ""                                        =>  false
+
+
+
+
+// const humanReadable = seconds => {
+//     let h = Math.floor(seconds / 3600);
+//     let m = Math.floor((seconds % 3600) / 60);
+//     let s = seconds % 60;
+
+//     return `${h > 9 ? h : '0' + h}:${m > 9 ? m : '0' + m}:${s > 9 ? s : '0' + s}`;
+// }
+
+
+// console.log(humanReadable(90));
 
 
 // strictEqual(humanReadable(0), '00:00:00', 'humanReadable(0)');
