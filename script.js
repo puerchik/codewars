@@ -1,15 +1,43 @@
-const generateHashtag = str => {
-    const trimArr = str.split(' ').filter(f => f !== '');
-    if (trimArr.length > 140 || trimArr.length === 0 || str === '' || str === ' ') {
-        return false
-    } else {
-        const result = '#' + trimArr.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('');
-        return result.length > 140 ? false : result;
+const expandedForm = num => {
+    let result = '';
+    let resultNum = num;
+
+    const remainder = dividend => dividend % (Math.pow(10, (dividend.toString().length - 1)));
+
+    while (resultNum !== 0) {
+        if (result === '') {
+            result = (resultNum - remainder(resultNum)).toString();
+        } else {
+            result = result + ' ' + '+' + ' ' + (resultNum - remainder(resultNum)).toString();
+        }
+
+        resultNum = remainder(resultNum);
     }
+
+    return result;
 }
 
+console.log(expandedForm(45));
 
-console.log(generateHashtag("Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong Cat"));
+// expandedForm(12); // Should return '10 + 2'
+// expandedForm(42); // Should return '40 + 2'
+// expandedForm(70304); // Should return '70000 + 300 + 4'
+
+
+
+
+// const generateHashtag = str => {
+//     const trimArr = str.split(' ').filter(f => f !== '');
+//     if (trimArr.length > 140 || trimArr.length === 0 || str === '' || str === ' ') {
+//         return false
+//     } else {
+//         const result = '#' + trimArr.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('');
+//         return result.length > 140 ? false : result;
+//     }
+// }
+
+
+// console.log(generateHashtag("Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong Cat"));
 
 // " Hello there thanks for trying my Kata"  =>  "#HelloThereThanksForTryingMyKata"
 // "    Hello     World   "                  =>  "#HelloWorld"
