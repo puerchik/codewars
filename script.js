@@ -1,23 +1,40 @@
-const expandedForm = num => {
-    let result = '';
-    let resultNum = num;
+const toWeirdCase = string => string.split(' ')
+    .map(w => w.split('')
+        .map((el, i) => i % 2
+            ? el.toLowerCase()
+            : el.toUpperCase())
+        .join(''))
+    .join(' ')
 
-    const remainder = dividend => dividend % (Math.pow(10, (dividend.toString().length - 1)));
+console.log(toWeirdCase("String"));
 
-    while (resultNum !== 0) {
-        if (result === '') {
-            result = (resultNum - remainder(resultNum)).toString();
-        } else {
-            result = result + ' ' + '+' + ' ' + (resultNum - remainder(resultNum)).toString();
-        }
 
-        resultNum = remainder(resultNum);
-    }
+// "String" => "StRiNg"
+// "Weird string case" => "WeIrD StRiNg CaSe"
 
-    return result;
-}
 
-console.log(expandedForm(45));
+
+
+// const expandedForm = num => {
+//     let result = '';
+//     let resultNum = num;
+
+//     const remainder = dividend => dividend % (Math.pow(10, (dividend.toString().length - 1)));
+
+//     while (resultNum !== 0) {
+//         if (result === '') {
+//             result = (resultNum - remainder(resultNum)).toString();
+//         } else {
+//             result = result + ' ' + '+' + ' ' + (resultNum - remainder(resultNum)).toString();
+//         }
+
+//         resultNum = remainder(resultNum);
+//     }
+
+//     return result;
+// }
+
+// console.log(expandedForm(45));
 
 // expandedForm(12); // Should return '10 + 2'
 // expandedForm(42); // Should return '40 + 2'
