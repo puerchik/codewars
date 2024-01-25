@@ -1,12 +1,46 @@
-const toWeirdCase = string => string.split(' ')
-    .map(w => w.split('')
-        .map((el, i) => i % 2
-            ? el.toLowerCase()
-            : el.toUpperCase())
-        .join(''))
-    .join(' ')
+const stockList = (listOfArt, listOfCat) => {
+    const arrListOfArt = listOfArt.map(el => el.slice(0, 1) + el.slice(-3));
+    const objListOfArt = {};
+    let result = '';
 
-console.log(toWeirdCase("String"));
+    listOfCat.forEach(el => objListOfArt[el] = 0);
+
+    listOfCat.forEach(category => {
+        arrListOfArt.forEach(el => {
+            el.slice(0, 1) === category ? objListOfArt[category] += +el.slice(-3) : undefined
+        })
+    });
+
+    if (listOfArt.length !== 0) {
+        result = Object.entries(objListOfArt)
+            .map((el) => `(${el[0]} : ${el[1]}) - `).join('').slice(0, -3);
+    }
+
+    return result;
+}
+
+console.log(stockList(["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"], ["A", "B", "C", "D"]));
+
+// b = ["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"]
+// c = ["A", "B", "C", "D"]
+// res = "(A : 0) - (B : 1290) - (C : 515) - (D : 600)"
+
+
+// b = ["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"]
+// c = ["A", "B"]
+// res = "(A : 200) - (B : 1140)"
+
+
+
+// const toWeirdCase = string => string.split(' ')
+//     .map(w => w.split('')
+//         .map((el, i) => i % 2
+//             ? el.toLowerCase()
+//             : el.toUpperCase())
+//         .join(''))
+//     .join(' ')
+
+// console.log(toWeirdCase("String"));
 
 
 // "String" => "StRiNg"
