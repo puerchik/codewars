@@ -1,25 +1,41 @@
-const stockList = (listOfArt, listOfCat) => {
-    const arrListOfArt = listOfArt.map(el => el.slice(0, 1) + el.slice(-3));
-    const objListOfArt = {};
-    let result = '';
+const lowercaseCount = str => str.split('').filter(el => el.charCodeAt(0) >= 97 && el.charCodeAt(0) <= 122).length;
 
-    listOfCat.forEach(el => objListOfArt[el] = 0);
 
-    listOfCat.forEach(category => {
-        arrListOfArt.forEach(el => {
-            el.slice(0, 1) === category ? objListOfArt[category] += +el.slice(-3) : undefined
-        })
-    });
 
-    if (listOfArt.length !== 0) {
-        result = Object.entries(objListOfArt)
-            .map((el) => `(${el[0]} : ${el[1]}) - `).join('').slice(0, -3);
-    }
+console.log(lowercaseCount("abcdefghijklmnopqrstuvwxyz"));
 
-    return result;
-}
+// "abc" ===> 3
+// "abcABC123" ===> 3
+// "abcABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~" ===> 3
+// "" ===> 0;
+// "ABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~" ===> 0
+// "abcdefghijklmnopqrstuvwxyz" ===> 26
 
-console.log(stockList(["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"], ["A", "B", "C", "D"]));
+
+
+
+// const stockList = (listOfArt, listOfCat) => {
+//     const arrListOfArt = listOfArt.map(el => el.slice(0, 1) + el.slice(-3));
+//     const objListOfArt = {};
+//     let result = '';
+
+//     listOfCat.forEach(el => objListOfArt[el] = 0);
+
+//     listOfCat.forEach(category => {
+//         arrListOfArt.forEach(el => {
+//             el.slice(0, 1) === category ? objListOfArt[category] += +el.slice(-3) : undefined
+//         })
+//     });
+
+//     if (listOfArt.length !== 0) {
+//         result = Object.entries(objListOfArt)
+//             .map((el) => `(${el[0]} : ${el[1]}) - `).join('').slice(0, -3);
+//     }
+
+//     return result;
+// }
+
+// console.log(stockList(["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"], ["A", "B", "C", "D"]));
 
 // b = ["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"]
 // c = ["A", "B", "C", "D"]
