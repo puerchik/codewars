@@ -1,8 +1,37 @@
-const lowercaseCount = str => str.split('').filter(el => el.charCodeAt(0) >= 97 && el.charCodeAt(0) <= 122).length;
+const nextId = ids => {
+    const uniqueSortArr = [...new Set(ids)].sort((a, b) => a - b);
+    let resultIn;
+    let resultOut;
+    if (uniqueSortArr[0] !== 0) {
+        return 0;
+    } else {
+        for (let i = uniqueSortArr[0]; i < uniqueSortArr.length; i++) {
+            if (uniqueSortArr[i] === i) {
+                resultOut = i + 1;
+            } else {
+                resultIn = i;
+            }
+        }
+    }
+
+    return resultIn < resultOut ? resultIn : resultOut;
+}
 
 
 
-console.log(lowercaseCount("abcdefghijklmnopqrstuvwxyz"));
+console.log(nextId([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
+// Test.assertEquals(nextId([0,1,2,3,5]), 4);
+// Test.assertEquals(nextId([0,1,2,3,4,5,6,7,8,9,10]), 11);
+// Test.assertEquals(nextId([1,2,0,2,3,5]), 4);
+
+
+
+// const lowercaseCount = str => str.split('').filter(el => el.charCodeAt(0) >= 97 && el.charCodeAt(0) <= 122).length;
+
+
+
+// console.log(lowercaseCount("abcdefghijklmnopqrstuvwxyz"));
 
 // "abc" ===> 3
 // "abcABC123" ===> 3
