@@ -1,25 +1,44 @@
-const nextId = ids => {
-    const uniqueSortArr = [...new Set(ids)].sort((a, b) => a - b);
-    let resultIn;
-    let resultOut;
-    if (uniqueSortArr[0] !== 0) {
-        return 0;
-    } else {
-        for (let i = uniqueSortArr[0]; i < uniqueSortArr.length; i++) {
-            if (uniqueSortArr[i] === i) {
-                resultOut = i + 1;
-            } else {
-                resultIn = i;
-            }
-        }
-    }
+const uefaEuro2016 = (teams, scores) => {
+    const teamsString = `At match ${teams[0]} - ${teams[1]}, `;
+    const scoresString = scores[0] > scores[1]
+        ? `${teams[0]} won!`
+        : scores[0] < scores[1]
+            ? `${teams[1]} won!`
+            : "teams played draw.";
 
-    return resultIn < resultOut ? resultIn : resultOut;
+    return teamsString + scoresString;
 }
 
+console.log(uefaEuro2016(['Portugal', 'Iceland'], [1, 1]));
+
+// uefaEuro2016(['Belgium', 'Italy'],[0, 2]) // "At match Belgium - Italy, Italy won!"
+// uefaEuro2016(['Portugal', 'Iceland'],[1, 1]) // "At match Portugal - Iceland, teams played draw."
 
 
-console.log(nextId([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
+
+// const nextId = ids => {
+//     const uniqueSortArr = [...new Set(ids)].sort((a, b) => a - b);
+//     let resultIn;
+//     let resultOut;
+//     if (uniqueSortArr[0] !== 0) {
+//         return 0;
+//     } else {
+//         for (let i = uniqueSortArr[0]; i < uniqueSortArr.length; i++) {
+//             if (uniqueSortArr[i] === i) {
+//                 resultOut = i + 1;
+//             } else {
+//                 resultIn = i;
+//             }
+//         }
+//     }
+
+//     return resultIn < resultOut ? resultIn : resultOut;
+// }
+
+
+
+// console.log(nextId([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 
 // Test.assertEquals(nextId([0,1,2,3,5]), 4);
 // Test.assertEquals(nextId([0,1,2,3,4,5,6,7,8,9,10]), 11);
