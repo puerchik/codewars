@@ -1,15 +1,27 @@
-const uefaEuro2016 = (teams, scores) => {
-    const teamsString = `At match ${teams[0]} - ${teams[1]}, `;
-    const scoresString = scores[0] > scores[1]
-        ? `${teams[0]} won!`
-        : scores[0] < scores[1]
-            ? `${teams[1]} won!`
-            : "teams played draw.";
+const all = (arr, fun) => arr.every(fun);
 
-    return teamsString + scoresString;
-}
 
-console.log(uefaEuro2016(['Portugal', 'Iceland'], [1, 1]));
+
+console.log(all([1, 2, 3, 4, 5], function (v) { return v < 9 }));
+
+// all((1, 2, 3, 4, 5), greater_than_9) -> false
+// all((1, 2, 3, 4, 5), less_than_9)    -> True
+
+
+
+
+// const uefaEuro2016 = (teams, scores) => {
+//     const teamsString = `At match ${teams[0]} - ${teams[1]}, `;
+//     const scoresString = scores[0] > scores[1]
+//         ? `${teams[0]} won!`
+//         : scores[0] < scores[1]
+//             ? `${teams[1]} won!`
+//             : "teams played draw.";
+
+//     return teamsString + scoresString;
+// }
+
+// console.log(uefaEuro2016(['Portugal', 'Iceland'], [1, 1]));
 
 // uefaEuro2016(['Belgium', 'Italy'],[0, 2]) // "At match Belgium - Italy, Italy won!"
 // uefaEuro2016(['Portugal', 'Iceland'],[1, 1]) // "At match Portugal - Iceland, teams played draw."
