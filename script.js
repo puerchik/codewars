@@ -1,8 +1,25 @@
-const all = (arr, fun) => arr.every(fun);
+const sakuraFall = v => {
+    const distance = 5 * 80;
+    const result = distance / v;
+
+    return v > 0 ? result : 0;
+}
+
+
+console.log(sakuraFall(-1));
+
+// assert.strictEqual(sakuraFall(5),80)
+// assert.strictEqual(sakuraFall(10),40)
+// assert.strictEqual(sakuraFall(-1),0)
 
 
 
-console.log(all([1, 2, 3, 4, 5], function (v) { return v < 9 }));
+
+// const all = (arr, fun) => arr.every(fun);
+
+
+
+// console.log(all([1, 2, 3, 4, 5], function (v) { return v < 9 }));
 
 // all((1, 2, 3, 4, 5), greater_than_9) -> false
 // all((1, 2, 3, 4, 5), less_than_9)    -> True
