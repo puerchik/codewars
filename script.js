@@ -1,12 +1,34 @@
-const sakuraFall = v => {
-    const distance = 5 * 80;
-    const result = distance / v;
+const isPythagoreanTriple = integers => {
+    const squareIntegers = integers.map(el => Math.pow(el, 2)).sort((a, b) => a - b);
 
-    return v > 0 ? result : 0;
+    return squareIntegers[2] === squareIntegers[0] + squareIntegers[1];
 }
 
 
-console.log(sakuraFall(-1));
+
+console.log(isPythagoreanTriple([13, 12, 5]));
+
+// [5, 3, 4] : it is possible to form a Pythagorean Triple using these 3 integers: 32 + 42 = 52
+
+// [3, 4, 5] : it is possible to form a Pythagorean Triple using these 3 integers: 32 + 42 = 52
+
+// [13, 12, 5] : it is possible to form a Pythagorean Triple using these 3 integers: 52 + 122 = 132
+
+// [100, 3, 999] : it is NOT possible to form a Pythagorean Triple using these 3 integers - no matter how you arrange them,
+// you will never find a way to satisfy the equation a2 + b2 = c2
+
+
+
+
+// const sakuraFall = v => {
+//     const distance = 5 * 80;
+//     const result = distance / v;
+
+//     return v > 0 ? result : 0;
+// }
+
+
+// console.log(sakuraFall(-1));
 
 // assert.strictEqual(sakuraFall(5),80)
 // assert.strictEqual(sakuraFall(10),40)
