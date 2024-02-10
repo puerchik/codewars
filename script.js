@@ -1,12 +1,28 @@
-const isPythagoreanTriple = integers => {
-    const squareIntegers = integers.map(el => Math.pow(el, 2)).sort((a, b) => a - b);
-
-    return squareIntegers[2] === squareIntegers[0] + squareIntegers[1];
-}
+const slope = points => (points[2] - points[0]) !== 0
+    ? ((points[3] - points[1]) / (points[2] - points[0])).toString()
+    : 'undefined';
 
 
 
-console.log(isPythagoreanTriple([13, 12, 5]));
+console.log(slope([10, 50, 30, 150]));
+
+// Test.assertEquals( slope([19,3,20,3]), "0" );
+// Test.assertEquals( slope([2,7,4,-7]), "-7" );
+// Test.assertEquals( slope([10,50,30,150]), "5" );
+// Test.assertEquals( slope([15,45,12,60]), "-5" );
+// Test.assertEquals( slope([10,20,20,80]), "6" );
+// Test.assertEquals( slope([-10,6,-10,3]), "undefined" );
+
+
+// const isPythagoreanTriple = integers => {
+//     const squareIntegers = integers.map(el => Math.pow(el, 2)).sort((a, b) => a - b);
+
+//     return squareIntegers[2] === squareIntegers[0] + squareIntegers[1];
+// }
+
+
+
+// console.log(isPythagoreanTriple([13, 12, 5]));
 
 // [5, 3, 4] : it is possible to form a Pythagorean Triple using these 3 integers: 32 + 42 = 52
 
