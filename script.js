@@ -1,10 +1,26 @@
-const slope = points => (points[2] - points[0]) !== 0
-    ? ((points[3] - points[1]) / (points[2] - points[0])).toString()
-    : 'undefined';
+const evenOrOdd = number => !!(number % 2) ? "Odd" : "Even";
 
 
 
-console.log(slope([10, 50, 30, 150]));
+console.log(evenOrOdd(9));
+
+
+//     assert.strictEqual(evenOrOdd(2), "Even");
+//     assert.strictEqual(evenOrOdd(7), "Odd");
+//     assert.strictEqual(evenOrOdd(-42), "Even");
+//     assert.strictEqual(evenOrOdd(-7), "Odd");
+//     assert.strictEqual(evenOrOdd(0), "Even");
+
+
+
+
+// const slope = points => (points[2] - points[0]) !== 0
+//     ? ((points[3] - points[1]) / (points[2] - points[0])).toString()
+//     : 'undefined';
+
+
+
+// console.log(slope([10, 50, 30, 150]));
 
 // Test.assertEquals( slope([19,3,20,3]), "0" );
 // Test.assertEquals( slope([2,7,4,-7]), "-7" );
