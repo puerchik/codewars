@@ -1,8 +1,26 @@
-const evenOrOdd = number => !!(number % 2) ? "Odd" : "Even";
+const summation = num => {
+    let result = 0;
+    for (let i = 1; i <= num; i++) {
+        result += i;
+    }
+
+    return result;
+}
+
+console.log(summation(8));
+
+// assert.strictEqual(summation(1), 1);
+// assert.strictEqual(summation(2), 3);
+// assert.strictEqual(summation(8), 36);
 
 
 
-console.log(evenOrOdd(9));
+
+// const evenOrOdd = number => !!(number % 2) ? "Odd" : "Even";
+
+
+
+// console.log(evenOrOdd(9));
 
 
 //     assert.strictEqual(evenOrOdd(2), "Even");
