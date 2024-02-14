@@ -1,13 +1,33 @@
-const summation = num => {
-    let result = 0;
-    for (let i = 1; i <= num; i++) {
-        result += i;
+const basicOp = (operation, value1, value2) => {
+    switch (operation) {
+        case "+": return value1 + value2;
+        case "-": return value1 - value2;
+        case "*": return value1 * value2;
+        case "/": return value1 / value2;
+        default: return 0
     }
-
-    return result;
 }
 
-console.log(summation(8));
+console.log(basicOp("/", 49, 7));
+
+// assert.strictEqual(basicOp("+", 4, 7), 11, "4 + 7 = 11");
+// assert.strictEqual(basicOp("-", 15, 18), -3, "15 - 18 = -3");
+// assert.strictEqual(basicOp("*", 5, 5), 25, "5 * 5 = 25");
+// assert.strictEqual(basicOp("/", 49, 7), 7, "49 / 7 = 7");
+
+
+
+
+// const summation = num => {
+//     let result = 0;
+//     for (let i = 1; i <= num; i++) {
+//         result += i;
+//     }
+
+//     return result;
+// }
+
+// console.log(summation(8));
 
 // assert.strictEqual(summation(1), 1);
 // assert.strictEqual(summation(2), 3);
