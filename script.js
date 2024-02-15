@@ -1,14 +1,29 @@
-const basicOp = (operation, value1, value2) => {
-    switch (operation) {
-        case "+": return value1 + value2;
-        case "-": return value1 - value2;
-        case "*": return value1 * value2;
-        case "/": return value1 / value2;
-        default: return 0
-    }
-}
+const century = year => Math.ceil(year / 100);
 
-console.log(basicOp("/", 49, 7));
+
+
+console.log(century(89));
+
+// Test.assertEquals(century(1705), 18, 'Testing for year 1705');
+// Test.assertEquals(century(1900), 19, 'Testing for year 1900');
+// Test.assertEquals(century(1601), 17, 'Testing for year 1601');
+// Test.assertEquals(century(2000), 20, 'Testing for year 2000');
+// Test.assertEquals(century(89), 1, 'Testing for year 89');
+
+
+
+
+// const basicOp = (operation, value1, value2) => {
+//     switch (operation) {
+//         case "+": return value1 + value2;
+//         case "-": return value1 - value2;
+//         case "*": return value1 * value2;
+//         case "/": return value1 / value2;
+//         default: return 0
+//     }
+// }
+
+// console.log(basicOp("/", 49, 7));
 
 // assert.strictEqual(basicOp("+", 4, 7), 11, "4 + 7 = 11");
 // assert.strictEqual(basicOp("-", 15, 18), -3, "15 - 18 = -3");
