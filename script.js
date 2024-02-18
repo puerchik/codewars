@@ -1,8 +1,20 @@
-const century = year => Math.ceil(year / 100);
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => (distanceToPump / mpg) <= fuelLeft ? true : false;
 
 
 
-console.log(century(89));
+console.log(zeroFuel(50, 25, 2));
+
+//   assert.equal(zeroFuel(50, 25, 2), true);
+//   assert.equal(zeroFuel(100, 50, 1), false);
+
+
+
+
+// const century = year => Math.ceil(year / 100);
+
+
+
+// console.log(century(89));
 
 
 
