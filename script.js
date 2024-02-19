@@ -1,8 +1,20 @@
-const zeroFuel = (distanceToPump, mpg, fuelLeft) => (distanceToPump / mpg) <= fuelLeft ? true : false;
+const areaOrPerimeter = (l, w) => l === w ? l * w : (l + w) * 2;
 
 
 
-console.log(zeroFuel(50, 25, 2));
+console.log(areaOrPerimeter(6, 10));
+
+// assert.strictEqual(areaOrPerimeter(3,  3),  9);
+// assert.strictEqual(areaOrPerimeter(6, 10), 32);
+
+
+
+
+// const zeroFuel = (distanceToPump, mpg, fuelLeft) => (distanceToPump / mpg) <= fuelLeft ? true : false;
+
+
+
+// console.log(zeroFuel(50, 25, 2));
 
 //   assert.equal(zeroFuel(50, 25, 2), true);
 //   assert.equal(zeroFuel(100, 50, 1), false);
