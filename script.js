@@ -1,8 +1,39 @@
-const areaOrPerimeter = (l, w) => l === w ? l * w : (l + w) * 2;
+const productFib = prod => {
+    let prev = 0;
+    let curent = 1;
+    let fib = 0;
+    let result = 0;
+
+    for (let i = 1; i < prod; i = result) {
+        fib = prev + curent;
+        prev = curent;
+        curent = fib;
+        result = prev * curent;
+    }
+
+    return [prev, fib, result === prod];
+}
+
+console.log(productFib(602070));
+
+// assert.sameOrderedMembers(productFib(4895), [55, 89, true])
+// assert.sameOrderedMembers(productFib(5895), [89, 144, false])
+// assert.sameOrderedMembers(productFib(74049690), [6765, 10946, true])
+// assert.sameOrderedMembers(productFib(84049690), [10946, 17711, false])
+// assert.sameOrderedMembers(productFib(193864606), [10946, 17711, true])
+// assert.sameOrderedMembers(productFib(447577), [610, 987, false])
+// assert.sameOrderedMembers(productFib(602070), [610, 987, true])
 
 
 
-console.log(areaOrPerimeter(6, 10));
+
+
+
+// const areaOrPerimeter = (l, w) => l === w ? l * w : (l + w) * 2;
+
+
+
+// console.log(areaOrPerimeter(6, 10));
 
 // assert.strictEqual(areaOrPerimeter(3,  3),  9);
 // assert.strictEqual(areaOrPerimeter(6, 10), 32);
