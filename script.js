@@ -1,20 +1,47 @@
-const productFib = prod => {
-    let prev = 0;
-    let curent = 1;
-    let fib = 0;
-    let result = 0;
+const twiceAsOld = (dadYearsOld, sonYearsOld) => sonYearsOld * 2 < dadYearsOld
+    ? dadYearsOld - sonYearsOld * 2
+    : sonYearsOld * 2 - dadYearsOld;
 
-    for (let i = 1; i < prod; i = result) {
-        fib = prev + curent;
-        prev = curent;
-        curent = fib;
-        result = prev * curent;
-    }
 
-    return [prev, fib, result === prod];
-}
 
-console.log(productFib(602070));
+console.log(twiceAsOld(55, 30));
+
+//   it("Testing for dad's age: 36 and son's age: 7", function(){
+//     assert.strictEqual(twiceAsOld(36,7) , 22);
+//   });
+//   it("Testing for dad's age: 55 and son's age: 30", function(){
+//     assert.strictEqual(twiceAsOld(55,30) , 5);
+//   });
+//   it("Testing for dad's age: 42 and son's age: 21", function(){
+//     assert.strictEqual(twiceAsOld(42,21) , 0);
+//   });
+//   it("Testing for dad's age: 22 and son's age: 1", function(){
+//     assert.strictEqual(twiceAsOld(22,1) , 20);
+//   });
+//   it("Testing for dad's age: 29 and son's age: 0", function(){
+//     assert.strictEqual(twiceAsOld(29,0) , 29);
+//   });
+
+
+
+
+// const productFib = prod => {
+//     let prev = 0;
+//     let curent = 1;
+//     let fib = 0;
+//     let result = 0;
+
+//     for (let i = 1; i < prod; i = result) {
+//         fib = prev + curent;
+//         prev = curent;
+//         curent = fib;
+//         result = prev * curent;
+//     }
+
+//     return [prev, fib, result === prod];
+// }
+
+// console.log(productFib(602070));
 
 // assert.sameOrderedMembers(productFib(4895), [55, 89, true])
 // assert.sameOrderedMembers(productFib(5895), [89, 144, false])
