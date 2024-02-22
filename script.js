@@ -1,10 +1,24 @@
-const twiceAsOld = (dadYearsOld, sonYearsOld) => sonYearsOld * 2 < dadYearsOld
-    ? dadYearsOld - sonYearsOld * 2
-    : sonYearsOld * 2 - dadYearsOld;
+class Kata {
+    static getVolumeOfCuboid(length, width, height) {
+        return length * width * height;
+    }
+}
+
+console.log(Kata.getVolumeOfCuboid(6, 2, 5));
+
+//   assert.strictEqual(Kata.getVolumeOfCuboid(1,2,2),  4);
+//   assert.strictEqual(Kata.getVolumeOfCuboid(6,2,5), 60);
 
 
 
-console.log(twiceAsOld(55, 30));
+
+// const twiceAsOld = (dadYearsOld, sonYearsOld) => sonYearsOld * 2 < dadYearsOld
+//     ? dadYearsOld - sonYearsOld * 2
+//     : sonYearsOld * 2 - dadYearsOld;
+
+
+
+// console.log(twiceAsOld(55, 30));
 
 //   it("Testing for dad's age: 36 and son's age: 7", function(){
 //     assert.strictEqual(twiceAsOld(36,7) , 22);
