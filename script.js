@@ -1,10 +1,29 @@
-class Kata {
-    static getVolumeOfCuboid(length, width, height) {
-        return length * width * height;
-    }
+const powersOfTwo = n => {
+    let result =[];
+    for(let i=0;i<=n;i++){
+        result = [...result, Math.pow(2, i)]
+    };
+
+    return result;
 }
 
-console.log(Kata.getVolumeOfCuboid(6, 2, 5));
+console.log(powersOfTwo(0));
+
+
+    // assert.deepEqual(powersOfTwo(0), [1])
+    // assert.deepEqual(powersOfTwo(1), [1, 2])
+    // assert.deepEqual(powersOfTwo(4), [1, 2, 4, 8, 16])  
+
+
+
+
+// class Kata {
+//     static getVolumeOfCuboid(length, width, height) {
+//         return length * width * height;
+//     }
+// }
+
+// console.log(Kata.getVolumeOfCuboid(6, 2, 5));
 
 //   assert.strictEqual(Kata.getVolumeOfCuboid(1,2,2),  4);
 //   assert.strictEqual(Kata.getVolumeOfCuboid(6,2,5), 60);
