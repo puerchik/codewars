@@ -1,8 +1,20 @@
-const checkForFactor = (base, factor) => !(base % factor);
+const oddCount = n => Math.floor(n / 2);
 
 
 
-console.log(checkForFactor(10, 2));
+console.log(oddCount(15023));
+
+// assert.strictEqual(oddCount(15), 7, "Oops! Wrong.");
+// assert.strictEqual(oddCount(15023), 7511, "Oops! Wrong.");
+
+
+
+
+// const checkForFactor = (base, factor) => !(base % factor);
+
+
+
+// console.log(checkForFactor(10, 2));
 
 
 // Test.assertEquals(checkForFactor(10, 2), true)
