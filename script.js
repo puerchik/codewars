@@ -1,8 +1,22 @@
-const oddCount = n => Math.floor(n / 2);
+const remainder = (n, m) => n > m ? n % m : m % n;
 
 
 
-console.log(oddCount(15023));
+console.log(remainder(17, -802));
+
+// assert.strictEqual(remainder(17, 5), 2, 'Returned value should be the value left over after dividing as much as possible. For input n = 17, m = 5');
+// assert.strictEqual(remainder(13, 72), remainder(72, 13), 'The order the arguments are passed should not matter');
+// assert.isNaN(remainder(1, 0), 'Divide by zero should return NaN');
+// assert.isNaN(remainder(0, 0), 'Divide by zero should return NaN');
+
+
+
+
+// const oddCount = n => Math.floor(n / 2);
+
+
+
+// console.log(oddCount(15023));
 
 // assert.strictEqual(oddCount(15), 7, "Oops! Wrong.");
 // assert.strictEqual(oddCount(15023), 7511, "Oops! Wrong.");
