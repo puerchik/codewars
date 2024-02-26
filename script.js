@@ -1,18 +1,36 @@
-const powersOfTwo = n => {
-    let result =[];
-    for(let i=0;i<=n;i++){
-        result = [...result, Math.pow(2, i)]
-    };
-
-    return result;
-}
-
-console.log(powersOfTwo(0));
+const checkForFactor = (base, factor) => !(base % factor);
 
 
-    // assert.deepEqual(powersOfTwo(0), [1])
-    // assert.deepEqual(powersOfTwo(1), [1, 2])
-    // assert.deepEqual(powersOfTwo(4), [1, 2, 4, 8, 16])  
+
+console.log(checkForFactor(10, 2));
+
+
+// Test.assertEquals(checkForFactor(10, 2), true)
+// Test.assertEquals(checkForFactor(63, 7), true)
+// Test.assertEquals(checkForFactor(2450, 5), true)
+// Test.assertEquals(checkForFactor(24612, 3), true)
+
+// Test.assertEquals(checkForFactor(9, 2), false)
+// Test.assertEquals(checkForFactor(653, 7), false)
+// Test.assertEquals(checkForFactor(2453, 5), false)
+// Test.assertEquals(checkForFactor(24617, 3), false)
+
+
+// const powersOfTwo = n => {
+//     let result = [];
+//     for (let i = 0; i <= n; i++) {
+//         result = [...result, Math.pow(2, i)]
+//     };
+
+//     return result;
+// }
+
+// console.log(powersOfTwo(0));
+
+
+// assert.deepEqual(powersOfTwo(0), [1])
+// assert.deepEqual(powersOfTwo(1), [1, 2])
+// assert.deepEqual(powersOfTwo(4), [1, 2, 4, 8, 16])
 
 
 
