@@ -1,8 +1,23 @@
-const remainder = (n, m) => n > m ? n % m : m % n;
+const nearestSq = n => Math.pow(Math.round(Math.sqrt(n)), 2);
 
 
 
-console.log(remainder(17, -802));
+console.log(nearestSq(9999));
+
+// assert.strictEqual(nearestSq(1), 1, "nearestSq(1) = 1");
+// assert.strictEqual(nearestSq(2), 1, "nearestSq(2) = 1");
+// assert.strictEqual(nearestSq(10), 9, "nearestSq(10) = 9");
+// assert.strictEqual(nearestSq(111), 121, "nearestSq(111) = 121");
+// assert.strictEqual(nearestSq(9999), 10000, "nearestSq(9999) = 10000");
+
+
+
+
+// const remainder = (n, m) => n > m ? n % m : m % n;
+
+
+
+// console.log(remainder(17, -802));
 
 // assert.strictEqual(remainder(17, 5), 2, 'Returned value should be the value left over after dividing as much as possible. For input n = 17, m = 5');
 // assert.strictEqual(remainder(13, 72), remainder(72, 13), 'The order the arguments are passed should not matter');
