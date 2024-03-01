@@ -1,8 +1,29 @@
-const nearestSq = n => Math.pow(Math.round(Math.sqrt(n)), 2);
+const squareArea = a => +Math.pow(((4 * a) / (2 * Math.PI)), 2).toFixed(2);
 
 
 
-console.log(nearestSq(9999));
+console.log(squareArea(14.05));
+
+// it("squareArea(2)", function () {
+//         assert.closeTo(squareArea(2), 1.62, 1e-2);
+//     });
+
+// it("squareArea(0)", function () {
+//         assert.closeTo(squareArea(0), 0, 1e-2);
+//     });
+
+// it("squareArea(14.05)", function () {
+//         assert.closeTo(squareArea(14.05), 80, 1e-2);
+//     });
+
+
+
+
+// const nearestSq = n => Math.pow(Math.round(Math.sqrt(n)), 2);
+
+
+
+// console.log(nearestSq(9999));
 
 // assert.strictEqual(nearestSq(1), 1, "nearestSq(1) = 1");
 // assert.strictEqual(nearestSq(2), 1, "nearestSq(2) = 1");
