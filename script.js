@@ -1,8 +1,28 @@
-const squareArea = a => +Math.pow(((4 * a) / (2 * Math.PI)), 2).toFixed(2);
+const pillars = (numPill, dist, width) => (numPill - 1) * dist * 100 + (numPill > 1 ? numPill - 2 : 0) * width;
 
 
 
-console.log(squareArea(14.05));
+console.log(pillars(11, 15, 30));
+
+// describe("Basic tests", function () {
+//     it("Testing for number of pillars: 1, distance: 10 m and width: 10 cm", function () {
+//         assert.strictEqual(pillars(1, 10, 10), 0);
+//     });
+//     it("Testing for number of pillars: 2, distance: 20 m and width: 25 cm", function () {
+//         assert.strictEqual(pillars(2, 20, 25), 2000);
+//     });
+//     it("Testing for number of pillars: 11, distance: 15 m and width: 30 cm", function () {
+//         assert.strictEqual(pillars(11, 15, 30), 15270);
+//     });
+// });
+
+
+
+// const squareArea = a => +Math.pow(((4 * a) / (2 * Math.PI)), 2).toFixed(2);
+
+
+
+// console.log(squareArea(14.05));
 
 // it("squareArea(2)", function () {
 //         assert.closeTo(squareArea(2), 1.62, 1e-2);
