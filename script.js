@@ -1,13 +1,29 @@
-const fuelPrice = (litres, pricePerLitre) => {
-    const discount = litres < 12 ? (Math.floor(litres / 2) * 0.05) * litres : 0.25 * litres;
-    const totalCost = litres * pricePerLitre - discount;
+const quadratic = (x1, x2) => [1, -(x1 + x2), x1 * x2];
 
-    return Number(totalCost.toFixed(2));
-}
+console.log(quadratic(5, -4));
 
 
 
-console.log(fuelPrice(8, 2.5));
+// assert.sameOrderedMembers(quadratic( 0,  1), [1, -1,   0]);
+// assert.sameOrderedMembers(quadratic( 1,  1), [1, -2,   1]);
+// assert.sameOrderedMembers(quadratic(-4, -9), [1, 13,  36]);
+// assert.sameOrderedMembers(quadratic(-5, -4), [1,  9,  20]);
+// assert.sameOrderedMembers(quadratic( 4, -9), [1,  5, -36]);
+// assert.sameOrderedMembers(quadratic( 5, -4), [1, -1, -20]);
+
+
+
+
+// const fuelPrice = (litres, pricePerLitre) => {
+//     const discount = litres < 12 ? (Math.floor(litres / 2) * 0.05) * litres : 0.25 * litres;
+//     const totalCost = litres * pricePerLitre - discount;
+
+//     return Number(totalCost.toFixed(2));
+// }
+
+
+
+// console.log(fuelPrice(8, 2.5));
 
 // Test.assertEquals(fuelPrice(5, 1.23), 5.65);
 // Test.assertEquals(fuelPrice(8, 2.5), 18.40);
