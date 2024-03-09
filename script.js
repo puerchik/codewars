@@ -1,19 +1,31 @@
-const quadrant = (x, y) => {
-    if (x > 0 && y > 0) {
-        return 1;
-    }
-    if (x < 0 && y > 0) {
-        return 2;
-    }
-    if (x < 0 && y < 0) {
-        return 3;
-    }
-    if (x > 0 && y < 0) {
-        return 4;
-    }
-}
+const toBinary = n => +n.toString(2);
 
-console.log(quadrant(19, -56));
+console.log(toBinary(5));
+
+
+
+//     assert.strictEqual(toBinary(1), 1);
+// assert.strictEqual(toBinary(2), 10);
+// assert.strictEqual(toBinary(3), 11);
+// assert.strictEqual(toBinary(5), 101);
+
+
+// const quadrant = (x, y) => {
+//     if (x > 0 && y > 0) {
+//         return 1;
+//     }
+//     if (x < 0 && y > 0) {
+//         return 2;
+//     }
+//     if (x < 0 && y < 0) {
+//         return 3;
+//     }
+//     if (x > 0 && y < 0) {
+//         return 4;
+//     }
+// }
+
+// console.log(quadrant(19, -56));
 
 // (1, 2)     => 1
 // (3, 5)     => 1
