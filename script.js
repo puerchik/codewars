@@ -1,6 +1,20 @@
-const toBinary = n => +n.toString(2);
+const pointsPer48 = (ppg, mpg) => mpg === 0 ? 0 : +((ppg / mpg) * 48).toFixed(1);
 
-console.log(toBinary(5));
+
+
+console.log(pointsPer48(10, 10));
+
+// pointsPer48(12, 20) // 28.8
+// pointsPer48(10, 10) // 48
+// pointsPer48(5, 17) // 14.1
+// pointsPer48(0, 0) // 0
+
+
+
+
+// const toBinary = n => +n.toString(2);
+
+// console.log(toBinary(5));
 
 
 
