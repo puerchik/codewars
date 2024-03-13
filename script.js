@@ -1,8 +1,22 @@
-const pointsPer48 = (ppg, mpg) => mpg === 0 ? 0 : +((ppg / mpg) * 48).toFixed(1);
+const excludingVatPrice = price => price === null
+    ? -1
+    : +(price - price / 115 * 15).toFixed(2);
 
 
 
-console.log(pointsPer48(10, 10));
+console.log(excludingVatPrice(123));
+
+// Test.assertSimilar(excludingVatPrice(230), 200.00);
+// Test.assertSimilar(excludingVatPrice(123), 106.96);
+
+
+
+
+// const pointsPer48 = (ppg, mpg) => mpg === 0 ? 0 : +((ppg / mpg) * 48).toFixed(1);
+
+
+
+// console.log(pointsPer48(10, 10));
 
 // pointsPer48(12, 20) // 28.8
 // pointsPer48(10, 10) // 48
