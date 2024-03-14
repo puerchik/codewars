@@ -1,10 +1,37 @@
-const excludingVatPrice = price => price === null
-    ? -1
-    : +(price - price / 115 * 15).toFixed(2);
+const hotpo = n => {
+    let result = 0;
+    while (n !== 1) {
+        if (n % 2 === 0) {
+            n = n / 2;
+            result += 1;
+        } else {
+            n = 3 * n + 1;
+            result += 1;
+        }
+    }
+
+    return result;
+}
 
 
 
-console.log(excludingVatPrice(123));
+console.log(hotpo(1));
+
+// Test.assertEquals(hotpo(1), 0);
+// Test.assertEquals(hotpo(5), 5);
+// Test.assertEquals(hotpo(6), 8);
+// Test.assertEquals(hotpo(23), 15);
+
+
+
+
+// const excludingVatPrice = price => price === null
+//     ? -1
+//     : +(price - price / 115 * 15).toFixed(2);
+
+
+
+// console.log(excludingVatPrice(123));
 
 // Test.assertSimilar(excludingVatPrice(230), 200.00);
 // Test.assertSimilar(excludingVatPrice(123), 106.96);
