@@ -1,21 +1,30 @@
-const hotpo = n => {
-    let result = 0;
-    while (n !== 1) {
-        if (n % 2 === 0) {
-            n = n / 2;
-            result += 1;
-        } else {
-            n = 3 * n + 1;
-            result += 1;
-        }
-    }
+const removeExclamationMarks = s => s.replace(/\!/g, '');
 
-    return result;
-}
+console.log(removeExclamationMarks("Hello World!"));
+
+// assert.strictEqual(removeExclamationMarks("Hello World!"), "Hello World");
 
 
 
-console.log(hotpo(1));
+
+// const hotpo = n => {
+//     let result = 0;
+//     while (n !== 1) {
+//         if (n % 2 === 0) {
+//             n = n / 2;
+//             result += 1;
+//         } else {
+//             n = 3 * n + 1;
+//             result += 1;
+//         }
+//     }
+
+//     return result;
+// }
+
+
+
+// console.log(hotpo(1));
 
 // Test.assertEquals(hotpo(1), 0);
 // Test.assertEquals(hotpo(5), 5);
