@@ -1,6 +1,31 @@
-const removeExclamationMarks = s => s.replace(/\!/g, '');
+function add(a, b) {
+    return a + b;
+}
 
-console.log(removeExclamationMarks("Hello World!"));
+function divide(a, b) {
+    return a / b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+function mod(a, b) {
+    return a % b;
+}
+
+function exponent(a, b) {
+    return Math.pow(a, b);
+}
+
+function subt(a, b) {
+    return a - b;
+}
+
+
+// const removeExclamationMarks = s => s.replace(/\!/g, '');
+
+// console.log(removeExclamationMarks("Hello World!"));
 
 // assert.strictEqual(removeExclamationMarks("Hello World!"), "Hello World");
 
