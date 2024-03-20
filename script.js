@@ -1,26 +1,42 @@
-function add(a, b) {
-    return a + b;
-}
+const multiply = number => number * Math.pow(5, String(Math.abs(number)).length);
 
-function divide(a, b) {
-    return a / b;
-}
 
-function multiply(a, b) {
-    return a * b;
-}
 
-function mod(a, b) {
-    return a % b;
-}
+console.log(multiply(10));
 
-function exponent(a, b) {
-    return Math.pow(a, b);
-}
 
-function subt(a, b) {
-    return a - b;
-}
+// Test.assertEquals(multiply(10),250);
+// Test.assertEquals(multiply(5),25);
+// Test.assertEquals(multiply(200),25000);
+// Test.assertEquals(multiply(0),0);
+// Test.assertEquals(multiply(-2),-10);
+
+
+
+
+// function add(a, b) {
+//     return a + b;
+// }
+
+// function divide(a, b) {
+//     return a / b;
+// }
+
+// function multiply(a, b) {
+//     return a * b;
+// }
+
+// function mod(a, b) {
+//     return a % b;
+// }
+
+// function exponent(a, b) {
+//     return Math.pow(a, b);
+// }
+
+// function subt(a, b) {
+//     return a - b;
+// }
 
 
 // const removeExclamationMarks = s => s.replace(/\!/g, '');
