@@ -1,8 +1,26 @@
-const multiply = number => number * Math.pow(5, String(Math.abs(number)).length);
+const sumArray = array => array === null || array === undefined || array.length < 3
+    ? 0
+    : array.sort((a, b) => a - b).reduce((a, c, i) => i === 0 || i === array.length - 1 ? a + 0 : a + c, 0);
+
+console.log(sumArray([-6, 20, -1, 10, -12]));
+
+// assert.strictEqual( sumArray(null)                     , 0 );
+// assert.strictEqual( sumArray([ ])                      , 0 );
+// assert.strictEqual( sumArray([ 3 ])                    , 0 );
+// assert.strictEqual( sumArray([ 3, 5 ])                 , 0 );
+// assert.strictEqual( sumArray([ 6, 2, 1, 8, 10 ])       , 16 );
+// assert.strictEqual( sumArray([ 0, 1, 6, 10, 10 ])      , 17 );
+// assert.strictEqual( sumArray([ -6, -20, -1, -10, -12 ]), -28 );
+// assert.strictEqual( sumArray([ -6, 20, -1, 10, -12 ])  , 3 );
 
 
 
-console.log(multiply(10));
+
+// const multiply = number => number * Math.pow(5, String(Math.abs(number)).length);
+
+
+
+// console.log(multiply(10));
 
 
 // Test.assertEquals(multiply(10),250);
