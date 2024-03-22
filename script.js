@@ -1,8 +1,40 @@
-const sumArray = array => array === null || array === undefined || array.length < 3
-    ? 0
-    : array.sort((a, b) => a - b).reduce((a, c, i) => i === 0 || i === array.length - 1 ? a + 0 : a + c, 0);
+const flickSwitch = arr => {
+    let result = [];
+    let flick = true;
 
-console.log(sumArray([-6, 20, -1, 10, -12]));
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === "flick") {
+            flick = !flick;
+            result.push(flick)
+        } else {
+            result.push(flick)
+        }
+    }
+
+    return result;
+}
+
+
+
+console.log(flickSwitch([]));
+
+// assert.deepEqual(flickSwitch(["codewars", "flick", "code", "wars"]), [true, false, false, false]);
+// assert.deepEqual(flickSwitch(["flick", "chocolate", "adventure", "sunshine"]), [false, false, false, false]);
+// assert.deepEqual(flickSwitch(["bicycle", "jarmony", "flick", "sheep", "flick"]), [true, true, false, false, true]);
+// assert.deepEqual(flickSwitch(["flick", "flick", "flick", "flick", "flick"]), [false, true, false, true, false]);
+// assert.deepEqual(flickSwitch(["john, smith, susan", "flick"]), [true, false]);
+// assert.deepEqual(flickSwitch(["bicycle"]), [true]);
+// assert.deepEqual(flickSwitch(["flick"]), [false]);
+// assert.deepEqual(flickSwitch([]), []);
+
+
+
+
+// const sumArray = array => array === null || array === undefined || array.length < 3
+//     ? 0
+//     : array.sort((a, b) => a - b).reduce((a, c, i) => i === 0 || i === array.length - 1 ? a + 0 : a + c, 0);
+
+// console.log(sumArray([-6, 20, -1, 10, -12]));
 
 // assert.strictEqual( sumArray(null)                     , 0 );
 // assert.strictEqual( sumArray([ ])                      , 0 );
