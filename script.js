@@ -1,22 +1,31 @@
-const flickSwitch = arr => {
-    let result = [];
-    let flick = true;
-
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === "flick") {
-            flick = !flick;
-            result.push(flick)
-        } else {
-            result.push(flick)
-        }
-    }
-
-    return result;
-}
+const combineNames = (firstName, lastName) => firstName + ' ' + lastName;
 
 
 
-console.log(flickSwitch([]));
+
+
+
+
+
+// const flickSwitch = arr => {
+//     let result = [];
+//     let flick = true;
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] === "flick") {
+//             flick = !flick;
+//             result.push(flick)
+//         } else {
+//             result.push(flick)
+//         }
+//     }
+
+//     return result;
+// }
+
+
+
+// console.log(flickSwitch([]));
 
 // assert.deepEqual(flickSwitch(["codewars", "flick", "code", "wars"]), [true, false, false, false]);
 // assert.deepEqual(flickSwitch(["flick", "chocolate", "adventure", "sunshine"]), [false, false, false, false]);
