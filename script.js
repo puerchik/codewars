@@ -1,9 +1,18 @@
-const combineNames = (firstName, lastName) => firstName + ' ' + lastName;
+const cubeChecker = (volume, side) => side && volume > 0
+    ? Math.pow(side, 3) === volume
+    : false;
 
 
 
+console.log(cubeChecker(125, 5));
 
 
+// assert.strictEqual(cubeChecker(  8, 3), false);
+// assert.strictEqual(cubeChecker(  8, 2), true );
+// assert.strictEqual(cubeChecker( -8,-2), false);
+// assert.strictEqual(cubeChecker(  0, 0), false);
+// assert.strictEqual(cubeChecker(  1, 5), false);
+// assert.strictEqual(cubeChecker(125, 5), true );
 
 
 
