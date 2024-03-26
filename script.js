@@ -1,10 +1,23 @@
-const cubeChecker = (volume, side) => side && volume > 0
-    ? Math.pow(side, 3) === volume
-    : false;
+const stringToNumber = str => +str;
 
 
 
-console.log(cubeChecker(125, 5));
+console.log(stringToNumber("79"));
+
+
+// Test.assertEquals(stringToNumber("1234"),1234)
+// Test.assertEquals(stringToNumber("605"), 605)
+// Test.assertEquals(stringToNumber("1405"),1405)
+// Test.assertEquals(stringToNumber("-7"),  -7)
+
+
+// const cubeChecker = (volume, side) => side && volume > 0
+//     ? Math.pow(side, 3) === volume
+//     : false;
+
+
+
+// console.log(cubeChecker(125, 5));
 
 
 // assert.strictEqual(cubeChecker(  8, 3), false);
