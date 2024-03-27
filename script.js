@@ -1,8 +1,17 @@
-const stringToNumber = str => +str;
+const numberToString = num => String(num);
 
 
 
-console.log(stringToNumber("79"));
+console.log(numberToString(89));
+
+
+
+
+// const stringToNumber = str => +str;
+
+
+
+// console.log(stringToNumber("79"));
 
 
 // Test.assertEquals(stringToNumber("1234"),1234)
