@@ -1,8 +1,20 @@
-const numberToString = num => String(num);
+String.prototype.isUpperCase = function () {
+    return this.split().join() === this.toUpperCase();
+}
 
 
 
-console.log(numberToString(89));
+
+console.log('AM DONALD'.isUpperCase());
+
+
+
+
+// const numberToString = num => String(num);
+
+
+
+// console.log(numberToString(89));
 
 
 
