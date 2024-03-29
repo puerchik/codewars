@@ -1,11 +1,30 @@
-String.prototype.isUpperCase = function () {
-    return this.split().join() === this.toUpperCase();
+const repeatStr = (n, s) => {
+    let result = s;
+    for (let i = 1; i < n; i++) {
+
+        result += s;
+    }
+
+    return result;
 }
 
+console.log(repeatStr(2, "ha "));
+
+// assert.strictEqual(repeatStr(3, "*"), "***");
+// assert.strictEqual(repeatStr(5, "#"), "#####");
+// assert.strictEqual(repeatStr(2, "ha "), "ha ha ");
 
 
 
-console.log('AM DONALD'.isUpperCase());
+
+// String.prototype.isUpperCase = function () {
+//     return this.split().join() === this.toUpperCase();
+// }
+
+
+
+
+// console.log('AM DONALD'.isUpperCase());
 
 
 
