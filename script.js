@@ -1,14 +1,23 @@
-const repeatStr = (n, s) => {
-    let result = s;
-    for (let i = 1; i < n; i++) {
+const makeNegative = num => num <= 0 ? num : -num;
 
-        result += s;
-    }
 
-    return result;
-}
 
-console.log(repeatStr(2, "ha "));
+console.log(makeNegative(95));
+
+
+
+
+// const repeatStr = (n, s) => {
+//     let result = s;
+//     for (let i = 1; i < n; i++) {
+
+//         result += s;
+//     }
+
+//     return result;
+// }
+
+// console.log(repeatStr(2, "ha "));
 
 // assert.strictEqual(repeatStr(3, "*"), "***");
 // assert.strictEqual(repeatStr(5, "#"), "#####");
