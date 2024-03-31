@@ -1,8 +1,20 @@
-const makeNegative = num => num <= 0 ? num : -num;
+const getSize = (width, height, depth) => [(width * height * 2 + height * depth * 2 + width * depth * 2), width * height * depth];
+
+console.log(getSize(4, 2, 6));
+
+// assert.deepEqual(getSize(4, 2, 6), [88, 48]);
+// assert.deepEqual(getSize(10, 10, 10), [600, 1000]);
+// assert.deepEqual(getSize(4, 2, 6)[0], 88);
+// assert.deepEqual(getSize(4, 2, 6)[1], 48);
 
 
 
-console.log(makeNegative(95));
+
+// const makeNegative = num => num <= 0 ? num : -num;
+
+
+
+// console.log(makeNegative(95));
 
 
 
