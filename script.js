@@ -1,6 +1,25 @@
-const getSize = (width, height, depth) => [(width * height * 2 + height * depth * 2 + width * depth * 2), width * height * depth];
+const calculateTip = (amount, rating) => {
+    switch (rating.toLowerCase()) {
+        case "terrible": return 0;
+        case "poor": return Math.ceil(0.05 * amount);
+        case "good": return Math.ceil(0.1 * amount);
+        case "great": return Math.ceil(0.15 * amount);
+        case "excellent": return Math.ceil(0.2 * amount);
+        default: return "Rating not recognised";
+    }
+}
 
-console.log(getSize(4, 2, 6));
+console.log(calculateTip(26.95, "good"));
+
+// Test.assertEquals(calculateTip(20, "Excellent"), 4);
+// Test.assertEquals(calculateTip(26.95, "good"), 3);
+
+
+
+
+// const getSize = (width, height, depth) => [(width * height * 2 + height * depth * 2 + width * depth * 2), width * height * depth];
+
+// console.log(getSize(4, 2, 6));
 
 // assert.deepEqual(getSize(4, 2, 6), [88, 48]);
 // assert.deepEqual(getSize(10, 10, 10), [600, 1000]);
