@@ -1,15 +1,32 @@
-const calculateTip = (amount, rating) => {
-    switch (rating.toLowerCase()) {
-        case "terrible": return 0;
-        case "poor": return Math.ceil(0.05 * amount);
-        case "good": return Math.ceil(0.1 * amount);
-        case "great": return Math.ceil(0.15 * amount);
-        case "excellent": return Math.ceil(0.2 * amount);
-        default: return "Rating not recognised";
-    }
+const sayHello = (name, city, state) => {
+    let nameStr = '';
+    name.forEach(el => nameStr = nameStr + el + ' ');
+    nameStr = nameStr.slice(0, -1);
+
+    return `Hello, ${nameStr}! Welcome to ${city}, ${state}!`;
 }
 
-console.log(calculateTip(26.95, "good"));
+console.log(sayHello(['Wallace', 'Russel', 'Osbourne'], 'Albany', 'New York'));
+
+// assert.strictEqual(sayHello(['John', 'Smith'], 'Phoenix', 'Arizona'), 'Hello, John Smith! Welcome to Phoenix, Arizona!')
+// assert.strictEqual(sayHello(['Franklin','Delano','Roosevelt'], 'Chicago', 'Illinois'), 'Hello, Franklin Delano Roosevelt! Welcome to Chicago, Illinois!')
+// assert.strictEqual(sayHello(['Wallace','Russel','Osbourne'],'Albany','New York'), 'Hello, Wallace Russel Osbourne! Welcome to Albany, New York!')
+
+
+
+
+// const calculateTip = (amount, rating) => {
+//     switch (rating.toLowerCase()) {
+//         case "terrible": return 0;
+//         case "poor": return Math.ceil(0.05 * amount);
+//         case "good": return Math.ceil(0.1 * amount);
+//         case "great": return Math.ceil(0.15 * amount);
+//         case "excellent": return Math.ceil(0.2 * amount);
+//         default: return "Rating not recognised";
+//     }
+// }
+
+// console.log(calculateTip(26.95, "good"));
 
 // Test.assertEquals(calculateTip(20, "Excellent"), 4);
 // Test.assertEquals(calculateTip(26.95, "good"), 3);
