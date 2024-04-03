@@ -1,12 +1,23 @@
-const sayHello = (name, city, state) => {
-    let nameStr = '';
-    name.forEach(el => nameStr = nameStr + el + ' ');
-    nameStr = nameStr.slice(0, -1);
+const strCount = (str, letter) => str.split('').reduce((a, c) => c === letter ? a + 1 : a + 0, 0);
 
-    return `Hello, ${nameStr}! Welcome to ${city}, ${state}!`;
-}
+console.log(strCount('Hello', 'l'));
 
-console.log(sayHello(['Wallace', 'Russel', 'Osbourne'], 'Albany', 'New York'));
+// assert.strictEqual(strCount('Hello', 'o'), 1);
+// assert.strictEqual(strCount('Hello', 'l'), 2);
+// assert.strictEqual(strCount('',      'z'), 0);
+
+
+
+
+// const sayHello = (name, city, state) => {
+//     let nameStr = '';
+//     name.forEach(el => nameStr = nameStr + el + ' ');
+//     nameStr = nameStr.slice(0, -1);
+
+//     return `Hello, ${nameStr}! Welcome to ${city}, ${state}!`;
+// }
+
+// console.log(sayHello(['Wallace', 'Russel', 'Osbourne'], 'Albany', 'New York'));
 
 // assert.strictEqual(sayHello(['John', 'Smith'], 'Phoenix', 'Arizona'), 'Hello, John Smith! Welcome to Phoenix, Arizona!')
 // assert.strictEqual(sayHello(['Franklin','Delano','Roosevelt'], 'Chicago', 'Illinois'), 'Hello, Franklin Delano Roosevelt! Welcome to Chicago, Illinois!')
