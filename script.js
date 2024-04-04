@@ -1,6 +1,17 @@
-const strCount = (str, letter) => str.split('').reduce((a, c) => c === letter ? a + 1 : a + 0, 0);
+const cockroachSpeed = s => Math.floor(s * 100000 / 3600);
 
-console.log(strCount('Hello', 'l'));
+console.log(cockroachSpeed(1.09));
+
+// assert.strictEqual(cockroachSpeed(1.08), 30);
+// assert.strictEqual(cockroachSpeed(1.09), 30);
+// assert.strictEqual(cockroachSpeed(0), 0);
+
+
+
+
+// const strCount = (str, letter) => str.split('').reduce((a, c) => c === letter ? a + 1 : a + 0, 0);
+
+// console.log(strCount('Hello', 'l'));
 
 // assert.strictEqual(strCount('Hello', 'o'), 1);
 // assert.strictEqual(strCount('Hello', 'l'), 2);
