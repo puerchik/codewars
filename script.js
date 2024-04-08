@@ -1,20 +1,32 @@
-const rps = (p1, p2) => {
-    switch (true) {
-        case p1 === 'rock' && p2 === 'scissors': return 'Player 1 won!';
-        case p1 === 'scissors' && p2 === 'rock': return 'Player 2 won!';
-        case p1 === 'scissors' && p2 === 'paper': return 'Player 1 won!';
-        case p1 === 'paper' && p2 === 'scissors': return 'Player 2 won!';
-        case p1 === 'paper' && p2 === 'rock': return 'Player 1 won!';
-        case p1 === 'rock' && p2 === 'paper': return 'Player 2 won!';
-        case p1 === 'rock' && p2 === 'rock': return 'Draw!';
-        case p1 === 'paper' && p2 === 'paper': return 'Draw!';
-        case p1 === 'scissors' && p2 === 'scissors': return 'Draw!';
-        default: return 'Enter correct value';
-    }
-};
+const solution = str => str.split('').reverse().join('');
+
+console.log(solution('h'));
+
+// assert.strictEqual(solution('world'), 'dlrow');
+// assert.strictEqual(solution('hello'), 'olleh');
+// assert.strictEqual(solution(''), '');
+// assert.strictEqual(solution('h'), 'h');
 
 
-console.log(rps('scissors', 'paper'));
+
+
+// const rps = (p1, p2) => {
+//     switch (true) {
+//         case p1 === 'rock' && p2 === 'scissors': return 'Player 1 won!';
+//         case p1 === 'scissors' && p2 === 'rock': return 'Player 2 won!';
+//         case p1 === 'scissors' && p2 === 'paper': return 'Player 1 won!';
+//         case p1 === 'paper' && p2 === 'scissors': return 'Player 2 won!';
+//         case p1 === 'paper' && p2 === 'rock': return 'Player 1 won!';
+//         case p1 === 'rock' && p2 === 'paper': return 'Player 2 won!';
+//         case p1 === 'rock' && p2 === 'rock': return 'Draw!';
+//         case p1 === 'paper' && p2 === 'paper': return 'Draw!';
+//         case p1 === 'scissors' && p2 === 'scissors': return 'Draw!';
+//         default: return 'Enter correct value';
+//     }
+// };
+
+
+// console.log(rps('scissors', 'paper'));
 
 // Test.assertEquals(rps('rock', 'scissors'), getMsg(1));
 // Test.assertEquals(rps('scissors', 'paper'), getMsg(1));
