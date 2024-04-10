@@ -1,6 +1,64 @@
-const mergeArrays = (a, b) => [...new Set(a.concat(b))].sort((a, b) => a - b);
+const longestMountainPass = (mountains, E) => {
+    let mountainPass = [];
+    let resultArr = [];
+    let resultPassSort = [];
+    let mountainPassResult = 0;
+    let resultIndex = 0;
 
-console.log(mergeArrays([1, 3, 5], [2, 4, 6]));
+    mountains.forEach((el, i) => {
+        if (i !== mountains.length - 1) {
+            mountainPass.push(el - mountains[i + 1]);
+        }
+    });
+
+    mountainPassResult = mountainPass.reduce((a, c) => a + c, 0);
+
+    if (mountainPassResult !== 0) {
+        for (let i = 0; i < mountainPass.length; i++) {
+            let a = E;
+            let resultPass = 0;
+
+            for (let j = i; j < mountainPass.length; j++) {
+                if (a > 0 && mountainPass[j] >= 0) {
+                    resultPass += 1;
+                } else if (a > 0 && mountainPass[j] < 0) {
+                    a += mountainPass[j];
+                    resultPass += 1;
+                }
+            }
+            resultArr.push(resultPass);
+        }
+
+        resultPassSort = [...resultArr];
+        resultPassSort.sort((a, b) => b - a);
+        resultIndex = resultArr.indexOf(resultPassSort[0]);
+
+        return [resultPassSort[0] + 1, resultIndex];
+    } else if (mountains.length === 0) {
+        return [mountains.length, 0];
+    } else if (mountainPass[0] === 0) {
+        return [mountains.length, 0];
+    } else {
+        return [mountains.length - 1, 0];
+    }
+}
+
+console.log(longestMountainPass([10, 10, 10], 0));
+
+
+// assert.deepEqual(longestMountainPass([], 0), [0, 0]);
+// assert.deepEqual(longestMountainPass([10, 10, 10], 0), [3, 0]);
+// assert.deepEqual(longestMountainPass([1, 2, 3, 4, 5], 0), [1, 0]);
+
+
+// assert.deepEqual(longestMountainPass([10, 9, 8, 7, 6, 5, 4, 3, 2, 3], 1), [10, 0]);
+// assert.deepEqual(longestMountainPass([9, 1, 2, 3, 4, 5, 6, 9], 7), [7, 0]);
+// assert.deepEqual(longestMountainPass([1, 8, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 7), [9, 1]);
+
+
+// const mergeArrays = (a, b) => [...new Set(a.concat(b))].sort((a, b) => a - b);
+
+// console.log(mergeArrays([1, 3, 5], [2, 4, 6]));
 
 // assert.deepEqual(mergeArrays([1, 3, 5], [2, 4, 6]), [1, 2, 3, 4, 5, 6]);
 // assert.deepEqual(mergeArrays([2, 4, 8], [2, 4, 6]), [2, 4, 6, 8]);
