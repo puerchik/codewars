@@ -1,59 +1,10 @@
-const longestMountainPass = (mountains, E) => {
-    let mountainPass = [];
-    let resultArr = [];
-    let resultPassSort = [];
-    let mountainPassResult = 0;
-    let resultIndex = 0;
+const combat = (health, damage) => health >= damage ? health - damage : 0;
 
-    mountains.forEach((el, i) => {
-        if (i !== mountains.length - 1) {
-            mountainPass.push(el - mountains[i + 1]);
-        }
-    });
+console.log(combat(100, 5));
 
-    mountainPassResult = mountainPass.reduce((a, c) => a + c, 0);
-
-    if (mountainPassResult !== 0) {
-        for (let i = 0; i < mountainPass.length; i++) {
-            let a = E;
-            let resultPass = 0;
-
-            for (let j = i; j < mountainPass.length; j++) {
-                if (a > 0 && mountainPass[j] >= 0) {
-                    resultPass += 1;
-                } else if (a > 0 && mountainPass[j] < 0) {
-                    a += mountainPass[j];
-                    resultPass += 1;
-                }
-            }
-            resultArr.push(resultPass);
-        }
-
-        resultPassSort = [...resultArr];
-        resultPassSort.sort((a, b) => b - a);
-        resultIndex = resultArr.indexOf(resultPassSort[0]);
-
-        return [resultPassSort[0] + 1, resultIndex];
-    } else if (mountains.length === 0) {
-        return [mountains.length, 0];
-    } else if (mountainPass[0] === 0) {
-        return [mountains.length, 0];
-    } else {
-        return [mountains.length - 1, 0];
-    }
-}
-
-console.log(longestMountainPass([10, 10, 10], 0));
-
-
-// assert.deepEqual(longestMountainPass([], 0), [0, 0]);
-// assert.deepEqual(longestMountainPass([10, 10, 10], 0), [3, 0]);
-// assert.deepEqual(longestMountainPass([1, 2, 3, 4, 5], 0), [1, 0]);
-
-
-// assert.deepEqual(longestMountainPass([10, 9, 8, 7, 6, 5, 4, 3, 2, 3], 1), [10, 0]);
-// assert.deepEqual(longestMountainPass([9, 1, 2, 3, 4, 5, 6, 9], 7), [7, 0]);
-// assert.deepEqual(longestMountainPass([1, 8, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 7), [9, 1]);
+// Test.assertEquals(combat(100, 5), 95);
+// Test.assertEquals(combat(92, 8), 84);
+// Test.assertEquals(combat(20, 30), 0, "Health cannot go below 0");
 
 
 // const mergeArrays = (a, b) => [...new Set(a.concat(b))].sort((a, b) => a - b);
