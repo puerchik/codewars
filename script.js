@@ -1,6 +1,17 @@
-const combat = (health, damage) => health >= damage ? health - damage : 0;
+const shortenToDate = longDate => longDate.split(',')[0]
 
-console.log(combat(100, 5));
+console.log(shortenToDate("Friday May 2, 9am"));
+
+// Test.assertEquals(shortenToDate("Friday May 2, 9am"), "Friday May 2");
+// Test.assertEquals(shortenToDate("Tuesday January 29, 10pm"), "Tuesday January 29");
+// Test.assertEquals(shortenToDate("Monday December 25, 10pm"), "Monday December 25");
+
+
+
+
+// const combat = (health, damage) => health >= damage ? health - damage : 0;
+
+// console.log(combat(100, 5));
 
 // Test.assertEquals(combat(100, 5), 95);
 // Test.assertEquals(combat(92, 8), 84);
