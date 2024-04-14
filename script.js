@@ -1,6 +1,20 @@
-const shortenToDate = longDate => longDate.split(',')[0]
+const doubleChar = str => str.split('').map(el => el + el).join('');
 
-console.log(shortenToDate("Friday May 2, 9am"));
+console.log(doubleChar("Adidas"));
+
+// Test.assertEquals(doubleChar("abcd"), "aabbccdd");
+// Test.assertEquals(doubleChar("Adidas"), "AAddiiddaass");
+// Test.assertEquals(doubleChar("1337"), "11333377");
+// Test.assertEquals(doubleChar("illuminati"), "iilllluummiinnaattii");
+// Test.assertEquals(doubleChar("123456"), "112233445566");
+// Test.assertEquals(doubleChar("%^&*("), "%%^^&&**((");
+
+
+
+
+// const shortenToDate = longDate => longDate.split(',')[0];
+
+// console.log(shortenToDate("Friday May 2, 9am"));
 
 // Test.assertEquals(shortenToDate("Friday May 2, 9am"), "Friday May 2");
 // Test.assertEquals(shortenToDate("Tuesday January 29, 10pm"), "Tuesday January 29");
