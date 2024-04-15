@@ -1,6 +1,17 @@
-const doubleChar = str => str.split('').map(el => el + el).join('');
+const getNumberFromString = s => +s.replace(/\D/g, '');
 
-console.log(doubleChar("Adidas"));
+console.log(getNumberFromString("this is number: 7"));
+
+// Test.assertSimilar(getNumberFromString("1"), 1);
+// Test.assertSimilar(getNumberFromString("123"), 123);
+// Test.assertSimilar(getNumberFromString("this is number: 7"), 7);
+
+
+
+
+// const doubleChar = str => str.split('').map(el => el + el).join('');
+
+// console.log(doubleChar("Adidas"));
 
 // Test.assertEquals(doubleChar("abcd"), "aabbccdd");
 // Test.assertEquals(doubleChar("Adidas"), "AAddiiddaass");
