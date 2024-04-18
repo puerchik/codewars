@@ -1,6 +1,18 @@
-const getNumberFromString = s => +s.replace(/\D/g, '');
+const quarterOf = month => Math.ceil(month / 3);
 
-console.log(getNumberFromString("this is number: 7"));
+console.log(quarterOf(9));
+
+// assert.strictEqual(quarterOf(3), 1)
+// assert.strictEqual(quarterOf(8), 3)
+// assert.strictEqual(quarterOf(11), 4)
+
+
+
+
+
+// const getNumberFromString = s => +s.replace(/\D/g, '');
+
+// console.log(getNumberFromString("this is number: 7"));
 
 // Test.assertSimilar(getNumberFromString("1"), 1);
 // Test.assertSimilar(getNumberFromString("123"), 123);
