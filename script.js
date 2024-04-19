@@ -1,6 +1,26 @@
-const quarterOf = month => Math.ceil(month / 3);
+const power = (x, y) => {
+    let result = x;
 
-console.log(quarterOf(9));
+    for (let i = 1; i < y; i++) {
+        result *= x;
+    }
+
+    return y === 0 ? 1 : result;
+}
+
+console.log(power(3, 2));
+
+// Test.assertEquals(power(1,701270), 1);
+// Test.assertEquals(power(2,2), 4);
+// Test.assertEquals(power(3,2), 9);
+// Test.assertEquals(power(-1,40), 1);
+
+
+
+
+// const quarterOf = month => Math.ceil(month / 3);
+
+// console.log(quarterOf(9));
 
 // assert.strictEqual(quarterOf(3), 1)
 // assert.strictEqual(quarterOf(8), 3)
