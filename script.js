@@ -1,14 +1,46 @@
-const power = (x, y) => {
-    let result = x;
+const warnTheSheep = queue => {
+    const wolf = queue.reverse().indexOf("wolf");
 
-    for (let i = 1; i < y; i++) {
-        result *= x;
-    }
-
-    return y === 0 ? 1 : result;
+    return wolf === 0
+        ? "Pls go away and stop eating my sheep"
+        : `Oi! Sheep number ${wolf}! You are about to be eaten by a wolf!`;
 }
 
-console.log(power(3, 2));
+console.log(warnTheSheep(["sheep", "wolf", "sheep", "sheep", "sheep", "sheep", "sheep"]));
+
+// doTest(["sheep", "sheep", "sheep", "sheep", "sheep", "wolf", "sheep", "sheep"],
+// 		"Oi! Sheep number 2! You are about to be eaten by a wolf!"
+// 	);
+//     doTest(["sheep", "wolf", "sheep", "sheep", "sheep", "sheep", "sheep"],
+// 		"Oi! Sheep number 5! You are about to be eaten by a wolf!"
+// 	);
+//     doTest(["wolf", "sheep", "sheep", "sheep", "sheep", "sheep", "sheep"],
+// 		"Oi! Sheep number 6! You are about to be eaten by a wolf!"
+// 	);
+//     doTest(["sheep", "wolf", "sheep"],
+// 		"Oi! Sheep number 1! You are about to be eaten by a wolf!"
+// 	);
+//     doTest(["wolf"],
+// 		"Pls go away and stop eating my sheep"
+// 	);
+//     doTest(["sheep", "sheep", "wolf"],
+// 		"Pls go away and stop eating my sheep"
+// 	);
+
+
+
+
+// const power = (x, y) => {
+//     let result = x;
+
+//     for (let i = 1; i < y; i++) {
+//         result *= x;
+//     }
+
+//     return y === 0 ? 1 : result;
+// }
+
+// console.log(power(3, 2));
 
 // Test.assertEquals(power(1,701270), 1);
 // Test.assertEquals(power(2,2), 4);
