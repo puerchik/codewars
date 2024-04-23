@@ -1,12 +1,29 @@
-const warnTheSheep = queue => {
-    const wolf = queue.reverse().indexOf("wolf");
+const array = string => string.split(',').length > 2
+    ? string.split(',').slice(1, -1).join(' ')
+    : null;
 
-    return wolf === 0
-        ? "Pls go away and stop eating my sheep"
-        : `Oi! Sheep number ${wolf}! You are about to be eaten by a wolf!`;
-}
+console.log(array('A,1,23,456,78,9,Z'));
 
-console.log(warnTheSheep(["sheep", "wolf", "sheep", "sheep", "sheep", "sheep", "sheep"]));
+//   test('', null);
+//   test('1', null);
+//   test('A1,B2', null);
+//   test('1,2,3', '2');
+//   test('1,2,3,4', '2 3');
+//   test('A1,B2,C3,D4,E5', 'B2 C3 D4');
+//   test('A,1,23,456,78,9,Z', '1 23 456 78 9');
+
+
+
+
+// const warnTheSheep = queue => {
+//     const wolf = queue.reverse().indexOf("wolf");
+
+//     return wolf === 0
+//         ? "Pls go away and stop eating my sheep"
+//         : `Oi! Sheep number ${wolf}! You are about to be eaten by a wolf!`;
+// }
+
+// console.log(warnTheSheep(["sheep", "wolf", "sheep", "sheep", "sheep", "sheep", "sheep"]));
 
 // doTest(["sheep", "sheep", "sheep", "sheep", "sheep", "wolf", "sheep", "sheep"],
 // 		"Oi! Sheep number 2! You are about to be eaten by a wolf!"
