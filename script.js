@@ -1,8 +1,18 @@
-const array = string => string.split(',').length > 2
-    ? string.split(',').slice(1, -1).join(' ')
-    : null;
+const printArray = array => array.join(",");
 
-console.log(array('A,1,23,456,78,9,Z'));
+console.log(printArray([2, 4, 5, 2]));
+
+//  [2,4,5,2] - "2,4,5,2"
+
+
+
+
+
+// const array = string => string.split(',').length > 2
+//     ? string.split(',').slice(1, -1).join(' ')
+//     : null;
+
+// console.log(array('A,1,23,456,78,9,Z'));
 
 //   test('', null);
 //   test('1', null);
