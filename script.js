@@ -1,6 +1,27 @@
-const arrayMadness = (a, b) => a.reduce((acc, c) => acc + Math.pow(c, 2), 0) > b.reduce((acc, c) => acc + Math.pow(c, 3), 0);
+const isAllPossibilities = x => {
+    const xLength = x.length;
+    let isCorrect = 1;
 
-console.log(arrayMadness([1, 2, 3, 4, 5], [2, 2, 2, 2, 2, 2, 1, 1, 1]));
+    x.sort((a, b) => a - b).forEach((el, i) => {
+        if (el !== i) {
+            isCorrect = -1;
+        }
+    })
+
+    return isCorrect === 1;
+}
+
+console.log(isAllPossibilities([11, 14, 17, 18, 19, 3, 8, 5, 4, 23, 24, 20, 2, 16, 12, 6, 13, 1, 7, 9, 21, 15, 10, 22, 0, 25]));
+
+// doTest([0,1,2,3], true)
+// doTest([1,2,3,4], false)
+
+
+
+
+// const arrayMadness = (a, b) => a.reduce((acc, c) => acc + Math.pow(c, 2), 0) > b.reduce((acc, c) => acc + Math.pow(c, 3), 0);
+
+// console.log(arrayMadness([1, 2, 3, 4, 5], [2, 2, 2, 2, 2, 2, 1, 1, 1]));
 
 // Test.assertEquals(arrayMadness([4,5,6],[1,2,3]), true);
 // Test.assertEquals(arrayMadness([5,6,7],[4,5,6]), false);
