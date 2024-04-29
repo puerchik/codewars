@@ -1,17 +1,35 @@
-const isAllPossibilities = x => {
-    const xLength = x.length;
-    let isCorrect = 1;
+const scramble = (str, arr) => {
+    const strArr = str.split('');
+    const result = [...strArr];
 
-    x.sort((a, b) => a - b).forEach((el, i) => {
-        if (el !== i) {
-            isCorrect = -1;
-        }
-    })
+    arr.forEach((el, i) => result.splice(el, 1, strArr[i]));
 
-    return isCorrect === 1;
+    return result.join('');
 }
 
-console.log(isAllPossibilities([11, 14, 17, 18, 19, 3, 8, 5, 4, 23, 24, 20, 2, 16, 12, 6, 13, 1, 7, 9, 21, 15, 10, 22, 0, 25]));
+console.log(scramble('bskl5', [2, 1, 4, 3, 0]));
+
+// Test.assertEquals(scramble('abcd', [0,3,1,2]), 'acdb', "Should return acdb");
+// Test.assertEquals(scramble('sc301s', [4,0,3,1,5,2]), "c0s3s1", "Should return c0s3s1");
+// Test.assertEquals(scramble('bskl5', [2,1,4,3,0]), "5sblk", "Should return 5sblk");
+
+
+
+
+// const isAllPossibilities = x => {
+//     const xLength = x.length;
+//     let isCorrect = 1;
+
+//     x.sort((a, b) => a - b).forEach((el, i) => {
+//         if (el !== i) {
+//             isCorrect = -1;
+//         }
+//     })
+
+//     return isCorrect === 1;
+// }
+
+// console.log(isAllPossibilities([11, 14, 17, 18, 19, 3, 8, 5, 4, 23, 24, 20, 2, 16, 12, 6, 13, 1, 7, 9, 21, 15, 10, 22, 0, 25]));
 
 // doTest([0,1,2,3], true)
 // doTest([1,2,3,4], false)
