@@ -1,13 +1,57 @@
-const scramble = (str, arr) => {
-    const strArr = str.split('');
-    const result = [...strArr];
+const oddOnesOut = nums => {
+    const unique = [...new Set(nums)];
+    const uniqueResult = [...unique];
+    const quantity = [];
+    let result = [];
+    let i = 0;
 
-    arr.forEach((el, i) => result.splice(el, 1, strArr[i]));
+    unique.forEach(el => quantity.push(nums.reduce((a, c) => c === el ? a + 1 : a + 0, 0)));
+    quantity.forEach(el => {
+        if (el % 2) {
+            uniqueResult.splice(i, 1);
+        } else {
+            i += 1;
+        }
+    });
 
-    return result.join('');
+    uniqueResult.forEach(el => {
+        result = nums.filter(f => f === el);
+    });
+
+    return [unique, uniqueResult, quantity, result];
 }
 
-console.log(scramble('bskl5', [2, 1, 4, 3, 0]));
+console.log(oddOnesOut([82, 86, 71, 58, 44, 79, 50, 44, 79, 67, 82, 82, 55, 50]));
+
+// it("Testing for [1, 2, 3, 1, 3, 3]", function () {
+//     assert.deepEqual(oddOnesOut([1, 2, 3, 1, 3, 3]), [1, 1]);
+// });
+// it("Testing for [75, 68, 75, 47, 68]", function () {
+//     assert.deepEqual(oddOnesOut([75, 68, 75, 47, 68]), [75, 68, 75, 68]);
+// });
+// it("Testing for [42, 72, 32, 4, 94, 82, 67, 67]", function () {
+//     assert.deepEqual(oddOnesOut([42, 72, 32, 4, 94, 82, 67, 67]), [67, 67]);
+// });
+// it("Testing for [100, 100, 5, 5, 100, 50, 68, 50, 68, 50, 68, 5, 100]", function () {
+//     assert.deepEqual(oddOnesOut([100, 100, 5, 5, 100, 50, 68, 50, 68, 50, 68, 5, 100]), [100, 100, 100, 100]);
+// });
+// it("Testing for [82, 86, 71, 58, 44, 79, 50, 44, 79, 67, 82, 82, 55, 50]", function () {
+//     assert.deepEqual(oddOnesOut([82, 86, 71, 58, 44, 79, 50, 44, 79, 67, 82, 82, 55, 50]), [44, 79, 50, 44, 79, 50]);
+// });
+
+
+
+
+// const scramble = (str, arr) => {
+//     const strArr = str.split('');
+//     const result = [...strArr];
+
+//     arr.forEach((el, i) => result.splice(el, 1, strArr[i]));
+
+//     return result.join('');
+// }
+
+// console.log(scramble('bskl5', [2, 1, 4, 3, 0]));
 
 // Test.assertEquals(scramble('abcd', [0,3,1,2]), 'acdb', "Should return acdb");
 // Test.assertEquals(scramble('sc301s', [4,0,3,1,5,2]), "c0s3s1", "Should return c0s3s1");
