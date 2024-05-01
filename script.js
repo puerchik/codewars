@@ -14,14 +14,12 @@ const oddOnesOut = nums => {
         }
     });
 
-    uniqueResult.forEach(el => {
-        result = nums.filter(f => f === el);
-    });
+    result = nums.filter(f => uniqueResult.includes(f));
 
-    return [unique, uniqueResult, quantity, result];
+    return result;
 }
 
-console.log(oddOnesOut([82, 86, 71, 58, 44, 79, 50, 44, 79, 67, 82, 82, 55, 50]));
+console.log(oddOnesOut([75, 89, 75, 47, 89]));
 
 // it("Testing for [1, 2, 3, 1, 3, 3]", function () {
 //     assert.deepEqual(oddOnesOut([1, 2, 3, 1, 3, 3]), [1, 1]);
