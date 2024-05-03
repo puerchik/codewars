@@ -1,25 +1,54 @@
-const oddOnesOut = nums => {
-    const unique = [...new Set(nums)];
-    const uniqueResult = [...unique];
-    const quantity = [];
-    let result = [];
-    let i = 0;
-
-    unique.forEach(el => quantity.push(nums.reduce((a, c) => c === el ? a + 1 : a + 0, 0)));
-    quantity.forEach(el => {
-        if (el % 2) {
-            uniqueResult.splice(i, 1);
-        } else {
-            i += 1;
+const likeOrDislike = buttons => {
+    const result = buttons.reduce((a, c) => {
+        if (a === 'Nothing') {
+            return c === 'Like' ? a = 'Like' : a = 'Dislike';
+        } else if (a === 'Like') {
+            return c === 'Like' ? a = 'Nothing' : a = 'Dislike';
+        } else if (a === 'Dislike') {
+            return c === 'Like' ? a = 'Like' : a = 'Nothing';
         }
-    });
-
-    result = nums.filter(f => uniqueResult.includes(f));
+    }, 'Nothing')
 
     return result;
 }
 
-console.log(oddOnesOut([75, 89, 75, 47, 89]));
+console.log(likeOrDislike(['Like', 'Like', 'Dislike', 'Like', 'Like', 'Like', 'Like', 'Dislike']));
+
+// assert.strictEqual(likeOrDislike([Dislike]), Dislike);
+// assert.strictEqual(likeOrDislike([Like, Like]), Nothing);
+// assert.strictEqual(likeOrDislike([Dislike, Like]), Like);
+// assert.strictEqual(likeOrDislike([Like, Dislike, Dislike]), Nothing);
+// assert.strictEqual(likeOrDislike([Dislike, Dislike]), Nothing);
+// assert.strictEqual(likeOrDislike([Like, Like, Like]), Like);
+// assert.strictEqual(likeOrDislike([Like, Dislike]), Dislike);
+// assert.strictEqual(likeOrDislike([Dislike, Like, Dislike]), Dislike);
+// assert.strictEqual(likeOrDislike([Like, Like, Dislike, Like, Like, Like, Like, Dislike]), Dislike);
+// assert.strictEqual(likeOrDislike([]), Nothing);
+
+
+
+// const oddOnesOut = nums => {
+//     const unique = [...new Set(nums)];
+//     const uniqueResult = [...unique];
+//     const quantity = [];
+//     let result = [];
+//     let i = 0;
+
+//     unique.forEach(el => quantity.push(nums.reduce((a, c) => c === el ? a + 1 : a + 0, 0)));
+//     quantity.forEach(el => {
+//         if (el % 2) {
+//             uniqueResult.splice(i, 1);
+//         } else {
+//             i += 1;
+//         }
+//     });
+
+//     result = nums.filter(f => uniqueResult.includes(f));
+
+//     return result;
+// }
+
+// console.log(oddOnesOut([75, 89, 75, 47, 89]));
 
 // it("Testing for [1, 2, 3, 1, 3, 3]", function () {
 //     assert.deepEqual(oddOnesOut([1, 2, 3, 1, 3, 3]), [1, 1]);
