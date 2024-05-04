@@ -1,18 +1,39 @@
-const likeOrDislike = buttons => {
-    const result = buttons.reduce((a, c) => {
-        if (a === 'Nothing') {
-            return c === 'Like' ? a = 'Like' : a = 'Dislike';
-        } else if (a === 'Like') {
-            return c === 'Like' ? a = 'Nothing' : a = 'Dislike';
-        } else if (a === 'Dislike') {
-            return c === 'Like' ? a = 'Like' : a = 'Nothing';
-        }
-    }, 'Nothing')
+const scrollingText = text => {
+    const textArr = text.toUpperCase().split('');
+    let swapArr = [...textArr];
+    let result = [textArr];
+
+    for (let i = 0; i < swapArr.length - 1; i++) {
+        swapArr.unshift(swapArr.pop());
+        swapArr = [...swapArr]
+        result.push(swapArr);
+    }
 
     return result;
 }
 
-console.log(likeOrDislike(['Like', 'Like', 'Dislike', 'Like', 'Like', 'Like', 'Like', 'Dislike']));
+console.log(scrollingText("abc"));
+
+// Test.assertDeepEquals(scrollingText("abc"), ["ABC","BCA","CAB"])
+
+
+
+
+// const likeOrDislike = buttons => {
+//     const result = buttons.reduce((a, c) => {
+//         if (a === 'Nothing') {
+//             return c === 'Like' ? a = 'Like' : a = 'Dislike';
+//         } else if (a === 'Like') {
+//             return c === 'Like' ? a = 'Nothing' : a = 'Dislike';
+//         } else if (a === 'Dislike') {
+//             return c === 'Like' ? a = 'Like' : a = 'Nothing';
+//         }
+//     }, 'Nothing')
+
+//     return result;
+// }
+
+// console.log(likeOrDislike(['Like', 'Like', 'Dislike', 'Like', 'Like', 'Like', 'Like', 'Dislike']));
 
 // assert.strictEqual(likeOrDislike([Dislike]), Dislike);
 // assert.strictEqual(likeOrDislike([Like, Like]), Nothing);
