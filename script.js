@@ -1,12 +1,10 @@
 const scrollingText = text => {
     const textArr = text.toUpperCase().split('');
-    let swapArr = [...textArr];
-    let result = [textArr];
+    let result = [text.toUpperCase()];
 
-    for (let i = 0; i < swapArr.length - 1; i++) {
-        swapArr.unshift(swapArr.pop());
-        swapArr = [...swapArr]
-        result.push(swapArr);
+    for (let i = 0; i < textArr.length - 1; i++) {
+        textArr.push(textArr.shift());
+        result.push(textArr.join(''));
     }
 
     return result;
