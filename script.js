@@ -1,16 +1,28 @@
-const scrollingText = text => {
-    const textArr = text.toUpperCase().split('');
-    let result = [text.toUpperCase()];
+const nthChar = words => {
 
-    for (let i = 0; i < textArr.length - 1; i++) {
-        textArr.push(textArr.shift());
-        result.push(textArr.join(''));
-    }
-
-    return result;
 }
 
-console.log(scrollingText("abc"));
+
+
+// assert.strictEqual(nthChar([]), '');
+// assert.strictEqual(nthChar(['yoda', 'best', 'has']), 'yes');
+
+
+
+
+// const scrollingText = text => {
+//     const textArr = text.toUpperCase().split('');
+//     let result = [text.toUpperCase()];
+
+//     for (let i = 0; i < textArr.length - 1; i++) {
+//         textArr.push(textArr.shift());
+//         result.push(textArr.join(''));
+//     }
+
+//     return result;
+// }
+
+// console.log(scrollingText("abc"));
 
 // Test.assertDeepEquals(scrollingText("abc"), ["ABC","BCA","CAB"])
 
