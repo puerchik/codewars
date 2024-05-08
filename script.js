@@ -1,8 +1,6 @@
-const nthChar = words => {
+const nthChar = words => words.reduce((a, c, i) => a + c.split('')[i], '');
 
-}
-
-
+console.log(nthChar(['yoda', 'best', 'has']));
 
 // assert.strictEqual(nthChar([]), '');
 // assert.strictEqual(nthChar(['yoda', 'best', 'has']), 'yes');
