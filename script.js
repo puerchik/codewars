@@ -1,6 +1,22 @@
-const nthChar = words => words.reduce((a, c, i) => a + c.split('')[i], '');
+const capitals = word => {
+    const wordArr = word.split('');
+    const result = [];
 
-console.log(nthChar(['yoda', 'best', 'has']));
+    wordArr.forEach((el, i) => el === el.toUpperCase() ? result.push(i) : 0);
+
+    return result;
+}
+
+console.log(capitals('CodEWaRs'));
+
+
+
+// assert.deepEqual(capitals('CodEWaRs'), [0, 3, 4, 6]);
+
+
+// const nthChar = words => words.reduce((a, c, i) => a + c.split('')[i], '');
+
+// console.log(nthChar(['yoda', 'best', 'has']));
 
 // assert.strictEqual(nthChar([]), '');
 // assert.strictEqual(nthChar(['yoda', 'best', 'has']), 'yes');
