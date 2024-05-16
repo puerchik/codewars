@@ -1,13 +1,22 @@
-const capitals = word => {
-    const wordArr = word.split('');
-    const result = [];
+console.log("test");
 
-    wordArr.forEach((el, i) => el === el.toUpperCase() ? result.push(i) : 0);
 
-    return result;
-}
 
-console.log(capitals('CodEWaRs'));
+
+
+
+
+
+// const capitals = word => {
+//     const wordArr = word.split('');
+//     const result = [];
+
+//     wordArr.forEach((el, i) => el === el.toUpperCase() ? result.push(i) : 0);
+
+//     return result;
+// }
+
+// console.log(capitals('CodEWaRs'));
 
 
 
