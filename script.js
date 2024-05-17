@@ -1,8 +1,17 @@
-function multiply(a, b) {
-    return a * b
-}
+const opposite = number => -number;
 
-console.log(multiply(3, 3));
+
+
+console.log(opposite(-1));
+
+
+
+
+// function multiply(a, b) {
+//     return a * b
+// }
+
+// console.log(multiply(3, 3));
 
 
 
