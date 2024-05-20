@@ -1,8 +1,28 @@
-const opposite = number => -number;
+const removeChar = str => {
+    const strArr = str.split('');
+
+    strArr.pop();
+    strArr.shift();
+
+    return strArr.join('');
+}
+
+console.log(removeChar('eloquent'));
+
+// assert.strictEqual(removeChar('eloquent'), 'loquen');
+// assert.strictEqual(removeChar('country'), 'ountr');
+// assert.strictEqual(removeChar('person'), 'erso');
+// assert.strictEqual(removeChar('place'), 'lac');
+// assert.strictEqual(removeChar('ooopsss'), 'oopss');
 
 
 
-console.log(opposite(-1));
+
+// const opposite = number => -number;
+
+
+
+// console.log(opposite(-1));
 
 
 
