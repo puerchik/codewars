@@ -1,6 +1,19 @@
-const noSpace = x => x.split('').filter(el => el !== ' ').join('');
+const findSmallestInt = arr => arr.sort((a, b) => a - b)[0];
 
-console.log(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B'));
+console.log(findSmallestInt([1, 56, 232, 12, 8]));
+
+// assert.strictEqual(findSmallestInt([78, 56, 232, 12, 8]), 8, `findSmallestInt([78,56,232,12,8])`);
+// assert.strictEqual(findSmallestInt([78, 56, 232, 12, 18]), 12, `findSmallestInt([78,56,232,12,18])`);
+// assert.strictEqual(findSmallestInt([78, 56, 232, 412, 228]), 56, `findSmallestInt([78,56,232,412,228])`);
+// assert.strictEqual(findSmallestInt([78, 56, 232, 12, 0]), 0, `findSmallestInt([78,56,232,12,0])`);
+// assert.strictEqual(findSmallestInt([1, 56, 232, 12, 8]), 1, `findSmallestInt([1,56,232,12,8])`);
+
+
+
+
+// const noSpace = x => x.split('').filter(el => el !== ' ').join('');
+
+// console.log(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B'));
 
 // assert.strictEqual(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B'), '8j8mBliB8gimjB8B8jlB');
 // assert.strictEqual(noSpace('8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd'), '88Bifk8hB8BB8BBBB888chl8BhBfd');
