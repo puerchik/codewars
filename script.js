@@ -1,6 +1,16 @@
-const findSmallestInt = arr => arr.sort((a, b) => a - b)[0];
+const greet = name => `Hello, ${name} how are you doing today?`;
 
-console.log(findSmallestInt([1, 56, 232, 12, 8]));
+console.log(greet("Shingles"));
+
+// assert.strictEqual(greet("Ryan"), "Hello, Ryan how are you doing today?");
+// assert.strictEqual(greet("Shingles"), "Hello, Shingles how are you doing today?");
+
+
+
+
+// const findSmallestInt = arr => arr.sort((a, b) => a - b)[0];
+
+//     console.log(findSmallestInt([1, 56, 232, 12, 8]));
 
 // assert.strictEqual(findSmallestInt([78, 56, 232, 12, 8]), 8, `findSmallestInt([78,56,232,12,8])`);
 // assert.strictEqual(findSmallestInt([78, 56, 232, 12, 18]), 12, `findSmallestInt([78,56,232,12,18])`);
