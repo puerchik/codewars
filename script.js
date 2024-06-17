@@ -1,9 +1,27 @@
-const squareDigits = num => +num.toString()
+const descendingOrder = n => +n
+    .toString()
     .split('')
-    .map(el => Math.pow(Number(el), 2))
+    .sort((a, b) => Number(b) - Number(a))
     .join('')
 
-console.log(squareDigits(3212))
+console.log(descendingOrder(123456789));
+
+// assert.strictEqual(descendingOrder(0), 0)
+// assert.strictEqual(descendingOrder(1), 1)
+// assert.strictEqual(descendingOrder(111), 111)
+// assert.strictEqual(descendingOrder(15), 51)
+// assert.strictEqual(descendingOrder(1021), 2110)
+// assert.strictEqual(descendingOrder(123456789), 987654321)
+
+
+
+
+// const squareDigits = num => +num.toString()
+//     .split('')
+//     .map(el => Math.pow(Number(el), 2))
+//     .join('')
+
+// console.log(squareDigits(3212))
 
 // it("squareDigits(3212) should equal 9414", () => {
 //     assert.strictEqual(squareDigits(3212), 9414);
