@@ -1,6 +1,17 @@
-const isSquare = n => Number.isInteger(Math.sqrt(n))
+const findShort = s => s.split(' ').map(el => el.length).sort((a, b) => a - b)[0]
 
-console.log(isSquare(25));
+console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
+
+// assert.strictEqual(findShort("bitcoin take over the world maybe who knows perhaps"), 3);
+// assert.strictEqual(findShort("turns out random test cases are easier than writing out basic ones"), 3);
+// assert.strictEqual(findShort("Let's travel abroad shall we"), 2);
+
+
+
+
+// const isSquare = n => Number.isInteger(Math.sqrt(n))
+
+// console.log(isSquare(25));
 
 // Test.assertEquals(isSquare(-1), false, "-1: Negative numbers cannot be square numbers");
 // Test.assertEquals(isSquare( 0), true, "0 is a square number (0 * 0)");
