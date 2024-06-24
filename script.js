@@ -1,6 +1,18 @@
-const findShort = s => s.split(' ').map(el => el.length).sort((a, b) => a - b)[0]
+const solution = (str, ending) => ending === ''
+    ? true
+    : str.slice(-ending.length) === ending
 
-console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
+console.log(solution('abcde', ''));
+
+// Test.assertEquals(solution('abcde', 'cde'), true)
+// Test.assertEquals(solution('abcde', 'abc'), false)
+
+
+
+
+// const findShort = s => s.split(' ').map(el => el.length).sort((a, b) => a - b)[0]
+
+// console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
 
 // assert.strictEqual(findShort("bitcoin take over the world maybe who knows perhaps"), 3);
 // assert.strictEqual(findShort("turns out random test cases are easier than writing out basic ones"), 3);
