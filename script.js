@@ -1,8 +1,21 @@
-const solution = (str, ending) => ending === ''
-    ? true
-    : str.slice(-ending.length) === ending
+const highAndLow = numbers => {
+    const sortedArr = numbers.split(' ').sort((a, b) => Number(b) - Number(a))
 
-console.log(solution('abcde', ''));
+    return sortedArr.slice(0, 1).concat(sortedArr.slice(-1)).join(' ')
+}
+
+console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
+
+// assert.strictEqual(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"), "42 -9");
+// assert.strictEqual(highAndLow("1 2 3"), "3 1");
+
+
+
+// const solution = (str, ending) => ending === ''
+//     ? true
+//     : str.slice(-ending.length) === ending
+
+// console.log(solution('abcde', ''));
 
 // Test.assertEquals(solution('abcde', 'cde'), true)
 // Test.assertEquals(solution('abcde', 'abc'), false)
