@@ -1,10 +1,32 @@
-const highAndLow = numbers => {
-    const sortedArr = numbers.split(' ').sort((a, b) => Number(b) - Number(a))
+const getMiddle = s => {
+    const strLength = s.length
+    const halfLength = Math.floor(strLength / 2)
 
-    return sortedArr.slice(0, 1).concat(sortedArr.slice(-1)).join(' ')
+    if (strLength % 2) {
+        return s.slice(halfLength, halfLength + 1)
+    } else {
+        return s.slice(halfLength - 1, halfLength + 1)
+    }
 }
 
-console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
+
+console.log(getMiddle("middle"));
+
+// Test.assertEquals(getMiddle("test"), "es");
+// Test.assertEquals(getMiddle("testing"), "t");
+// Test.assertEquals(getMiddle("middle"), "dd");
+// Test.assertEquals(getMiddle("A"), "A");
+
+
+
+
+// const highAndLow = numbers => {
+//     const sortedArr = numbers.split(' ').sort((a, b) => Number(b) - Number(a))
+
+//     return sortedArr.slice(0, 1).concat(sortedArr.slice(-1)).join(' ')
+// }
+
+// console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
 
 // assert.strictEqual(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"), "42 -9");
 // assert.strictEqual(highAndLow("1 2 3"), "3 1");
