@@ -1,9 +1,31 @@
-const accum = s => s
-    .split('')
-    .map((el, i) => el.toUpperCase() + el.repeat(i).toLowerCase())
-    .join('-')
+function isIsogram(str) {
+    const strArr = str.toLowerCase().split('')
+    const unique = [...new Set(strArr)]
 
-console.log(accum("ZpglnRxqenU"));
+    return strArr.length === unique.length
+}
+
+console.log(isIsogram("isogram"));
+
+// assert.strictEqual(isIsogram("Dermatoglyphics"), true);
+// assert.strictEqual(isIsogram("isogram"), true);
+// assert.strictEqual(isIsogram("aba"), false, "same chars may not be adjacent");
+// assert.strictEqual(isIsogram("moOse"), false, "same chars may not be same case");
+// assert.strictEqual(isIsogram("isIsogram"), false);
+// assert.strictEqual(isIsogram(""), true, "an empty string is a valid isogram");
+
+
+
+
+
+
+
+// const accum = s => s
+//     .split('')
+//     .map((el, i) => el.toUpperCase() + el.repeat(i).toLowerCase())
+//     .join('-')
+
+// console.log(accum("ZpglnRxqenU"));
 
 // Test.assertEquals(accum("ZpglnRxqenU"), "Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu");
 // Test.assertEquals(accum("NyffsGeyylB"), "N-Yy-Fff-Ffff-Sssss-Gggggg-Eeeeeee-Yyyyyyyy-Yyyyyyyyy-Llllllllll-Bbbbbbbbbbb");
