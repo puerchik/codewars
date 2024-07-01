@@ -1,11 +1,27 @@
-function isIsogram(str) {
-    const strArr = str.toLowerCase().split('')
-    const unique = [...new Set(strArr)]
+function isTriangle(a, b, c) {
+    const ab = a + b
+    const ac = a + c
+    const bc = b + c
 
-    return strArr.length === unique.length
+    return a < bc && b < ac && c < ab
 }
 
-console.log(isIsogram("isogram"));
+console.log(isTriangle(1, 2, 2));
+
+// assert.strictEqual(isTriangle(1, 2, 2), true);
+// assert.strictEqual(isTriangle(7, 2, 2), false);
+
+
+
+
+// function isIsogram(str) {
+//     const strArr = str.toLowerCase().split('')
+//     const unique = [...new Set(strArr)]
+
+//     return strArr.length === unique.length
+// }
+
+// console.log(isIsogram("isogram"));
 
 // assert.strictEqual(isIsogram("Dermatoglyphics"), true);
 // assert.strictEqual(isIsogram("isogram"), true);
