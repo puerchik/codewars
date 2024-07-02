@@ -1,12 +1,26 @@
-function isTriangle(a, b, c) {
-    const ab = a + b
-    const ac = a + c
-    const bc = b + c
-
-    return a < bc && b < ac && c < ab
+function number(busStops) {
+    return busStops.reduce((a, c) => a = a + c[0] - c[1], 0)
 }
 
-console.log(isTriangle(1, 2, 2));
+console.log(number([[3, 0], [9, 1], [4, 8], [12, 2], [6, 1], [7, 8]]));
+
+// assert.strictEqual(number([[10, 0], [3, 5], [5, 8]]), 5);
+// assert.strictEqual(number([[3, 0], [9, 1], [4, 10], [12, 2], [6, 1], [7, 10]]), 17);
+// assert.strictEqual(number([[3, 0], [9, 1], [4, 8], [12, 2], [6, 1], [7, 8]]), 21);
+// assert.strictEqual(number([[0, 0]]), 0);
+
+
+
+
+// function isTriangle(a, b, c) {
+//     const ab = a + b
+//     const ac = a + c
+//     const bc = b + c
+
+//     return a < bc && b < ac && c < ab
+// }
+
+// console.log(isTriangle(1, 2, 2));
 
 // assert.strictEqual(isTriangle(1, 2, 2), true);
 // assert.strictEqual(isTriangle(7, 2, 2), false);
