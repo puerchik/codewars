@@ -1,8 +1,24 @@
-function number(busStops) {
-    return busStops.reduce((a, c) => a = a + c[0] - c[1], 0)
+function reverseWords(str) {
+    return str.split(' ').map(el => el.split('').reverse().join('')).join(' ')
 }
 
-console.log(number([[3, 0], [9, 1], [4, 8], [12, 2], [6, 1], [7, 8]]));
+console.log(reverseWords('The quick brown fox jumps over the lazy dog.'))
+
+// assert.strictEqual(reverseWords('The quick brown fox jumps over the lazy dog.'), 'ehT kciuq nworb xof spmuj revo eht yzal .god');
+// assert.strictEqual(reverseWords('apple'), 'elppa');
+// assert.strictEqual(reverseWords('a b c d'), 'a b c d');
+// assert.strictEqual(reverseWords('double  spaced  words'), 'elbuod  decaps  sdrow');
+
+
+
+
+
+
+// function number(busStops) {
+//     return busStops.reduce((a, c) => a = a + c[0] - c[1], 0)
+// }
+
+// console.log(number([[3, 0], [9, 1], [4, 8], [12, 2], [6, 1], [7, 8]]));
 
 // assert.strictEqual(number([[10, 0], [3, 5], [5, 8]]), 5);
 // assert.strictEqual(number([[3, 0], [9, 1], [4, 10], [12, 2], [6, 1], [7, 10]]), 17);
