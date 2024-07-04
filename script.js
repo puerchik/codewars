@@ -1,8 +1,30 @@
-function reverseWords(str) {
-    return str.split(' ').map(el => el.split('').reverse().join('')).join(' ')
+function arithmetic(a, b, operator) {
+    switch (operator) {
+        case "add": return a + b
+        case "subtract": return a - b
+        case "multiply": return a * b
+        case "divide": return a / b
+
+        default: return 'enter a valid arithmetic operator'
+    }
 }
 
-console.log(reverseWords('The quick brown fox jumps over the lazy dog.'))
+console.log(arithmetic(18, 2, "divide"));
+
+// assert.strictEqual(arithmetic(1, 2, "add"), 3, "'add' should return the two numbers added together!");
+// assert.strictEqual(arithmetic(8, 2, "subtract"), 6, "'subtract' should return a minus b!");
+// assert.strictEqual(arithmetic(5, 2, "multiply"), 10, "'multiply' should return a multiplied by b!");
+// assert.strictEqual(arithmetic(8, 2, "divide"), 4, "'divide' should return a divided by b!");
+
+
+
+
+
+// function reverseWords(str) {
+//     return str.split(' ').map(el => el.split('').reverse().join('')).join(' ')
+// }
+
+// console.log(reverseWords('The quick brown fox jumps over the lazy dog.'))
 
 // assert.strictEqual(reverseWords('The quick brown fox jumps over the lazy dog.'), 'ehT kciuq nworb xof spmuj revo eht yzal .god');
 // assert.strictEqual(reverseWords('apple'), 'elppa');
