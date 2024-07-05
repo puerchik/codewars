@@ -1,15 +1,36 @@
-function arithmetic(a, b, operator) {
-    switch (operator) {
-        case "add": return a + b
-        case "subtract": return a - b
-        case "multiply": return a * b
-        case "divide": return a / b
+function minValue(values) {
+    const arrValues = +[...new Set(values)].sort((a, b) => a - b).join('')
 
-        default: return 'enter a valid arithmetic operator'
-    }
+    return arrValues
 }
 
-console.log(arithmetic(18, 2, "divide"));
+console.log(minValue([4, 7, 5, 7]));
+
+// assert.strictEqual(minValue([1, 3, 1]), 13);
+// assert.strictEqual(minValue([4, 7, 5, 7]), 457);
+// assert.strictEqual(minValue([4, 8, 1, 4]), 148);
+// assert.strictEqual(minValue([5, 7, 9, 5, 7]), 579);
+// assert.strictEqual(minValue([6, 7, 8, 7, 6, 6]), 678);
+// assert.strictEqual(minValue([5, 6, 9, 9, 7, 6, 4]), 45679);
+// assert.strictEqual(minValue([1, 9, 1, 3, 7, 4, 6, 6, 7]), 134679);
+// assert.strictEqual(minValue([3, 6, 5, 5, 9, 8, 7, 6, 3, 5, 9]), 356789);
+// assert.strictEqual(minValue([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]), 1);
+
+
+
+
+// function arithmetic(a, b, operator) {
+//     switch (operator) {
+//         case "add": return a + b
+//         case "subtract": return a - b
+//         case "multiply": return a * b
+//         case "divide": return a / b
+
+//         default: return 'enter a valid arithmetic operator'
+//     }
+// }
+
+// console.log(arithmetic(18, 2, "divide"));
 
 // assert.strictEqual(arithmetic(1, 2, "add"), 3, "'add' should return the two numbers added together!");
 // assert.strictEqual(arithmetic(8, 2, "subtract"), 6, "'subtract' should return a minus b!");
