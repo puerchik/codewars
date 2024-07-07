@@ -1,10 +1,21 @@
-function minValue(values) {
-    const arrValues = +[...new Set(values)].sort((a, b) => a - b).join('')
-
-    return arrValues
+String.prototype.toJadenCase = function () {
+    return this.split(' ').map(el => el.slice(0, 1).toUpperCase() + el.slice(1)).join(' ')
 }
 
-console.log(minValue([4, 7, 5, 7]));
+console.log("How can mirrors be real if our eyes aren't real".toJadenCase());
+
+
+
+
+
+
+// function minValue(values) {
+//     const arrValues = +[...new Set(values)].sort((a, b) => a - b).join('')
+
+//     return arrValues
+// }
+
+// console.log(minValue([4, 7, 5, 7]));
 
 // assert.strictEqual(minValue([1, 3, 1]), 13);
 // assert.strictEqual(minValue([4, 7, 5, 7]), 457);
