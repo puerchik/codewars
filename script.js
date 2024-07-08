@@ -1,10 +1,24 @@
-String.prototype.toJadenCase = function () {
-    return this.split(' ').map(el => el.slice(0, 1).toUpperCase() + el.slice(1)).join(' ')
+function findNextSquare(sq) {
+    const num = Math.sqrt(sq)
+
+    return Number.isInteger(num) ? Math.pow(num + 1, 2) : -1
 }
 
-console.log("How can mirrors be real if our eyes aren't real".toJadenCase());
+console.log(findNextSquare(121));
 
 
+// Test.assertEquals(findNextSquare(121), 144, "Wrong output for 121");
+// Test.assertEquals(findNextSquare(625), 676, "Wrong output for 625");
+// Test.assertEquals(findNextSquare(319225), 320356, "Wrong output for 319225");
+// Test.assertEquals(findNextSquare(15241383936), 15241630849, "Wrong output for 15241383936");
+
+
+
+// String.prototype.toJadenCase = function () {
+//     return this.split(' ').map(el => el.slice(0, 1).toUpperCase() + el.slice(1)).join(' ')
+// }
+
+// console.log("How can mirrors be real if our eyes aren't real".toJadenCase());
 
 
 
