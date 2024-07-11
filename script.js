@@ -1,10 +1,38 @@
-function findNextSquare(sq) {
-    const num = Math.sqrt(sq)
+function getDivisorsCnt(n) {
+    let count = 0
 
-    return Number.isInteger(num) ? Math.pow(num + 1, 2) : -1
+    if (n % Math.sqrt(n) === 0) {
+        count++
+    }
+
+    for (let i = 0; i < Math.sqrt(n); i++) {
+        if (n % i === 0) {
+            count += 2
+        }
+    }
+
+    return count
 }
 
-console.log(findNextSquare(121));
+
+console.log(getDivisorsCnt(1));
+
+
+// assert.strictEqual(getDivisorsCnt(1),  1);
+// assert.strictEqual(getDivisorsCnt(10), 4);
+// assert.strictEqual(getDivisorsCnt(11), 2);
+// assert.strictEqual(getDivisorsCnt(54), 8);
+
+
+
+
+// function findNextSquare(sq) {
+//     const num = Math.sqrt(sq)
+
+//     return Number.isInteger(num) ? Math.pow(num + 1, 2) : -1
+// }
+
+// console.log(findNextSquare(121));
 
 
 // Test.assertEquals(findNextSquare(121), 144, "Wrong output for 121");
