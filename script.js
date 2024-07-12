@@ -1,21 +1,33 @@
-function getDivisorsCnt(n) {
-    let count = 0
-
-    if (n % Math.sqrt(n) === 0) {
-        count++
-    }
-
-    for (let i = 0; i < Math.sqrt(n); i++) {
-        if (n % i === 0) {
-            count += 2
-        }
-    }
-
-    return count
-}
+const modifiedSum = (a, n) => a.reduce((a, c) => a + Math.pow(c, n), 0) - a.reduce((a, c) => a + c, 0)
 
 
-console.log(getDivisorsCnt(1));
+console.log(modifiedSum([1, 2, 3], 3))
+
+//   {1, 2, 3}, 3  -->  (1^3 + 2^3 + 3^3 ) - (1 + 2 + 3)  -->  36 - 6  -->  30
+//   {1, 2}, 5     -->  (1^5 + 2^5) - (1 + 2)             -->  33 - 3  -->  30
+
+// Test.assertEquals(modifiedSum([1, 2, 3], 3), 30);
+// Test.assertEquals(modifiedSum([1, 2], 5), 30);
+
+
+// function getDivisorsCnt(n) {
+//     let count = 0
+
+//     if (n % Math.sqrt(n) === 0) {
+//         count++
+//     }
+
+//     for (let i = 0; i < Math.sqrt(n); i++) {
+//         if (n % i === 0) {
+//             count += 2
+//         }
+//     }
+
+//     return count
+// }
+
+
+// console.log(getDivisorsCnt(1));
 
 
 // assert.strictEqual(getDivisorsCnt(1),  1);
