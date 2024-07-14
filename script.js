@@ -1,7 +1,26 @@
-const modifiedSum = (a, n) => a.reduce((a, c) => a + Math.pow(c, n), 0) - a.reduce((a, c) => a + c, 0)
+function geo_mean(nums, arith_mean) {
+    const n = nums.length + 1
+    const lastN = arith_mean * (nums.length + 1) - nums.reduce((a, c) => a + c, 0)
+
+    return Math.pow([...nums, lastN].reduce((a, c) => a * c, 1), 1 / n)
+}
 
 
-console.log(modifiedSum([1, 2, 3], 3))
+console.log(geo_mean([4, 6, 7, 2], 5));
+
+// assert.approximately(geo_mean([2], 10), 6, EPSILON);
+// assert.approximately(geo_mean([1, 2], 3), 2.2894284851066637, EPSILON);
+// assert.approximately(geo_mean([4, 6, 7, 2], 5), 4.580344097847165, EPSILON);
+
+
+
+
+
+
+// const modifiedSum = (a, n) => a.reduce((a, c) => a + Math.pow(c, n), 0) - a.reduce((a, c) => a + c, 0)
+
+
+// console.log(modifiedSum([1, 2, 3], 3))
 
 //   {1, 2, 3}, 3  -->  (1^3 + 2^3 + 3^3 ) - (1 + 2 + 3)  -->  36 - 6  -->  30
 //   {1, 2}, 5     -->  (1^5 + 2^5) - (1 + 2)             -->  33 - 3  -->  30
