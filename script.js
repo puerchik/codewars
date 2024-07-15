@@ -1,12 +1,24 @@
-function geo_mean(nums, arith_mean) {
-    const n = nums.length + 1
-    const lastN = arith_mean * (nums.length + 1) - nums.reduce((a, c) => a + c, 0)
-
-    return Math.pow([...nums, lastN].reduce((a, c) => a * c, 1), 1 / n)
+function age(x, y) {
+    return y * (x / (y - 1))
 }
 
 
-console.log(geo_mean([4, 6, 7, 2], 5));
+// Test.expect(age(-15, 0.25) == 5)
+// Test.expect(age(6, 3) == 9)
+
+
+
+
+
+// function geo_mean(nums, arith_mean) {
+//     const n = nums.length + 1
+//     const lastN = arith_mean * (nums.length + 1) - nums.reduce((a, c) => a + c, 0)
+
+//     return Math.pow([...nums, lastN].reduce((a, c) => a * c, 1), 1 / n)
+// }
+
+
+// console.log(geo_mean([4, 6, 7, 2], 5));
 
 // assert.approximately(geo_mean([2], 10), 6, EPSILON);
 // assert.approximately(geo_mean([1, 2], 3), 2.2894284851066637, EPSILON);
