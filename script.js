@@ -1,6 +1,18 @@
-function age(x, y) {
-    return y * (x / (y - 1))
+function getSlope(p1, p2) {
+    const deltaX = p2[0] - p1[0]
+    const deltaY = p2[1] - p1[1]
+
+    return deltaX === 0 ? null : deltaY / deltaX
 }
+
+console.log(getSlope([1, 1], [1, 2]));
+
+// Test.assertSimilar(getSlope([1,1],[1,2]), null, "Incorrect Slope")
+
+
+// function age(x, y) {
+//     return y * (x / (y - 1))
+// }
 
 
 // Test.expect(age(-15, 0.25) == 5)
