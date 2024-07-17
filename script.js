@@ -1,11 +1,34 @@
-function getSlope(p1, p2) {
-    const deltaX = p2[0] - p1[0]
-    const deltaY = p2[1] - p1[1]
+const divisors = integer => {
+    let result = []
 
-    return deltaX === 0 ? null : deltaY / deltaX
+    for (let i = 2; i < integer; i++) {
+        if (integer % i === 0) {
+            result.push(i)
+        }
+    }
+
+    return result.length !== 0 ? result : `${integer} is prime`
 }
 
-console.log(getSlope([1, 1], [1, 2]));
+
+
+console.log(divisors(13));
+
+// Test.assertDeepEquals(divisors(15), [3, 5]);
+// Test.assertDeepEquals(divisors(12), [2, 3, 4, 6]);
+// Test.assertDeepEquals(divisors(13), "13 is prime");
+
+
+
+
+// function getSlope(p1, p2) {
+//     const deltaX = p2[0] - p1[0]
+//     const deltaY = p2[1] - p1[1]
+
+//     return deltaX === 0 ? null : deltaY / deltaX
+// }
+
+// console.log(getSlope([1, 1], [1, 2]));
 
 // Test.assertSimilar(getSlope([1,1],[1,2]), null, "Incorrect Slope")
 
