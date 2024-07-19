@@ -1,18 +1,59 @@
-const divisors = integer => {
-    let result = []
-
-    for (let i = 2; i < integer; i++) {
-        if (integer % i === 0) {
-            result.push(i)
+function isLeapYear(year) {
+    if (!(year % 4)) {
+        if (!(year % 100)) {
+            if (!(year % 400)) {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return true
         }
+    } else {
+        return false
     }
-
-    return result.length !== 0 ? result : `${integer} is prime`
 }
 
+console.log(isLeapYear(2000));
+
+// Years divisible by 4 are leap years,
+// but years divisible by 100 are not leap years,
+// but years divisible by 400 are leap years.
+// Tested years are in range 1600 ≤ year ≤ 4000.
+
+// it("Year 2020 is a leap year", () => {
+//     assert.strictEqual(isLeapYear(2020), true, "Incorrect answer for year = 2020");
+// });
+
+// it("Year 2000 is a leap year", () => {
+//     assert.strictEqual(isLeapYear(2000), true, "Incorrect answer for year = 2000");
+// });
+
+// it("Year 2015 is not a leap year", () => {
+//     assert.strictEqual(isLeapYear(2015), false, "Incorrect answer for year = 2015");
+// });
+
+// it("Year 2100 is not a leap year", () => {
+//     assert.strictEqual(isLeapYear(2100), false, "Incorrect answer for year = 2100");
 
 
-console.log(divisors(13));
+
+
+// const divisors = integer => {
+//     let result = []
+
+//     for (let i = 2; i < integer; i++) {
+//         if (integer % i === 0) {
+//             result.push(i)
+//         }
+//     }
+
+//     return result.length !== 0 ? result : `${integer} is prime`
+// }
+
+
+
+// console.log(divisors(13));
 
 // Test.assertDeepEquals(divisors(15), [3, 5]);
 // Test.assertDeepEquals(divisors(12), [2, 3, 4, 6]);
