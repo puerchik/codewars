@@ -1,20 +1,42 @@
-function isLeapYear(year) {
-    if (!(year % 4)) {
-        if (!(year % 100)) {
-            if (!(year % 400)) {
-                return true
-            } else {
-                return false
-            }
-        } else {
-            return true
+function inAscOrder(arr) {
+    let result = true
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > arr[i + 1]) {
+            result = false
         }
-    } else {
-        return false
     }
+
+    return result
 }
 
-console.log(isLeapYear(2000));
+console.log(inAscOrder([1, 2, 4, 7, 19]));
+
+// assert.strictEqual(inAscOrder([1, 2, 4, 7, 19]), true, 'The list of numbers "1, 2, 4, 7, 19" is in ascending order');
+// assert.strictEqual(inAscOrder([1, 2, 3, 4, 5]), true, 'The list of numbers "1, 2, 3, 4, 5" is in ascending order');
+// assert.strictEqual(inAscOrder([1, 6, 10, 18, 2, 4, 20]), false, 'The list of numbers "1, 6, 10, 18, 2, 4, 20" is not in ascending order');
+// assert.strictEqual(inAscOrder([9, 8, 7, 6, 5, 4, 3, 2, 1]), false, 'The list of numbers "9, 8, 7, 6, 5, 4, 3, 2, 1" is in DESCENDING order not ascending order');
+
+
+
+
+// function isLeapYear(year) {
+//     if (!(year % 4)) {
+//         if (!(year % 100)) {
+//             if (!(year % 400)) {
+//                 return true
+//             } else {
+//                 return false
+//             }
+//         } else {
+//             return true
+//         }
+//     } else {
+//         return false
+//     }
+// }
+
+// console.log(isLeapYear(2000));
 
 // Years divisible by 4 are leap years,
 // but years divisible by 100 are not leap years,
