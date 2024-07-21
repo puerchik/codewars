@@ -1,16 +1,27 @@
-function inAscOrder(arr) {
-    let result = true
-
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > arr[i + 1]) {
-            result = false
-        }
-    }
-
-    return result
+function removeDuplicateWords(s) {
+    return [...new Set(s.split(' '))].join(' ')
 }
 
-console.log(inAscOrder([1, 2, 4, 7, 19]));
+console.log(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'));
+
+// assert.strictEqual(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'), 'alpha beta gamma delta');
+
+
+
+
+// function inAscOrder(arr) {
+//     let result = true
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] > arr[i + 1]) {
+//             result = false
+//         }
+//     }
+
+//     return result
+// }
+
+// console.log(inAscOrder([1, 2, 4, 7, 19]));
 
 // assert.strictEqual(inAscOrder([1, 2, 4, 7, 19]), true, 'The list of numbers "1, 2, 4, 7, 19" is in ascending order');
 // assert.strictEqual(inAscOrder([1, 2, 3, 4, 5]), true, 'The list of numbers "1, 2, 3, 4, 5" is in ascending order');
