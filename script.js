@@ -1,8 +1,31 @@
-function removeDuplicateWords(s) {
-    return [...new Set(s.split(' '))].join(' ')
+function reverseNumber(num) {
+    let str = num.toString()
+    let arr = str.split('')
+    let reversedArr = arr.reverse()
+    let reversedStr = reversedArr.join('')
+    let reversedNum = parseInt(reversedStr)
+
+    return num < 0 ? -reversedNum : reversedNum
 }
 
-console.log(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'));
+console.log(reverseNumber(100000));
+
+// assert.strictEqual(reverseNumber(123), 321)
+// assert.strictEqual(reverseNumber(-123), -321, 'Negative Numbers should be preserved')
+// assert.strictEqual(reverseNumber(1000), 1, 'Should handle numbers ending with "0"')
+// assert.strictEqual(reverseNumber(4321234), 4321234)
+// assert.strictEqual(reverseNumber(5), 5)
+// assert.strictEqual(reverseNumber(0), 0)
+// assert.strictEqual(reverseNumber(98989898), 89898989)
+
+
+
+
+// function removeDuplicateWords(s) {
+//     return [...new Set(s.split(' '))].join(' ')
+// }
+
+// console.log(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'));
 
 // assert.strictEqual(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'), 'alpha beta gamma delta');
 
