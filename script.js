@@ -1,14 +1,23 @@
-function reverseNumber(num) {
-    let str = num.toString()
-    let arr = str.split('')
-    let reversedArr = arr.reverse()
-    let reversedStr = reversedArr.join('')
-    let reversedNum = parseInt(reversedStr)
+const sumEvenNumbers = input => input.reduce((a, c) => !(c % 2) ? a + c : a + 0, 0)
 
-    return num < 0 ? -reversedNum : reversedNum
-}
+console.log(sumEvenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 
-console.log(reverseNumber(100000));
+// assert.strictEqual(sumEvenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 30);
+
+
+
+
+// function reverseNumber(num) {
+//     let str = num.toString()
+//     let arr = str.split('')
+//     let reversedArr = arr.reverse()
+//     let reversedStr = reversedArr.join('')
+//     let reversedNum = parseInt(reversedStr)
+
+//     return num < 0 ? -reversedNum : reversedNum
+// }
+
+// console.log(reverseNumber(100000));
 
 // assert.strictEqual(reverseNumber(123), 321)
 // assert.strictEqual(reverseNumber(-123), -321, 'Negative Numbers should be preserved')
