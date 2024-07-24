@@ -1,6 +1,32 @@
-const sumEvenNumbers = input => input.reduce((a, c) => !(c % 2) ? a + c : a + 0, 0)
+function hasUniqueChars(str) {
+    const asciiSet = new Set()
 
-console.log(sumEvenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+    for (let char of str) {
+        if (asciiSet.has(char)) {
+            return false
+        }
+        asciiSet.add(char)
+    }
+
+    return true
+}
+
+
+console.log(hasUniqueChars("abcdef"));
+
+// Test.assertEquals(hasUniqueChars("  nAa"), false) // because there are two spaces ' '
+// Test.assertEquals(hasUniqueChars("abcdef"), true)
+// Test.assertEquals(hasUniqueChars("aA"), true) // case - sensitivity
+// Test.assertEquals(hasUniqueChars("++-"), false) // because there are two '+'
+
+
+
+
+
+
+// const sumEvenNumbers = input => input.reduce((a, c) => !(c % 2) ? a + c : a + 0, 0)
+
+// console.log(sumEvenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 
 // assert.strictEqual(sumEvenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 30);
 
