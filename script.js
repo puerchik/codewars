@@ -1,18 +1,29 @@
-function hasUniqueChars(str) {
-    const asciiSet = new Set()
-
-    for (let char of str) {
-        if (asciiSet.has(char)) {
-            return false
-        }
-        asciiSet.add(char)
-    }
-
-    return true
+function cookingTime(eggs) {
+    return Math.ceil(eggs / 8) * 5
 }
 
 
-console.log(hasUniqueChars("abcdef"));
+
+console.log(cookingTime(10));
+
+
+
+
+// function hasUniqueChars(str) {
+//     const asciiSet = new Set()
+
+//     for (let char of str) {
+//         if (asciiSet.has(char)) {
+//             return false
+//         }
+//         asciiSet.add(char)
+//     }
+
+//     return true
+// }
+
+
+// console.log(hasUniqueChars("abcdef"));
 
 // Test.assertEquals(hasUniqueChars("  nAa"), false) // because there are two spaces ' '
 // Test.assertEquals(hasUniqueChars("abcdef"), true)
