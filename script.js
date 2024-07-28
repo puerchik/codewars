@@ -1,10 +1,34 @@
-function cookingTime(eggs) {
-    return Math.ceil(eggs / 8) * 5
+const repeats = arr => {
+    const counts = arr.reduce((acc, value) => {
+        acc[value] = (acc[value] || 0) + 1;
+        return acc;
+    }, {});
+
+
+    const uniqueNumbers = arr.filter(value => counts[value] === 1);
+
+    return uniqueNumbers.reduce((a, c) => a + c, 0);
 }
 
 
+console.log(repeats([4, 5, 7, 5, 4, 8]));
 
-console.log(cookingTime(10));
+// Test.assertEquals(repeats([4, 5, 7, 5, 4, 8]), 15);
+// Test.assertEquals(repeats([9, 10, 19, 13, 19, 13]), 19);
+// Test.assertEquals(repeats([16, 0, 11, 4, 8, 16, 0, 11]), 12);
+// Test.assertEquals(repeats([5, 17, 18, 11, 13, 18, 11, 13]), 22);
+// Test.assertEquals(repeats([5, 10, 19, 13, 10, 13]), 24);
+
+
+
+
+// function cookingTime(eggs) {
+//     return Math.ceil(eggs / 8) * 5
+// }
+
+
+
+// console.log(cookingTime(10));
 
 
 
