@@ -1,17 +1,39 @@
-const repeats = arr => {
-    const counts = arr.reduce((acc, value) => {
-        acc[value] = (acc[value] || 0) + 1;
-        return acc;
-    }, {});
+function halvingSum(n) {
+    let result = n
+    let currentNum = n
 
+    while (currentNum !== 1) {
+        currentNum = Math.floor(currentNum / 2)
+        result += currentNum
+    }
 
-    const uniqueNumbers = arr.filter(value => counts[value] === 1);
-
-    return uniqueNumbers.reduce((a, c) => a + c, 0);
+    return result
 }
 
+console.log(halvingSum(127));
 
-console.log(repeats([4, 5, 7, 5, 4, 8]));
+
+// Test.assertEquals(halvingSum(25),47);
+// Test.assertEquals(halvingSum(127),247);
+
+
+
+
+
+// const repeats = arr => {
+//     const counts = arr.reduce((acc, value) => {
+//         acc[value] = (acc[value] || 0) + 1;
+//         return acc;
+//     }, {});
+
+
+//     const uniqueNumbers = arr.filter(value => counts[value] === 1);
+
+//     return uniqueNumbers.reduce((a, c) => a + c, 0);
+// }
+
+
+// console.log(repeats([4, 5, 7, 5, 4, 8]));
 
 // Test.assertEquals(repeats([4, 5, 7, 5, 4, 8]), 15);
 // Test.assertEquals(repeats([9, 10, 19, 13, 19, 13]), 19);
