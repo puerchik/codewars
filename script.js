@@ -1,16 +1,34 @@
-function halvingSum(n) {
-    let result = n
-    let currentNum = n
+function solve(arr) {
+    const pairsArr = arr.map(el => arr.includes(-el))
 
-    while (currentNum !== 1) {
-        currentNum = Math.floor(currentNum / 2)
-        result += currentNum
-    }
-
-    return result
+    return arr[pairsArr.indexOf(false)]
 }
 
-console.log(halvingSum(127));
+console.log(solve([-110, 110, -38, -38, -62, 62, -38, -38, -38]));
+
+
+// Test.assertEquals(solve([1, -1, 2, -2, 3]), 3);
+// Test.assertEquals(solve([-3, 1, 2, 3, -1, -4, -2]), -4);
+// Test.assertEquals(solve([1, -1, 2, -2, 3, 3]), 3);
+// Test.assertEquals(solve([-110, 110, -38, -38, -62, 62, -38, -38, -38]), -38);
+// Test.assertEquals(solve([-9, -105, -9, -9, -9, -9, 105]), -9);
+
+
+
+
+// function halvingSum(n) {
+//     let result = n
+//     let currentNum = n
+
+//     while (currentNum !== 1) {
+//         currentNum = Math.floor(currentNum / 2)
+//         result += currentNum
+//     }
+
+//     return result
+// }
+
+// console.log(halvingSum(127));
 
 
 // Test.assertEquals(halvingSum(25),47);
