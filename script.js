@@ -1,10 +1,45 @@
-function solve(arr) {
-    const pairsArr = arr.map(el => arr.includes(-el))
+function add(num1, num2) {
+    let num1Str = num1.toString()
+    let num2Str = num2.toString()
+    let diff = num1Str.length - num2Str.length
 
-    return arr[pairsArr.indexOf(false)]
+    if (diff > 0) {
+        num2Str = '0'.repeat(diff) + num2Str
+    }
+
+    if (diff < 0) {
+        num1Str = '0'.repeat(-diff) + num1Str
+    }
+
+    return +num1Str.split('').map((el, i) => +el + (+num2Str[i])).join('')
+
 }
 
-console.log(solve([-110, 110, -38, -38, -62, 62, -38, -38, -38]));
+console.log(add(49999, 49999))
+
+
+// assert.strictEqual(add(2, 11), 13);
+// assert.strictEqual(add(0, 1), 1);
+// assert.strictEqual(add(0, 0), 0);
+// assert.strictEqual(add(16, 18), 214);
+// assert.strictEqual(add(26, 39), 515);
+// assert.strictEqual(add(122, 81), 1103);
+// assert.strictEqual(add(1222, 30277), 31499);
+// assert.strictEqual(add(1236, 30977), 31111013);
+// assert.strictEqual(add(38810, 1383), 391193);
+// assert.strictEqual(add(49999, 49999), 818181818);
+
+
+
+
+
+// function solve(arr) {
+//     const pairsArr = arr.map(el => arr.includes(-el))
+
+//     return arr[pairsArr.indexOf(false)]
+// }
+
+// console.log(solve([-110, 110, -38, -38, -62, 62, -38, -38, -38]));
 
 
 // Test.assertEquals(solve([1, -1, 2, -2, 3]), 3);
