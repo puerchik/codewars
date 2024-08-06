@@ -1,21 +1,32 @@
-function add(num1, num2) {
-    let num1Str = num1.toString()
-    let num2Str = num2.toString()
-    let diff = num1Str.length - num2Str.length
-
-    if (diff > 0) {
-        num2Str = '0'.repeat(diff) + num2Str
-    }
-
-    if (diff < 0) {
-        num1Str = '0'.repeat(-diff) + num1Str
-    }
-
-    return +num1Str.split('').map((el, i) => +el + (+num2Str[i])).join('')
-
+function digitize(n) {
+    return String(n).split('').map(el => +el)
 }
 
-console.log(add(49999, 49999))
+
+
+
+
+
+
+
+// function add(num1, num2) {
+//     let num1Str = num1.toString()
+//     let num2Str = num2.toString()
+//     let diff = num1Str.length - num2Str.length
+
+//     if (diff > 0) {
+//         num2Str = '0'.repeat(diff) + num2Str
+//     }
+
+//     if (diff < 0) {
+//         num1Str = '0'.repeat(-diff) + num1Str
+//     }
+
+//     return +num1Str.split('').map((el, i) => +el + (+num2Str[i])).join('')
+
+// }
+
+// console.log(add(49999, 49999))
 
 
 // assert.strictEqual(add(2, 11), 13);
