@@ -1,6 +1,22 @@
-function digitize(n) {
-    return String(n).split('').map(el => +el)
+function findDup(arr) {
+
+    return arr.reduce((a, c) => a + c, 0) - [...new Set(arr)].reduce((a, c) => a + c, 0);
 }
+
+
+console.log(findDup([1, 3, 2, 5, 4, 5, 7, 6]));
+
+
+// Test.assertEquals(findDup([1, 2, 2, 3]), 2);
+// Test.assertEquals(findDup([1, 3, 2, 5, 4, 5, 7, 6]), 5);
+
+
+
+
+
+// function digitize(n) {
+//     return String(n).split('').map(el => +el)
+// }
 
 
 
