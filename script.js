@@ -1,10 +1,52 @@
-function findDup(arr) {
-
-    return arr.reduce((a, c) => a + c, 0) - [...new Set(arr)].reduce((a, c) => a + c, 0);
+function Fighter(name, health, damagePerAttack) {
+    this.name = name;
+    this.health = health;
+    this.damagePerAttack = damagePerAttack;
+    this.toString = function () { return this.name; }
 }
 
+function declareWinner(fighter1, fighter2, firstAttacker) {
+    let fighter1health = fighter1.health
+    let fighter2health = fighter2.health
+    let attacker = firstAttacker
 
-console.log(findDup([1, 3, 2, 5, 4, 5, 7, 6]));
+    while (fighter1health > 0 && fighter2health > 0) {
+        if (attacker === fighter2.name) {
+            fighter1health = fighter1health - fighter2.damagePerAttack
+            attacker = fighter1.name
+        } else {
+            fighter2health = fighter2health - fighter1.damagePerAttack
+            attacker = fighter2.name
+        }
+    }
+
+    return fighter1health > 0 ? fighter1.name : fighter2.name
+}
+
+console.log(declareWinner(new Fighter("Harald", 20, 5), new Fighter("Harry", 5, 4), "Harry"))
+
+
+//   assert.strictEqual(declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew"), "Lew");
+
+//   assert.strictEqual(declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Harry"), "Harry");
+
+//   assert.strictEqual(declareWinner(new Fighter("Harald", 20, 5), new Fighter("Harry", 5, 4), "Harry"), "Harald")
+
+//   assert.strictEqual(declareWinner(new Fighter("Harald", 20, 5), new Fighter("Harry", 5, 4), "Harald"), "Harald")
+
+//   assert.strictEqual(declareWinner(new Fighter("Jerry", 30, 3), new Fighter("Harald", 20, 5), "Jerry"), "Harald")
+
+//   assert.strictEqual(declareWinner(new Fighter("Jerry", 30, 3), new Fighter("Harald", 20, 5), "Harald"), "Harald")
+
+
+
+// function findDup(arr) {
+
+//     return arr.reduce((a, c) => a + c, 0) - [...new Set(arr)].reduce((a, c) => a + c, 0);
+// }
+
+
+// console.log(findDup([1, 3, 2, 5, 4, 5, 7, 6]));
 
 
 // Test.assertEquals(findDup([1, 2, 2, 3]), 2);
